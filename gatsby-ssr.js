@@ -1,16 +1,12 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from './src/components/styled';
+import Theme from './src/themes/theme';
 
-const theme = {
-  colors: {
-    main: '#FFFFFF',
-  },
-};
 
 export const wrapRootElement = ({ element }) => {
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={Theme}>
       <GlobalStyle />
       {element}
     </ThemeProvider>

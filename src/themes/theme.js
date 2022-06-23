@@ -26,6 +26,19 @@ export default {
     COLLAPSED_MENU_WIDTH: 80,
   },
   screens: {
-    mobile: '767px',
+    // max width for mobile
+    mobile: '600px',
+
+    // max width for tablet (portrait mode)
+    tablet_portrait: '900px',
+
+    // max width for tablet (landscape mode)
+    tablet_landscape: '1200px',
+
+    // max width for desktop
+    desktop: '1800px',
+
+    // min width for desktop
+    wide_screen: '1800px',
   },
 };
