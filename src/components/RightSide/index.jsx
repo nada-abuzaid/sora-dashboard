@@ -6,38 +6,40 @@ import colors from '../../constants/colors';
 const RightSide = () => {
   return (
     <Wrapper>
-      <StaticImage
+      {/* <StaticImage
         src='../../assets/svgs/Frame.svg'
         formats={['auto', 'webp', 'avif']}
         alt='Sora App!'
         className='background'
-      />
-      <StaticImage
-        src='../../assets/svgs/Arrow.svg'
-        formats={['auto', 'webp', 'avif']}
-        alt='Sora App!'
-        className='arrow'
-        style={{
-          position: 'absolute',
-          left: '26rem',
-          top: '2rem',
-          width: '5rem',
-        }}
-      />
-      <StaticImage
-        src='../../assets/svgs/Mobile.svg'
-        formats={['auto', 'webp', 'avif']}
-        style={{
-          position: 'absolute',
-          flex: 1,
-          left: '15rem',
-          bottom: '4rem',
-          zIndex: 2,
-        }}
-        className='mobile'
-        alt='Sora App!'
-      />
-      <Shadow className='shadow' />
+      /> */}
+      <div className='background'>
+        <StaticImage
+          src='../../assets/svgs/Arrow.svg'
+          formats={['auto', 'webp', 'avif']}
+          alt='Sora App!'
+          className='arrow'
+          style={{
+            position: 'absolute',
+            left: '26rem',
+            top: '2rem',
+            width: '5rem',
+          }}
+        />
+        <StaticImage
+          src='../../assets/svgs/Mobile.svg'
+          formats={['auto', 'webp', 'avif']}
+          style={{
+            position: 'absolute',
+            flex: 1,
+            left: '15rem',
+            bottom: '4rem',
+            zIndex: 2,
+          }}
+          className='mobile'
+          alt='Sora App!'
+        />
+        <Shadow className='shadow' />
+      </div>
     </Wrapper>
   );
 };
@@ -67,6 +69,10 @@ const Wrapper = styled.div`
   justify-content: center;
   overflow: hidden;
 
+  .background {
+    background-image: url('../../assets/svgs/Frame.svg');
+  }
+
   .gatsby-image-wrapper.background {
     width: 100%;
     height: 100vh;
@@ -78,8 +84,7 @@ const Wrapper = styled.div`
   }
 
   .gatsby-image-wrapper.mobile {
-    width: 30%;
-    height: 73%;
+    object-fit: cover;
   }
 `;
 
