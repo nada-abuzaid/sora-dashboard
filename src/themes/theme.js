@@ -26,6 +26,6 @@ export default {
     COLLAPSED_MENU_WIDTH: 80,
   },
   screens: {
-    mobile: "767px"
-  }
+    mobile: '767px',
+  },
 };

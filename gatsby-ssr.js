@@ -1,21 +1,17 @@
 import React from 'react';
-import { ThemeProvider, createGlobalStyle } from 'styled-components';
+import { ThemeProvider } from 'styled-components';
+import { GlobalStyle } from './src/components/styled';
 
 const theme = {
   colors: {
     main: '#FFFFFF',
   },
 };
-const GlobalStyle = createGlobalStyle`
-  *{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-`;
+
 export const wrapRootElement = ({ element }) => {
   return (
     <ThemeProvider theme={theme}>
+      <GlobalStyle />
       {element}
     </ThemeProvider>
   );
