@@ -1,23 +1,22 @@
 import React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
-import colors from '../../constants/colors';
 
 const RightSide = () => {
   return (
     <Wrapper>
       {/* <StaticImage
-        src='../../assets/svgs/Frame.svg'
+        src='../assets/svgs/Frame.svg'
         formats={['auto', 'webp', 'avif']}
         alt='Sora App!'
         className='background'
       /> */}
-      <div className='background'>
+      <div className="background">
         <StaticImage
-          src='../../assets/svgs/Arrow.svg'
+          src="../assets/svgs/Arrow.svg"
           formats={['auto', 'webp', 'avif']}
-          alt='Sora App!'
-          className='arrow'
+          alt="Sora App!"
+          className="arrow"
           style={{
             position: 'absolute',
             left: '26rem',
@@ -26,7 +25,7 @@ const RightSide = () => {
           }}
         />
         <StaticImage
-          src='../../assets/svgs/Mobile.svg'
+          src="../assets/svgs/Mobile.svg"
           formats={['auto', 'webp', 'avif']}
           style={{
             position: 'absolute',
@@ -35,17 +34,17 @@ const RightSide = () => {
             bottom: '4rem',
             zIndex: 2,
           }}
-          className='mobile'
-          alt='Sora App!'
+          className="mobile"
+          alt="Sora App!"
         />
-        <Shadow className='shadow' />
+        <Shadow className="shadow" />
       </div>
     </Wrapper>
   );
 };
 
 const Shadow = styled.div`
-  background: ${colors.liteGreen};
+  background: ${({ theme }) => theme.colors.primary};
   opacity: 0.5;
   position: absolute;
   bottom: 45px;
@@ -70,7 +69,7 @@ const Wrapper = styled.div`
   overflow: hidden;
 
   .background {
-    background-image: url('../../assets/svgs/Frame.svg');
+    background-image: url('../assets/svgs/Frame.svg');
   }
 
   .gatsby-image-wrapper.background {

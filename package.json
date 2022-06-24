@@ -15,9 +15,11 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "babel-plugin-styled-components": "^2.0.7",
     "gatsby": "^4.17.0",
     "gatsby-plugin-image": "^2.17.0",
     "gatsby-plugin-sharp": "^4.17.0",
+    "gatsby-plugin-styled-components": "^5.17.0",
     "gatsby-source-filesystem": "^4.17.0",
     "gatsby-transformer-sharp": "^4.17.0",
     "react": "^18.1.0",
