@@ -3,11 +3,11 @@ import styled from "styled-components";
 import Header from "../../pages-components/Dashboard/Header";
 import Sidebar from "../../pages-components/Dashboard/Sidebar";
 export default function DashboardLayout({ children }) {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setisOpen] = useState(true);
   return (
     <Wrapper className="page-continer" isOpen={isOpen}>
       <div className="main-page">
-        <Header isOpen={isOpen} setIsOpen={setIsOpen} />
+        <Header isOpen={isOpen} setisOpen={setisOpen} />
         <div className="main-content">{children}</div>
       </div>
       <Sidebar isOpen={isOpen} />

@@ -2,13 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import { RiMenu2Line } from "react-icons/ri";
 
-export default function Header({ isOpen, setIsOpen }) {
+export default function Header({ isOpen, setisOpen }) {
   return (
     <Nav isOpen={isOpen}>
       <RiMenu2Line
         className="menu-icon"
         onClick={() => {
-          setIsOpen(!isOpen);
+          setisOpen(!isOpen);
         }}
       />
     </Nav>
