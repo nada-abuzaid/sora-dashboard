@@ -23,7 +23,7 @@ export default function Sidebar({ isOpen }) {
               alt="Dashboard"
               className="icon"
             />
-            <p isOpen={isOpen}>Dashboard</p>
+            <p>Dashboard</p>
           </Link>
           <Link
             to="/profile"
@@ -35,7 +35,7 @@ export default function Sidebar({ isOpen }) {
               alt="Account"
               className="icon"
             />
-            <p isOpen={isOpen}>Profile</p>
+            <p>Profile</p>
           </Link>
         </div>
         <Link to="/logout" className="side-menu-item" activeClassName="active">
@@ -44,11 +44,11 @@ export default function Sidebar({ isOpen }) {
             alt="Logout"
             className="icon"
           />
-          <p isOpen={isOpen}>Sign Out</p>
+          <p>Sign Out</p>
         </Link>
       </div>
       <div className="footer">
-        <p isOpen={isOpen}>© 2022 Syrona Health. All rights reserved.</p>
+        <p>© 2022 Syrona Health. All rights reserved.</p>
         <span>
           <StaticImage src="../../assets/svgs/syrona.svg" alt="App Logo" />
         </span>
@@ -113,6 +113,7 @@ const ASide = styled.div`
       font-family: NunitoSans;
       font-size: 1rem;
       margin-left: 0.7rem;
+
       padding: 1.4rem 0;
       ${(props) => (props.isOpen ? null : `display:none`)}
     }
@@ -146,7 +147,6 @@ const ASide = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
-
       ${(props) =>
         props.isOpen
           ? `border-radius: 0.5rem 0 0 0`

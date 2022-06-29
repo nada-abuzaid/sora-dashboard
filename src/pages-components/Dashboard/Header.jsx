@@ -15,14 +15,18 @@ export default function Header({ isOpen, setisOpen }) {
   );
 }
 const Nav = styled.nav`
+  position: fixed;
+  width: 100%;
   height: 3.4rem;
   display: flex;
   align-items: center;
   box-shadow: 2px 2px 4px #b5b5b5;
-
+  background-color: white;
+  z-index: 11;
   .menu-icon {
     font-size: 1.5rem;
     margin-left: 1rem;
     font-weight: normal;
+    cursor: pointer;
   }
 `;

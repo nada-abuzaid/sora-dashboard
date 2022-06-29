@@ -19,10 +19,11 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
-
+  background-color: #fbfbfb;
   .main-page {
     display: flex;
     flex-direction: column;
+    height: 100vh;
     ${({ isOpen, theme: { sizes } }) => {
       return isOpen
         ? `margin-left: ${sizes.MENU_WIDTH}px;`
@@ -31,5 +32,17 @@ const Wrapper = styled.div`
   `;
     }}
     transition: all 0.5s ease;
+  }
+  .main-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4rem;
+    /* height: calc(100vh - 1rem); */
+    gap: 2rem;
+    .chart :nth-child(3) {
+      width: 100%;
+    }
   }
 `;

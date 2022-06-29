@@ -21,7 +21,6 @@ export const theme = {
     darkGreen: 'rgba(39,92,97,1)',
   },
   sizes: {
-    HEADER_HEIGHT: 100,
     MENU_WIDTH: 280,
     COLLAPSED_MENU_WIDTH: 80,
   },
