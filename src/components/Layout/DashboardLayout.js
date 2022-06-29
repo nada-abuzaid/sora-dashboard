@@ -45,4 +45,13 @@ const Wrapper = styled.div`
       width: 100%;
     }
   }
+
+  @media only screen and (max-width: 600px) {
+    .main-page {
+      margin-left: 0px;
+      p{
+        text-align: center;
+      }
+    }
+  }
 `;

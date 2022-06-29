@@ -3,6 +3,14 @@ import { Chart } from "primereact/chart";
 import styled from "styled-components";
 
 const Chartt = ({ type }) => {
+  // let allCanvas = document.getElementsByTagName("canvas");
+  // let canvas = Array.from(allCanvas)[2];
+  // console.log(canvas);
+  // let ctx = canvas.getContext("2d");
+  // let gradient = ctx.createLinearGradient(0, 0, 0, 400);
+  // gradient.addColorStop(0, "rgba(10,10,10,.2)");
+  // gradient.addColorStop(1, "rgba(255,255,255,1)");
+
   const [chartData] = useState({
     labels: [
       "Tracking health - 30%",

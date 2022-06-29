@@ -41,4 +41,8 @@ const StatisticStyle = styled.div`
     font-size: 0.7rem;
     font-family: NunitoSans;
   }
+
+  @media only screen and (max-width: 600px) {
+    width: 25%;
+  }
 `;

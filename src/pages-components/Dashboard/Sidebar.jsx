@@ -153,4 +153,8 @@ const ASide = styled.div`
           : `border-radius: 0; width: 100%;`}
     }
   }
+
+  @media only screen and (max-width: 600px) {
+    display: none;
+  }
 `;
