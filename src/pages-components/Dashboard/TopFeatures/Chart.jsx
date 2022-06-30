@@ -38,7 +38,7 @@ const Chartt = ({ type }) => {
       legend: {
         position: "right",
         labels: {
-          padding: 20,
+          padding: 15,
           color: "#495057",
           usePointStyle: true,
           boxWidth: 7,
@@ -181,5 +181,15 @@ const ChartStyle = styled.div`
   .chart {
     width: 85%;
     height: 95%;
+  }
+
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+    padding: 1rem;
+
+    .chart {
+      width: 95%;
+      height: 95%;
+    }
   }
 `;

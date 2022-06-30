@@ -52,10 +52,10 @@ const StatisticsStyle = styled.div`
   display: flex;
   flex-direction: row;
   width: 90%;
-  /* height: 5rem; */
   border-radius: 10px;
   box-shadow: 1px 1px 4px 2px #e1e1e1;
   @media only screen and (max-width: 990px) {
     flex-wrap: wrap;
+    width: 100%;
   }
 `;

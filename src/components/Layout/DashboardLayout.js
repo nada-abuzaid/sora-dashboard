@@ -39,7 +39,6 @@ const Wrapper = styled.div`
     flex-direction: column;
     align-items: center;
     margin-top: 4rem;
-    /* height: calc(100vh - 1rem); */
     gap: 2rem;
     .chart :nth-child(3) {
       width: 100%;

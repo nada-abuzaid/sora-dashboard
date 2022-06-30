@@ -22,7 +22,7 @@ const StatisticStyle = styled.div`
   :nth-child(1) {
     background-color: ${({ theme: { colors } }) => colors.lightGray3};
   }
-  :nth-child(1) {
+  :first-child, :last-child {
     border-radius: 10px 0 0 0;
   }
   ::after {
