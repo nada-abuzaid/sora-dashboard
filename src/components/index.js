@@ -1,4 +1,4 @@
-import Header from './Header';
+import Header from '../stories/Header';
 import AuthLayout from './Layout/AuthLayout';
 
 export { Header, AuthLayout };

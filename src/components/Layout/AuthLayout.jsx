@@ -1,7 +1,7 @@
 import React from 'react';
-import Header from '../Header';
 import styled from 'styled-components';
 import { RightSide } from '../../pages-components';
+import { Header } from '../../stories/Header';
 
 export default function AuthLayout({ children }) {
   return (
