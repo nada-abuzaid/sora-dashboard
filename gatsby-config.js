@@ -8,5 +8,22 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-styled-components`,
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /assets\/svgs\/.*\.svg/, // See below to configure properly
+        },
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: `${__dirname}/src/assets/images`,
+        ignore: [`**/\.*`], // ignore files starting with a dot
+      },
+      __key: 'images',
+    },
   ],
 };

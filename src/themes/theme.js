@@ -29,15 +29,15 @@ export const theme = {
     mobile: '600px',
 
     // max width for tablet (portrait mode)
-    tablet_portrait: '900px',
+    tablet_portrait: '990px',
 
     // max width for tablet (landscape mode)
     tablet_landscape: '1200px',
 
     // max width for desktop
-    desktop: '1800px',
+    desktop: '1440px',
 
     // min width for desktop
-    wide_screen: '1800px',
+    wide_screen: '1440px',
   },
 };
