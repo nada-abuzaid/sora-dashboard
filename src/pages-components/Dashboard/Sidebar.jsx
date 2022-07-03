@@ -2,13 +2,14 @@ import { StaticImage } from "gatsby-plugin-image";
 import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
-import "../css/typography.css";
+import PropTypes from "prop-types";
+import "../../css/typography.css";
 
 export default function Sidebar({ isOpen }) {
   return (
     <ASide isOpen={isOpen}>
       <div className="side-logo">
-        <StaticImage src="../assets/svgs/AppLogo.svg" alt="App Logo" />
+        <StaticImage src="../../assets/svgs/AppLogo.svg" alt="App Logo" />
         <p className="sora">Sora</p>
       </div>
       <div className="side-content">
@@ -50,7 +51,7 @@ export default function Sidebar({ isOpen }) {
       <div className="footer">
         <p>© 2022 Syrona Health. All rights reserved.</p>
         <span>
-          <StaticImage src="../assets/svgs/syrona.svg" alt="App Logo" />
+          <StaticImage src="../../assets/svgs/syrona.svg" alt="App Logo" />
         </span>
       </div>
     </ASide>
@@ -158,3 +159,19 @@ const ASide = styled.div`
     display: none;
   }
 `;
+
+Sidebar.propTypes = {
+  /**
+   * If the sidebar is open or not
+   */
+  isOpen: PropTypes.bool,
+  /**
+   * Set the sidebar state
+   */
+  setisOpen: PropTypes.bool,
+};
+
+Sidebar.defaultProps = {
+  isOpen: true,
+  setisOpen: true,
+};

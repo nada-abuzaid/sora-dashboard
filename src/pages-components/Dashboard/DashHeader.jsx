@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { RiMenu2Line } from "react-icons/ri";
+import PropTypes from "prop-types";
 
 export default function Header({ isOpen, setisOpen }) {
   return (
@@ -14,6 +15,7 @@ export default function Header({ isOpen, setisOpen }) {
     </Nav>
   );
 }
+
 const Nav = styled.nav`
   position: fixed;
   width: 100%;
@@ -30,3 +32,19 @@ const Nav = styled.nav`
     cursor: pointer;
   }
 `;
+
+Header.propTypes = {
+  /**
+   * If the sidebar is open or not
+   */
+  isOpen: PropTypes.bool,
+  /**
+   * Set the sidebar state
+   */
+  setisOpen: PropTypes.bool,
+};
+
+Header.defaultProps = {
+  isOpen: true,
+  setisOpen: true,
+};

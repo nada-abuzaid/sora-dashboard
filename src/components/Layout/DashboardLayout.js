@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Header from "../../pages-components/Dashboard/Header";
+import Header from "../../pages-components/Dashboard/DashHeader";
 import Sidebar from "../../pages-components/Dashboard/Sidebar";
 export default function DashboardLayout({ children }) {
   const [isOpen, setisOpen] = useState(true);
@@ -48,7 +48,7 @@ const Wrapper = styled.div`
   @media only screen and (max-width: 600px) {
     .main-page {
       margin-left: 0px;
-      p{
+      p {
         text-align: center;
       }
     }
