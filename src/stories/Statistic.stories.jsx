@@ -2,7 +2,7 @@ import React from "react";
 import Statistic from "../pages-components/Dashboard/StatisticNumbers/Statistic";
 
 export default {
-  title: "Components/Statictics Number/Statistic",
+  title: "Components/Dashboard/Statictics/Statistic",
   component: Statistic,
   parameters: {
     layout: "fullscreen",
