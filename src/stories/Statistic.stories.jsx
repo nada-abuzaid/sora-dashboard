@@ -12,12 +12,13 @@ export default {
 const Template = (args) => <Statistic {...args} />;
 
 export const Statistiic = Template.bind({});
-Statistiic.argsType = {
-  title: "string",
-  number: "number",
-};
 
 Statistiic.args = {
   title: "Total",
   number: 123,
+};
+
+Statistiic.argTypes = {
+  number: { control: "number" },
+  title: { control: "string" },
 };
