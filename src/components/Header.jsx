@@ -2,13 +2,15 @@ import React from "react";
 import Logo from "../assets/svgs/Logo.svg";
 import styled from "styled-components";
 
-export const Header = () => (
-  <header>
-    <Div>
-      <img className="logo-img" src={Logo} alt="Logo Img" />
-    </Div>
-  </header>
-);
+export default function Header() {
+  return(
+    <header>
+      <Div>
+        <img className="logo-img" src={Logo} alt="Logo Img" />
+      </Div>
+    </header>
+  );
+}
 
 const Div = styled.div`
   height: 3.4rem;

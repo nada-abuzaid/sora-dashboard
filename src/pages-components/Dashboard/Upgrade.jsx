@@ -39,8 +39,8 @@ const UpgradeStyle = styled.div`
     flex-direction: column;
     align-items: center;
     border-radius: 0.5rem;
-    padding: 4rem 1rem 1rem 1rem;
-    margin-top: 3rem;
+    padding: 4rem 1rem 2rem 1rem;
+    margin-top: 2rem;
     background-color: #f4f7f7;
     width: 75%;
     height: 80%;

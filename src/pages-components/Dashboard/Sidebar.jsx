@@ -40,7 +40,9 @@ export default function Sidebar({ isOpen }) {
             <p>Profile</p>
           </Link>
         </div>
-        <Upgrade isOpen={isOpen} />
+        <div>
+          <Upgrade isOpen={isOpen} />
+        </div>
         <Link to="/logout" className="side-menu-item" activeClassName="active">
           <StaticImage
             src="../../assets/svgs/Logout.svg"

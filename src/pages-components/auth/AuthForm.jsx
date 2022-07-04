@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from 'react';
-import styled from 'styled-components';
-import { Form } from 'antd';
+import React, { useEffect, useState } from "react";
+import styled from "styled-components";
+import { Form } from "antd";
 import {
   PanelTitle,
   Scribbles,
-} from '../../components/styled/CommonStyled.styled';
-import authForms, { AUTH_FORM_KEYS } from '../../constants/authForms';
-import { navigate } from 'gatsby-link';
-import { useAuth0 } from '@auth0/auth0-react';
-import { FloatLabel } from '../../components';
+} from "../../components/styled/CommonStyled.styled";
+import authForms, { AUTH_FORM_KEYS } from "../../constants/authForms";
+import { navigate } from "gatsby-link";
+import { useAuth0 } from "@auth0/auth0-react";
+import { FloatLabel } from "../../components";
 
-const isBrowser = () => typeof window !== 'undefined';
+const isBrowser = () => typeof window !== "undefined";
 
 const AuthForm = () => {
   const { loginWithRedirect } = useAuth0();
@@ -18,26 +18,7 @@ const AuthForm = () => {
   const [type, setType] = useState(null);
 
   const afterSubmit = () => {
-    // switch (type) {
-    //   case AUTH_FORM_KEYS.REGISTER:
-    //     navigate('/auth?type=verify-email')
-    //     return
-    //   case AUTH_FORM_KEYS.VERIFY_EMAIL:
-    //     navigate('/auth?type=set-password')
-    //     return
-    //   case AUTH_FORM_KEYS.SET_PASSWORD:
-    //     navigate('/auth?type=login')
-    //     return
-    //   case AUTH_FORM_KEYS.LOGIN:
-    //     loginWithRedirect()
-    //     // navigate('/')
-    //     return
-    //   case AUTH_FORM_KEYS.FORGOT_PASSWORD:
-    //     navigate('/auth?type=set-password')
-    //     return
-    //   default:
-    //     loginWithRedirect()
-    // }
+    console.log("afterSubmit");
   };
 
   const getParams = () => {
@@ -68,27 +49,23 @@ const AuthForm = () => {
   });
 
   const toggleForgotPassword = () => {
-    navigate('/auth?type=forgot-password');
+    navigate("/auth?type=forgot-password");
   };
 
   return (
     <AuthFormWrapper>
       {currentForm ? (
         <>
-          <PanelTitle style={{ position: 'relative', marginBottom: 40 }}>
+          <PanelTitle style={{ position: "relative", marginBottom: 40 }}>
             <Scribbles />
             {currentForm.title}
           </PanelTitle>
           {currentForm.description && (
             <Description>{currentForm.description}</Description>
           )}
-          {/* {currentForm.selectedTab && <FormType
-          onClick={onClick}
-          isLogin={currentForm.selectedTab === AUTH_FORM_KEYS.LOGIN}
-        />} */}
           <Form
             style={{
-              width: '70%',
+              width: "70%",
             }}
             name="auth"
             onFinish={onFinish}
@@ -104,18 +81,7 @@ const AuthForm = () => {
                 />
               );
             })}
-            {/* {currentForm.selectedTab === AUTH_FORM_KEYS.LOGIN && <ForgotPassword onClick={toggleForgotPassword}>
-            Forgot password?
-          </ForgotPassword>} */}
-            {/* <Form.Item>
-            <Confirm type="primary" htmlType="submit" >
-              {currentForm.buttonText}
-            </Confirm>
-            <Confirm type="primary" htmlType="submit" >
-              Register
-            </Confirm>
-          </Form.Item> */}
-            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+            <div style={{ display: "flex", justifyContent: "space-between" }}>
               <Confirm type="primary" onClick={loginWithRedirect}>
                 {currentForm.buttonText}
               </Confirm>
@@ -123,7 +89,7 @@ const AuthForm = () => {
               <SignUp
                 onClick={() =>
                   loginWithRedirect({
-                    screen_hint: 'signup',
+                    screen_hint: "signup",
                   })
                 }
               >
