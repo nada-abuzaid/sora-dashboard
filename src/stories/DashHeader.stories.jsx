@@ -1,11 +1,14 @@
 import React from "react";
-import DashHeader from "../pages-components/Dashboard/DashHeader";
+import DashHeader from "../pages-components/Dashboard/DashHeader.jsx";
 
 export default {
-  title: "Components/Dashboard/DashHeader",
+  title: "Components/Header",
   component: DashHeader,
+  parameters: {
+    layout: "fullscreen",
+  },
 };
 
 const Template = (args) => <DashHeader {...args} />;
 
-export const HeaderDash = Template.bind({});
+export const DashboardHeader = Template.bind({});

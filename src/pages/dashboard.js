@@ -2,17 +2,17 @@ import React from "react";
 import styled from "styled-components";
 import DashboardLayout from "../components/Layout/DashboardLayout";
 import Statistics from "../pages-components/Dashboard/StatisticNumbers/Statistics";
-import Chartt from "../pages-components/Dashboard/TopFeatures/Chart";
+import BarChart from "../pages-components/Dashboard/TopFeatures/BarChart";
+import HorizontalChart from "../pages-components/Dashboard/TopFeatures/HorizontalChart";
 
 export default function Dashboard() {
   return (
     <DashboardLayout>
       <Statistics />
       <Wrapper>
-        <Chartt type="doughnut" />
-        <Chartt type="bar" />
+        <BarChart />
+        <HorizontalChart />
       </Wrapper>
-      <Chartt type="bar-health" />
     </DashboardLayout>
   );
 }

@@ -1,8 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
-import { RightSide } from '../../pages-components';
-import { Header } from '../Header';
- 
+import React from "react";
+import styled from "styled-components";
+import { RightSide } from "../../pages-components";
+import Header from "../Header";
+
 export default function AuthLayout({ children }) {
   return (
     <div>

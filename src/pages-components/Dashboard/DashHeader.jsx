@@ -16,6 +16,22 @@ export default function Header({ isOpen, setisOpen }) {
   );
 }
 
+Header.propTypes = {
+  /**
+   * If the sidebar is open or not
+   */
+  isOpen: PropTypes.bool,
+  /**
+   * Set the sidebar state
+   */
+  setisOpen: PropTypes.bool,
+};
+
+Header.defaultProps = {
+  isOpen: true,
+  setisOpen: true,
+};
+
 const Nav = styled.nav`
   position: fixed;
   width: 100%;
@@ -32,19 +48,3 @@ const Nav = styled.nav`
     cursor: pointer;
   }
 `;
-
-Header.propTypes = {
-  /**
-   * If the sidebar is open or not
-   */
-  isOpen: PropTypes.bool,
-  /**
-   * Set the sidebar state
-   */
-  setisOpen: PropTypes.bool,
-};
-
-Header.defaultProps = {
-  isOpen: true,
-  setisOpen: true,
-};

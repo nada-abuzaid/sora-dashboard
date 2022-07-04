@@ -1,10 +1,10 @@
-import Statistics from "../pages-components/Dashboard/StatisticNumbers/Statistics";
+import AllStatistics from "../pages-components/Dashboard/StatisticNumbers/Statistics";
 
 export default {
-  title: "Components/Dashboard/Statictics/Statictics",
-  Component: Statistics,
+  title: "Components/Statictics",
+  Component: AllStatistics,
 };
 
-const Template = () => <Statistics isOpen={true} />;
+const Template = () => <AllStatistics isOpen={true} />;
 
-export const AllStatistics = Template.bind({});
+export const Statistics = Template.bind({});

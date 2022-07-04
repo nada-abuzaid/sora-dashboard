@@ -1,6 +1,6 @@
-import { StaticImage } from "gatsby-plugin-image";
 import React from "react";
 import { Link } from "gatsby";
+import { StaticImage } from "gatsby-plugin-image";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import "../../css/typography.css";
@@ -57,6 +57,22 @@ export default function Sidebar({ isOpen }) {
     </ASide>
   );
 }
+
+Sidebar.propTypes = {
+  /**
+   * If the sidebar is open or not
+   */
+  isOpen: PropTypes.bool,
+  /**
+   * Set the sidebar state
+   */
+  setisOpen: PropTypes.bool,
+};
+
+Sidebar.defaultProps = {
+  isOpen: true,
+  setisOpen: true,
+};
 
 const ASide = styled.div`
   box-shadow: 0px 2px 4px 2px #b5b5b5;
@@ -159,19 +175,3 @@ const ASide = styled.div`
     display: none;
   }
 `;
-
-Sidebar.propTypes = {
-  /**
-   * If the sidebar is open or not
-   */
-  isOpen: PropTypes.bool,
-  /**
-   * Set the sidebar state
-   */
-  setisOpen: PropTypes.bool,
-};
-
-Sidebar.defaultProps = {
-  isOpen: true,
-  setisOpen: true,
-};

@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import '../../../css/typography.css'
+import "../../../css/typography.css";
+import PropTypes from "prop-types";
 
 export default function Statistic({ number, title }) {
   return (
@@ -48,3 +49,13 @@ const StatisticStyle = styled.div`
     width: 25%;
   }
 `;
+
+Statistic.propTypes = {
+  number: PropTypes.number,
+  title: PropTypes.string,
+};
+
+Statistic.defaultProps = {
+  number: 250,
+  title: "Employees",
+};
