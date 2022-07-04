@@ -21,6 +21,7 @@
   bottom: 0;
   background-color: #c6c6c6;
 }
+
 .ReactModal__Overlay {
   opacity: 0;
   transition: opacity 1000ms ease-in-out;

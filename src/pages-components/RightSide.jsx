@@ -5,12 +5,6 @@ import styled from 'styled-components';
 const RightSide = () => {
   return (
     <Wrapper>
-      {/* <StaticImage
-        src='../assets/svgs/Frame.svg'
-        formats={['auto', 'webp', 'avif']}
-        alt='Sora App!'
-        className='background'
-      /> */}
       <div className="background">
         <StaticImage
           src="../assets/svgs/Arrow.svg"

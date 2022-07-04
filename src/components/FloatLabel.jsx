@@ -5,7 +5,6 @@ import styled from 'styled-components';
 const FloatLabel = (props) => {
   const [focus, setFocus] = useState(false);
   const [value, setValue] = useState('');
-  // const [inputRef, setRef] = useState(null);
 
   const onChange = (e) => {
     e.preventDefault();
@@ -39,7 +38,6 @@ const FloatLabel = (props) => {
               setValue(ref.input.value);
             }
           }}
-          // required={required}
         />
       </Form.Item>
       <label className={labelClass}>{label}</label>
