@@ -4,6 +4,7 @@ import { StaticImage } from "gatsby-plugin-image";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import "../../css/typography.css";
+import Upgrade from "./Upgrade";
 
 export default function Sidebar({ isOpen }) {
   return (
@@ -39,6 +40,7 @@ export default function Sidebar({ isOpen }) {
             <p>Profile</p>
           </Link>
         </div>
+        <Upgrade isOpen={isOpen} />
         <Link to="/logout" className="side-menu-item" activeClassName="active">
           <StaticImage
             src="../../assets/svgs/Logout.svg"
@@ -48,6 +50,7 @@ export default function Sidebar({ isOpen }) {
           <p>Sign Out</p>
         </Link>
       </div>
+      <div className="side-pro"></div>
       <div className="footer">
         <p>© 2022 Syrona Health. All rights reserved.</p>
         <span>
@@ -114,11 +117,9 @@ const ASide = styled.div`
       ${(props) => (props.isOpen ? null : `display:none`)}
     }
   }
-
   .side-menu {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
   }
   .side-menu-item {
     display: flex;
