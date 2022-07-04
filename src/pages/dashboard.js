@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import DashboardLayout from "../components/Layout/DashboardLayout";
 import Statistics from "../pages-components/Dashboard/StatisticNumbers/Statistics";
-import BarChart from "../pages-components/Dashboard/TopFeatures/BarChart";
-import HorizontalChart from "../pages-components/Dashboard/TopFeatures/HorizontalChart";
+import BarChart from "../pages-components/Dashboard/Charts/BarChart";
+import HorizontalChart from "../pages-components/Dashboard/Charts/HorizontalChart";
 
 export default function Dashboard() {
   return (

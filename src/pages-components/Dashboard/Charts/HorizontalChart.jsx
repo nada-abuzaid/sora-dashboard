@@ -46,9 +46,7 @@ export default function HorizontalChart() {
 
   return (
     <ChartStyle>
-      <div className="chart">
-        <Bar data={data} options={options} />
-      </div>
+      <Bar data={data} options={options} />
     </ChartStyle>
   );
 }
@@ -64,18 +62,8 @@ const ChartStyle = styled.div`
     font-family: "DM Serif Text";
     font-size: 1.3rem;
   }
-  .chart {
-    width: 85%;
-    height: 95%;
-  }
-
   @media only screen and (max-width: 990px) {
     width: 100%;
     padding: 1rem;
-
-    .chart {
-      width: 95%;
-      height: 95%;
-    }
   }
 `;
