@@ -2,37 +2,9 @@ import React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 
-const RightSide = () => {
+export default function RightPanel() {
   return (
     <Wrapper>
-      {/* <div className="background">
-        <StaticImage
-          src="../assets/svgs/Arrow.svg"
-          formats={['auto', 'webp', 'avif']}
-          alt="Sora App!"
-          className="arrow"
-          style={{
-            position: 'absolute',
-            left: '26rem',
-            top: '2rem',
-            width: '5rem',
-          }}
-        />
-        <StaticImage
-          src="../assets/svgs/Mobile.svg"
-          formats={['auto', 'webp', 'avif']}
-          style={{
-            position: 'absolute',
-            flex: 1,
-            left: '15rem',
-            bottom: '4rem',
-            zIndex: 2,
-          }}
-          className="mobile"
-          alt="Sora App!"
-        />
-        <Shadow className="shadow" />
-      </div> */}
       <StaticImage
         src='../../assets/svgs/Frame.svg'
         formats={['auto', 'webp', 'avif']}
@@ -40,34 +12,21 @@ const RightSide = () => {
         className='background'
       />
       <StaticImage
-        src='../assets/svgs/Arrow.svg'
+        src='../../assets/svgs/Arrow.svg'
         formats={['auto', 'webp', 'avif']}
         alt='Sora App!'
         className='arrow'
-        style={{
-          position: 'absolute',
-          left: '70%',
-          top: '5%',
-          width: '5em',
-        }}
       />
       <StaticImage
         src='../../assets/svgs/Mobile.svg'
         formats={['auto', 'webp', 'avif']}
-        style={{
-          position: 'absolute',
-          flex: 1,
-          left: '35%',
-          bottom: '10%',
-          zIndex: 2,
-        }}
         className='mobile'
         alt='Sora App!'
       />
       <Shadow className='shadow' />
     </Wrapper>
   );
-};
+}
 
 const Shadow = styled.div`
   background: ${({ theme }) => theme.colors.lightGray2};
@@ -110,6 +69,16 @@ const Wrapper = styled.div`
     width: 75%;
   }
 
+  .gatsby-image-wrapper.mobile {
+    position: absolute;
+    flex: 1;
+    left: 35%;
+    bottom: 10%;
+    z-index: 2;
+    height: 80%;
+    width: 45%;
+  }
+
   .gatsby-image-wrapper.background {
     width: 100%;
     height: 100vh;
@@ -118,7 +87,18 @@ const Wrapper = styled.div`
 
   .gatsby-image-wrapper.arrow {
     height: 3rem;
+    position: absolute;
+    left: 70%;
+    top: 4%;
+    width: 5rem;
+  }
+
+  @media only screen and (max-width: 1024px) and (min-width: 990px) {
+    .gatsby-image-wrapper.mobile img {
+      width: 65%;
+    }
+  }
+  @media only screen and (max-width: 991px) {
+    display: none;
   }
 `;
-
-export default RightSide;

@@ -1,14 +1,14 @@
-import * as React from "react";
-import styled from "styled-components";
-import SoraLayout from "../components/Layout/AppLayout";
-import { AuthForm, AuthRightPanel } from "../pages-components";
+import * as React from 'react';
+import styled from 'styled-components';
+import SoraLayout from '../components/Layout/AppLayout';
+import { AuthForm, RightSide } from '../pages-components';
 
 const NotFoundPage = () => {
   return (
     <SoraLayout>
       <AuthWrapper>
         <AuthForm />
-        <AuthRightPanel />
+        <RightSide />
       </AuthWrapper>
     </SoraLayout>
   );

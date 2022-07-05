@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../Header';
 import styled from 'styled-components';
-import { RightSide } from '../../pages-components';
+import RightPanel from '../../pages-components/auth/RightPanel';
 
 export default function AuthLayout({ children }) {
   return (
@@ -9,7 +9,7 @@ export default function AuthLayout({ children }) {
       <Header />
       <Div>
         {children}
-        <RightSide />
+        <RightPanel />
       </Div>
     </div>
   );
