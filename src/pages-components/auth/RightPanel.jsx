@@ -1,28 +1,15 @@
 import React from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
+import SoraImg from '../../assets/svgs/Frame.svg';
+import Arrow from '../../assets/svgs/Arrow.svg';
+import Mobile from '../../assets/svgs/Mobile.svg';
 
 export default function RightPanel() {
   return (
     <Wrapper>
-      <StaticImage
-        src='../../assets/svgs/Frame.svg'
-        formats={['auto', 'webp', 'avif']}
-        alt='Sora App!'
-        className='background'
-      />
-      <StaticImage
-        src='../../assets/svgs/Arrow.svg'
-        formats={['auto', 'webp', 'avif']}
-        alt='Sora App!'
-        className='arrow'
-      />
-      <StaticImage
-        src='../../assets/svgs/Mobile.svg'
-        formats={['auto', 'webp', 'avif']}
-        className='mobile'
-        alt='Sora App!'
-      />
+      <img src={SoraImg} alt='Sora App!' className='background' />
+      <img src={Mobile} alt='Sora App!' className='mobile' />
+      <img src={Arrow} alt='Sora App!' className='arrow' />
       <Shadow className='shadow' />
     </Wrapper>
   );
@@ -62,30 +49,25 @@ const Wrapper = styled.div`
   align-items: flex-start;
   justify-content: center;
   overflow: hidden;
-  background: ${({ theme }) => theme.colors.secondary};
   height: calc(100vh - 3.4rem);
 
-  .gatsby-image-wrapper.mobile img {
-    width: 75%;
-  }
-
-  .gatsby-image-wrapper.mobile {
+  .mobile {
     position: absolute;
     flex: 1;
-    left: 35%;
+    left: 30%;
     bottom: 10%;
     z-index: 2;
     height: 80%;
     width: 45%;
   }
 
-  .gatsby-image-wrapper.background {
+  .background {
     width: 100%;
     height: 100vh;
-    object-fit: contain;
+    object-fit: cover;
   }
 
-  .gatsby-image-wrapper.arrow {
+  .arrow {
     height: 3rem;
     position: absolute;
     left: 70%;
@@ -94,8 +76,8 @@ const Wrapper = styled.div`
   }
 
   @media only screen and (max-width: 1024px) and (min-width: 990px) {
-    .gatsby-image-wrapper.mobile img {
-      width: 65%;
+    .mobile {
+      width: 60%;
     }
   }
   @media only screen and (max-width: 991px) {

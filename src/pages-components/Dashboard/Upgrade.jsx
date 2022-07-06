@@ -1,23 +1,19 @@
-import { Link } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
-import React from "react";
-import styled from "styled-components";
-import "../../css/typography.css";
+import { Link } from 'gatsby';
+import React from 'react';
+import styled from 'styled-components';
+import PRO from '../../assets/svgs/PRO.svg';
+import '../../css/typography.css';
 
 export default function Upgrade({ isOpen }) {
   return (
     <UpgradeStyle isOpen={isOpen}>
-      <div className="upgrade">
-        <StaticImage
-          src="../../assets/svgs/PRO.svg"
-          alt="Upgrade to PRO"
-          className="upgrade-img"
-        />
-        <h3 className="title">Upgrade to Premium</h3>
-        <p className="desc">
+      <div className='upgrade'>
+        <img src={PRO} alt='Upgrade to PRO' className='upgrade-img' />
+        <h3 className='title'>Upgrade to Premium</h3>
+        <p className='desc'>
           Upgrade to unlock premium data for your employers.
         </p>
-        <Link className="btn-more" to="/">
+        <Link className='btn-more' to='/'>
           Learn more
         </Link>
       </div>
@@ -26,7 +22,7 @@ export default function Upgrade({ isOpen }) {
 }
 
 const UpgradeStyle = styled.div`
-  display: ${({isOpen}) => (isOpen ? "flex" : "none")};
+  display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -52,13 +48,13 @@ const UpgradeStyle = styled.div`
     }
     .title {
       font-weight: bold;
-      font-family: "DM Serif Text";
+      font-family: 'DM Serif Text';
       font-size: 1.3rem;
       text-align: center;
       margin-bottom: 0;
     }
     .desc {
-      font-family: "NunitoSans";
+      font-family: 'NunitoSans';
       text-align: center;
     }
     a.btn-more {

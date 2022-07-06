@@ -13,17 +13,17 @@ import '../css/modal.css';
 
 function WelcomeCarousel() {
   const [modalIsOpen, setIsOpen] = React.useState(true);
-  const  closeModal = () => {
+  const closeModal = () => {
     setIsOpen(false);
-  }
+  };
 
   return (
     <Modal
       isOpen={modalIsOpen}
-      className="modal"
+      className='modal'
       onRequestClose={closeModal}
-      contentLabel="Example Modal"
-      overlayClassName="overlay"
+      contentLabel='Example Modal'
+      overlayClassName='overlay'
     >
       <Swiper
         pagination={{
@@ -33,16 +33,16 @@ function WelcomeCarousel() {
       >
         <SwiperSlide>
           <SlideWrapper>
-            <ImagesWrapper className="images">
+            <ImagesWrapper className='images'>
               <StaticImage
                 width={138}
                 src={'../assets/svgs/welcome-popup-1-lock.svg'}
-                alt="Popup image"
+                alt='Popup image'
               />
               <StaticImage
                 width={175.25}
                 src={'../assets/svgs/welcome-popup-1-lock-scribbles.svg'}
-                alt="Popup image"
+                alt='Popup image'
                 style={{
                   position: 'absolute',
                   top: '50%',
@@ -64,16 +64,16 @@ function WelcomeCarousel() {
         </SwiperSlide>
         <SwiperSlide>
           <SlideWrapper>
-            <ImagesWrapper className="images">
+            <ImagesWrapper className='images'>
               <StaticImage
                 width={138}
                 src={'../assets/svgs/welcome-popup-2.svg'}
-                alt="Popup image"
+                alt='Popup image'
               />
               <StaticImage
                 width={155.25}
                 src={'../assets/svgs/welcome-popup-2-upper-pop.svg'}
-                alt="Popup image"
+                alt='Popup image'
                 style={{
                   position: 'absolute',
                   top: '40%',
@@ -95,16 +95,16 @@ function WelcomeCarousel() {
         </SwiperSlide>
         <SwiperSlide>
           <SlideWrapper>
-            <ImagesWrapper className="images">
+            <ImagesWrapper className='images'>
               <StaticImage
                 width={138}
                 src={'../assets/svgs/welcome-popup-1-lock.svg'}
-                alt="Popup image"
+                alt='Popup image'
               />
               <StaticImage
                 width={175.25}
                 src={'../assets/svgs/welcome-popup-1-lock-scribbles.svg'}
-                alt="Popup image"
+                alt='Popup image'
                 style={{
                   position: 'absolute',
                   top: '50%',
@@ -122,7 +122,7 @@ function WelcomeCarousel() {
         </SwiperSlide>
       </Swiper>
       <StyledCloseButton onClick={closeModal}>
-        <StaticImage alt="close" src={'../assets/svgs/close.svg'} width={14} />
+        <StaticImage alt='close' src={'../assets/svgs/close.svg'} width={14} />
       </StyledCloseButton>
     </Modal>
   );

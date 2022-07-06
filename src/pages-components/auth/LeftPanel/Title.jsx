@@ -1,16 +1,13 @@
-import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
 import styled from 'styled-components';
+import Scribbles from '../../../assets/svgs/Scribbles.svg';
+import PropTypes from 'prop-types';
 import '../../../css/typography.css';
 
 export default function Title({ title }) {
   return (
     <TitleStyle>
-      <StaticImage
-        src='../../../assets/svgs/Scribbles.svg'
-        alt='Scribbles'
-        className='scribbles'
-      />
+      <img src={Scribbles} alt='Scribbles' className='scribbles' />
       <p className='section-title'>{title}</p>
     </TitleStyle>
   );
@@ -19,22 +16,22 @@ export default function Title({ title }) {
 const TitleStyle = styled.div`
   width: 65%;
   position: relative;
+  margin-top: 5rem;
 
-  .gatsby-image-wrapper.gatsby-image-wrapper-constrained {
+  .scribbles {
     position: absolute;
-  }
-
-  .gatsby-image-wrapper.gatsby-image-wrapper-constrained img {
-    position: absolute;
-    left: -2rem;
-    top: 1rem;
+    left: -1.5rem;
+    top: -5rem;
   }
 
   .section-title {
-    font-family: 'DM Serif Display', 'serif';
+    font-family: 'DM Serif Display';
     font-size: 30px;
     font-weight: bold;
     text-align: center;
-    margin-top: 5rem;
   }
 `;
+
+Title.propTypes = {
+  title: PropTypes.string,
+};

@@ -1,8 +1,8 @@
-import React from "react";
-import Horizontalchart from "../pages-components/Dashboard/TopFeatures/HorizontalChart";
+import React from 'react';
+import Horizontalchart from '../pages-components/Dashboard/Charts/HorizontalChart';
 
 export default {
-  title: "Components/Charts",
+  title: 'Components/Charts',
   component: Horizontalchart,
 };
 

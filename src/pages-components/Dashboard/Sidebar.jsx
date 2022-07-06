@@ -1,41 +1,43 @@
-import React from "react";
-import { Link } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
-import styled from "styled-components";
-import PropTypes from "prop-types";
-import "../../css/typography.css";
-import Upgrade from "./Upgrade";
-
+import React from 'react';
+import { Link } from 'gatsby';
+import { StaticImage } from 'gatsby-plugin-image';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import Upgrade from './Upgrade';
+import logout from '../../assets/svgs/Logout.svg';
+import logo from '../../assets/svgs/syrona.svg';
+import AppLogo from '../../assets/svgs/AppLogo.svg';
+import '../../css/typography.css';
 export default function Sidebar({ isOpen }) {
   return (
     <ASide isOpen={isOpen}>
-      <div className="side-logo">
-        <StaticImage src="../../assets/svgs/AppLogo.svg" alt="App Logo" />
-        <p className="sora">Sora</p>
+      <div className='side-logo'>
+        <img src={AppLogo} alt='App Logo' />
+        <p className='sora'>Sora</p>
       </div>
-      <div className="side-content">
-        <div className="side-menu">
+      <div className='side-content'>
+        <div className='side-menu'>
           <Link
-            to="/dashboard"
-            className="side-menu-item"
-            activeClassName="active"
+            to='/dashboard'
+            className='side-menu-item'
+            activeClassName='active'
           >
             <StaticImage
-              src="../../assets/svgs/Menu.svg"
-              alt="Dashboard"
-              className="icon"
+              src='../../assets/svgs/Menu.svg'
+              alt='Dashboard'
+              className='icon'
             />
             <p>Dashboard</p>
           </Link>
           <Link
-            to="/profile"
-            className="side-menu-item"
-            activeClassName="active"
+            to='/profile'
+            className='side-menu-item'
+            activeClassName='active'
           >
             <StaticImage
-              src="../../assets/svgs/Account.svg"
-              alt="Account"
-              className="icon"
+              src='../../assets/svgs/Account.svg'
+              alt='Account'
+              className='icon'
             />
             <p>Profile</p>
           </Link>
@@ -43,20 +45,15 @@ export default function Sidebar({ isOpen }) {
         <div>
           <Upgrade isOpen={isOpen} />
         </div>
-        <Link to="/logout" className="side-menu-item" activeClassName="active">
-          <StaticImage
-            src="../../assets/svgs/Logout.svg"
-            alt="Logout"
-            className="icon"
-          />
+        <Link to='/logout' className='side-menu-item' activeClassName='active'>
+          <img src={logout} alt='Logout' className='icon' />
           <p>Sign Out</p>
         </Link>
       </div>
-      <div className="side-pro"></div>
-      <div className="footer">
+      <div className='footer'>
         <p>© 2022 Syrona Health. All rights reserved.</p>
         <span>
-          <StaticImage src="../../assets/svgs/syrona.svg" alt="App Logo" />
+          <img src={logo} alt='App Logo' />
         </span>
       </div>
     </ASide>

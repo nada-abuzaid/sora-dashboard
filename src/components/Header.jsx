@@ -1,15 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import { StaticImage } from 'gatsby-plugin-image';
+import logo from '../assets/svgs/Logo.svg';
 
 export default function Header() {
   return (
     <Div>
-      <StaticImage
-        className='logo-img'
-        src='../assets/svgs/Logo.svg'
-        alt='Logo Img'
-      />
+      <img className='logo-img' src={logo} alt='Logo Img' />
     </Div>
   );
 }
