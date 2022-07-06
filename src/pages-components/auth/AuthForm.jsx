@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from "react";
-import styled from "styled-components";
-import { Form } from "antd";
+import React, { useEffect, useState } from 'react';
+import styled from 'styled-components';
+import { Form } from 'antd';
 import {
   PanelTitle,
   Scribbles,
-} from "../../components/styled/CommonStyled.styled";
-import authForms, { AUTH_FORM_KEYS } from "../../constants/authForms";
-import { useAuth0 } from "@auth0/auth0-react";
-import { FloatLabel } from "../../components";
+} from '../../components/styled/CommonStyled.styled';
+import authForms, { AUTH_FORM_KEYS } from '../../constants/authForms';
+import { useAuth0 } from '@auth0/auth0-react';
+import { FloatLabel } from '../../components';
 
-const isBrowser = () => typeof window !== "undefined";
+const isBrowser = () => typeof window !== 'undefined';
 
 const AuthForm = () => {
   const { loginWithRedirect } = useAuth0();
@@ -17,7 +17,7 @@ const AuthForm = () => {
   const [type, setType] = useState(null);
 
   const afterSubmit = () => {
-    console.log("afterSubmit");
+    console.log('afterSubmit');
   };
 
   const getParams = () => {
@@ -51,7 +51,7 @@ const AuthForm = () => {
     <AuthFormWrapper>
       {currentForm ? (
         <>
-          <PanelTitle style={{ position: "relative", marginBottom: 40 }}>
+          <PanelTitle style={{ position: 'relative', marginBottom: 40 }}>
             <Scribbles />
             {currentForm.title}
           </PanelTitle>
@@ -60,9 +60,9 @@ const AuthForm = () => {
           )}
           <Form
             style={{
-              width: "70%",
+              width: '70%',
             }}
-            name="auth"
+            name='auth'
             onFinish={onFinish}
           >
             {currentForm.inputs.map((input, index) => {
@@ -76,15 +76,15 @@ const AuthForm = () => {
                 />
               );
             })}
-            <div style={{ display: "flex", justifyContent: "space-between" }}>
-              <Confirm type="primary" onClick={loginWithRedirect}>
+            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+              <Confirm type='primary' onClick={loginWithRedirect}>
                 {currentForm.buttonText}
               </Confirm>
               <div style={{ width: 50 }} />
               <SignUp
                 onClick={() =>
                   loginWithRedirect({
-                    screen_hint: "signup",
+                    screen_hint: 'signup',
                   })
                 }
               >
@@ -133,7 +133,7 @@ const Confirm = styled.button`
   text-align: center;
   cursor: pointer;
   margin-top: 50px;
-  font-family: "NunitoSans-SemiBold";
+  font-family: 'NunitoSans-SemiBold';
   border: 3px solid ${({ theme: { colors } }) => colors.primary};
   text-decoration: none;
   color: ${({ theme: { colors } }) => colors.white};
@@ -154,7 +154,7 @@ const SignUp = styled.button`
   text-align: center;
   cursor: pointer;
   margin-top: 50px;
-  font-family: "NunitoSans-Bold";
+  font-family: 'NunitoSans-Bold';
   border: 3px solid ${({ theme: { colors } }) => colors.primary};
   text-decoration: none;
   color: ${({ theme: { colors } }) => colors.primary};

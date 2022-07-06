@@ -6,9 +6,9 @@ const FloatLabel = (props) => {
   const [focus, setFocus] = useState(false);
   const [value, setValue] = useState('');
 
-  const onChange = (e) => {
-    e.preventDefault();
-    setValue(e.target.value);
+  const onChange = (event) => {
+    event.preventDefault();
+    setValue(event.target.value);
   };
   const { label, name, type, required } = props;
 
@@ -17,7 +17,7 @@ const FloatLabel = (props) => {
 
   return (
     <FloatInputWrapper
-      className="float-label"
+      className='float-label'
       onBlur={() => setFocus(false)}
       onFocus={() => setFocus(true)}
     >

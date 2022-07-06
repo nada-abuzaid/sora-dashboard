@@ -9,4 +9,7 @@ export const GlobalStyle = createGlobalStyle`
 body{
   position: relative;
 }
+p{
+  margin-bottom: 0;
+}
 `;
