@@ -1,10 +1,10 @@
 import { Link } from 'gatsby';
 import styled from 'styled-components';
-import ScribblesSvg from '../../assets/svgs/scribbles.svg';
+import ScribblesSvg from '../../assets/svgs/Scribbles.svg';
 import RandomScribblesSvg from '../../assets/svgs/random-scribble.svg';
 
 export const PanelTitle = styled.div`
-  font-family: DM Serif Text;
+  font-family: "DM Serif Text";
   font-size: 42px;
   color: ${({ theme: { colors } }) => colors.primaryDark};
   text-align: center;
@@ -13,6 +13,7 @@ export const PanelTitle = styled.div`
     padding: 0px 30px;
   }
 `;
+
 export const RandomScribble = styled(RandomScribblesSvg)`
   position: absolute;
   right: calc(100% - 52px);

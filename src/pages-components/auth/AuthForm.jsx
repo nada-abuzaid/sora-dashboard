@@ -1,13 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Form } from 'antd';
-import {
-  PanelTitle,
-  Scribbles,
-} from '../../components/styled/CommonStyled.styled';
+import { PanelTitle, Scribbles, FloatLabel } from '../../components';
 import authForms, { AUTH_FORM_KEYS } from '../../constants/authForms';
 import { useAuth0 } from '@auth0/auth0-react';
-import { FloatLabel } from '../../components';
 
 const isBrowser = () => typeof window !== 'undefined';
 

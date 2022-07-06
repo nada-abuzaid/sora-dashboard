@@ -1,16 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
-import DashboardLayout from '../components/Layout/DashboardLayout';
-import Statistics from '../pages-components/Dashboard/StatisticNumbers/Statistics';
-import BarChart from '../pages-components/Dashboard/Charts/DoughnutChart';
-import HorizontalChart from '../pages-components/Dashboard/Charts/HorizontalChart';
+import { DashboardLayout } from '../components';
+import {
+  Statistics,
+  DoughnutChart,
+  HorizontalChart,
+} from '../pages-components';
 
 export default function Dashboard() {
   return (
     <DashboardLayout>
       <Statistics />
       <Wrapper>
-        <BarChart />
+        <DoughnutChart />
         <HorizontalChart />
       </Wrapper>
     </DashboardLayout>

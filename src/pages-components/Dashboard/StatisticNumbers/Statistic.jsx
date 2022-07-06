@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import '../../../css/typography.css';
 import PropTypes from 'prop-types';
+import '../../../css/typography.css';
 
 export default function Statistic({ number, title }) {
   return (
@@ -22,7 +22,7 @@ const StatisticStyle = styled.div`
   position: relative;
   :hover,
   :nth-child(1) {
-    background-color: #e5e5e5;
+    background-color: ${({ theme: { colors } }) => colors.lightGray3};
   }
   :first-child,
   :last-child {
@@ -34,7 +34,7 @@ const StatisticStyle = styled.div`
     width: 1px;
     right: 0;
     position: absolute;
-    background-color: #e5e5e5;
+    background-color: ${({ theme: { colors } }) => colors.lightGray3};
   }
   .statistic-number {
     font-family: 'DM Serif Text';

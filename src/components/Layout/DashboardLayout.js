@@ -1,14 +1,15 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import Header from "../../pages-components/Dashboard/DashHeader";
-import Sidebar from "../../pages-components/Dashboard/Sidebar";
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import Header from '../../pages-components/Dashboard/DashHeader';
+import Sidebar from '../../pages-components/Dashboard/Sidebar';
+
 export default function DashboardLayout({ children }) {
   const [isOpen, setisOpen] = useState(true);
   return (
-    <Wrapper className="page-continer" isOpen={isOpen}>
-      <div className="main-page">
+    <Wrapper className='page-continer' isOpen={isOpen}>
+      <div className='main-page'>
         <Header isOpen={isOpen} setisOpen={setisOpen} />
-        <div className="main-content">{children}</div>
+        <div className='main-content'>{children}</div>
       </div>
       <Sidebar isOpen={isOpen} />
     </Wrapper>

@@ -1,6 +1,6 @@
 import React from 'react';
-import LeftPanel from '../pages-components/auth/LeftPanel/LeftPanel';
-import AuthLayout from '../components/Layout/AuthLayout';
+import { LeftPanel } from '../pages-components';
+import { AuthLayout } from '../components';
 
 export default function Register() {
   return (
