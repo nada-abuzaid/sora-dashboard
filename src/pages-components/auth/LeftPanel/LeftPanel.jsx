@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+import Title from './Title';
 
 export default function LeftSide() {
   return (
     <Div>
-      <h2>Welcome to Syrona Health</h2>
+      <Title title='Welcome to Syrona Health' />
     </Div>
   );
 }

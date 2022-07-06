@@ -1,21 +1,20 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import SoraLayout from '../components/Layout/AppLayout';
-import { AuthForm, AuthRightPanel } from '../pages-components';
+import { AuthForm, RightSide } from '../pages-components';
 
-// markup
 const NotFoundPage = () => {
   return (
     <SoraLayout>
-    <AuthWrapper>
-      <AuthForm />
-      <AuthRightPanel />
-    </AuthWrapper>
+      <AuthWrapper>
+        <AuthForm />
+        <RightSide />
+      </AuthWrapper>
     </SoraLayout>
   );
 };
 
-export const AuthWrapper = styled.div`
+const AuthWrapper = styled.div`
   height: 100vh;
   flex: 1;
   display: flex;

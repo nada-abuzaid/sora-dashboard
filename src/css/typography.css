@@ -1,28 +1,8 @@
-@font-face {
-  font-family: "DM Serif Text";
-  src: url("../fonts/DMSerifText-Regular.ttf")
-}
-@font-face {
-  font-family: "Mulish";
-  src: url("../fonts/Mulish-Regular.ttf");
-}
-@font-face {
-  font-family: "Mulish-SemiBold";
-  src: url("../fonts/Mulish-SemiBold.ttf");
-}
-@font-face {
-  font-family: "Mulish-Bold";
-  src: url("../fonts/Mulish-Bold.ttf");
-}
-@font-face {
-  font-family: "NunitoSans";
-  src: url("../fonts/NunitoSans-Regular.ttf");
-}
-@font-face {
-  font-family: "NunitoSans-SemiBold";
-  src: url("../fonts/NunitoSans-SemiBold.ttf");
-}
-@font-face {
-  font-family: "NunitoSans-Bold";
-  src: url("../fonts/NunitoSans-Bold.ttf");
-}
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700&display=swap');

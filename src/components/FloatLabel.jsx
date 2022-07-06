@@ -1,10 +1,10 @@
-import { Input, Form } from "antd";
-import React, { useState } from "react";
-import styled from "styled-components";
+import { Input, Form } from 'antd';
+import React, { useState } from 'react';
+import styled from 'styled-components';
 
 const FloatLabel = (props) => {
   const [focus, setFocus] = useState(false);
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState('');
 
   const onChange = (event) => {
     event.preventDefault();
@@ -13,11 +13,11 @@ const FloatLabel = (props) => {
   const { label, name, type, required } = props;
 
   let labelClass =
-    focus || (value && value.length !== 0) ? "label label-float" : "label";
+    focus || (value && value.length !== 0) ? 'label label-float' : 'label';
 
   return (
     <FloatInputWrapper
-      className="float-label"
+      className='float-label'
       onBlur={() => setFocus(false)}
       onFocus={() => setFocus(true)}
     >
@@ -26,7 +26,7 @@ const FloatLabel = (props) => {
         rules={[
           {
             required,
-            message: "This field is mandatory",
+            message: 'This field is mandatory',
           },
         ]}
       >
@@ -38,7 +38,6 @@ const FloatLabel = (props) => {
               setValue(ref.input.value);
             }
           }}
-          // required={required}
         />
       </Form.Item>
       <label className={labelClass}>{label}</label>
