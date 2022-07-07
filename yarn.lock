@@ -5433,10 +5433,10 @@
   dependencies:
     "entities" "^2.0.0"
 
-"antd@^4.21.3":
-  "integrity" "sha512-seSXyzVwfOI0a9/HIxUQ41nVJpR8hHn+DbBlJTCOM92Q56Fvw0FlbtZuNMA2gaOkDzyPTnp4W7adlbaqkGsvog=="
-  "resolved" "https://registry.npmjs.org/antd/-/antd-4.21.4.tgz"
-  "version" "4.21.4"
+"antd@^4.21.5":
+  "integrity" "sha512-S6L29rmbiQvE4/kn1hPBscHFZ405Pbtuw3DCpXVnMt409JtY6sDaUbUcWfl4i21XkABEogKzqxjYVGogf1QIWQ=="
+  "resolved" "https://registry.npmjs.org/antd/-/antd-4.21.5.tgz"
+  "version" "4.21.5"
   dependencies:
     "@ant-design/colors" "^6.0.0"
     "@ant-design/icons" "^4.7.0"

@@ -8,27 +8,29 @@ export default function Title({ title }) {
   return (
     <TitleStyle>
       <img src={Scribbles} alt='Scribbles' className='scribbles' />
-      <p className='section-title'>{title}</p>
+      <div className='section-title'>
+        <p>{title}</p>
+      </div>
     </TitleStyle>
   );
 }
 
 const TitleStyle = styled.div`
-  width: 65%;
+  width: 45%;
   position: relative;
-  margin-top: 5rem;
-
+  margin: 3rem 2rem 0 2rem;
   .scribbles {
     position: absolute;
-    left: -1.5rem;
-    top: -5rem;
+    left: -3rem;
+    top: -2.5rem;
+    width: 6rem;
   }
 
   .section-title {
-    font-family: 'DM Serif Display';
-    font-size: 30px;
-    font-weight: bold;
+    font-family: 'DM Serif Text';
+    font-size: 33px;
     text-align: center;
+    margin-bottom: 0;
   }
 `;
 

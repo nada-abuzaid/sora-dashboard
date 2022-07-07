@@ -1,11 +1,11 @@
 import React from 'react';
-import RightPanel from '../pages-components/auth/RightPanel';
+import RightPanell from '../pages-components/auth/RightPanel';
 
 export default {
-  title: 'Components/RightPanel',
-  component: RightPanel,
+  title: 'Components/Panels',
+  component: RightPanell,
 };
 
-const Template = () => <RightPanel />;
+const Template = () => <RightPanell />;
 
-export const RightPanell = Template.bind({});
+export const RightPanel = Template.bind({});
