@@ -109,7 +109,8 @@ const ASide = styled.div`
     padding: 1.4rem;
     .sora {
       text-transform: uppercase;
-      font-family: NunitoSans-Bold;
+      font-family: 'Nunito Sans';
+      font-weight: bold;
       color: ${({ theme: { colors } }) => colors.primary};
       font-size: 1.3rem;
       margin-left: 0.5rem;

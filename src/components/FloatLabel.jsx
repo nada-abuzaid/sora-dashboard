@@ -48,7 +48,8 @@ const FloatLabel = (props) => {
 const FloatInputWrapper = styled.div`
   position: relative;
   width: 100%;
-  font-family: NunitoSans-SemiBold;
+  font-family: 'Nunito Sans';
+  font-weight: semibold;
   margin-top: 40px;
   .label {
     font-size: 18px;

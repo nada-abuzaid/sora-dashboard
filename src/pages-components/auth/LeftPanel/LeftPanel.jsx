@@ -13,8 +13,6 @@ export default function LeftSide() {
 }
 
 const Div = styled.div`
-  width: 50%;
-  height: calc(100%-3.4rem);
   display: flex;
   flex-direction: column;
   align-items: center;

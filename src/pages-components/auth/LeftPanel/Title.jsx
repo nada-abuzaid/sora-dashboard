@@ -18,10 +18,10 @@ export default function Title({ title }) {
 const TitleStyle = styled.div`
   width: 45%;
   position: relative;
-  margin: 3rem 2rem 0 2rem;
+  margin: 0 2rem;
   .scribbles {
     position: absolute;
-    left: -3rem;
+    left: -0.8rem;
     top: -2.5rem;
     width: 6rem;
   }

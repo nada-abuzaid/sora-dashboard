@@ -54,7 +54,7 @@ const UpgradeStyle = styled.div`
       margin-bottom: 0;
     }
     .desc {
-      font-family: 'NunitoSans';
+      font-family: 'Nunito Sans';
       text-align: center;
     }
     a.btn-more {

@@ -145,7 +145,7 @@ const SlideTitle = styled.p`
 `;
 const SlideParagraph = styled.p`
   text-align: justify;
-  font-family: 'NunitoSans';
+  font-family: 'Nunito Sans';
   margin-bottom: 50px;
   font-size: 16px;
   @media only screen and (max-width: ${({ theme: { screens } }) => screens.tablet_portrait}) {

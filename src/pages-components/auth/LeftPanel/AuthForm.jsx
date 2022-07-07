@@ -111,7 +111,7 @@ const AuthFormWrapper = styled.div`
 `;
 
 const Description = styled.div`
-  font-family: NunitoSans;
+  font-family: 'Nunito Sans';
   font-size: 28px;
   padding: 40px 20%;
   margin-bottom: 30px;
@@ -129,7 +129,8 @@ const Confirm = styled.button`
   text-align: center;
   cursor: pointer;
   margin-top: 50px;
-  font-family: 'NunitoSans-SemiBold';
+  font-family: 'Nunito Sans';
+  font-weight: 600;
   border: 3px solid ${({ theme: { colors } }) => colors.primary};
   text-decoration: none;
   color: ${({ theme: { colors } }) => colors.white};
@@ -150,7 +151,8 @@ const SignUp = styled.button`
   text-align: center;
   cursor: pointer;
   margin-top: 50px;
-  font-family: 'NunitoSans-Bold';
+  font-family: 'Nunito Sans';
+  font-weight: bold;
   border: 3px solid ${({ theme: { colors } }) => colors.primary};
   text-decoration: none;
   color: ${({ theme: { colors } }) => colors.primary};
