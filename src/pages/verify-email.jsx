@@ -4,7 +4,7 @@ import { AuthLayout } from '../components';
 import { Title } from '../pages-components';
 import Button from '../pages-components/auth/Button';
 
-export default function verifyEmail() {
+export default function VerifyEmail() {
   return (
     <AuthLayout>
       <Wrapper>
