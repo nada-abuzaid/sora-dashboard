@@ -4,7 +4,7 @@ import ScribblesSvg from '../../assets/svgs/Scribbles.svg';
 import RandomScribblesSvg from '../../assets/svgs/random-scribble.svg';
 
 export const PanelTitle = styled.div`
-  font-family: "DM Serif Text";
+  font-family: 'DM Serif Text';
   font-size: 42px;
   color: ${({ theme: { colors } }) => colors.primaryDark};
   text-align: center;
@@ -64,7 +64,7 @@ export const PanelSubTitle = styled.div`
   line-height: 27px;
   margin-bottom: 33px;
   padding-right: 100px;
-  font-family: NunitoSans;
+  font-family: 'Nunito Sans';
   @media only screen and (max-width: ${({ theme: { screens } }) => screens.tablet_portrait}) {
     font-size: 18px;
   }
@@ -77,12 +77,12 @@ export const LearnMore = styled(Link)`
   background: ${({ theme: { colors } }) => colors.primary};
   margin-top: 20px;
   border-radius: 6px;
-  font-family: NunitoSans;
+  font-family: 'Nunito Sans';
 `;
 
 export const ErrorMessage = styled.div`
   color: ${({ theme: { colors } }) => colors.error};
-  font-family: Mulish;
+  font-family: 'Mulish';
   font-size: 14px;
   margin-left: 10px;
   margin-top: 10px;
@@ -90,7 +90,7 @@ export const ErrorMessage = styled.div`
 
 export const SuccessMessage = styled.div`
   color: ${({ theme: { colors } }) => colors.darkGreen};
-  font-family: Mulish;
+  font-family: 'Mulish';
   font-size: 12px;
   margin-left: 10px;
   margin-top: 10px;

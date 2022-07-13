@@ -16,24 +16,19 @@ export default function Title({ title }) {
 }
 
 const TitleStyle = styled.div`
-  width: 45%;
   position: relative;
-  margin: 0 2rem;
   .scribbles {
     position: absolute;
-    left: -0.8rem;
+    left: -4rem;
     top: -2.5rem;
     width: 6rem;
   }
-
   .section-title {
     font-family: 'DM Serif Text';
-    font-size: 33px;
+    font-size: 34px;
     text-align: center;
-    margin-bottom: 0;
   }
 `;
-
 Title.propTypes = {
   title: PropTypes.string,
 };

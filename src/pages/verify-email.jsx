@@ -24,6 +24,7 @@ const Wrapper = styled.div`
   align-items: center;
   flex-direction: column;
   height: 100%;
+  gap: 1rem;
   .desc {
     font-family: 'Nunito Sans';
     text-align: center;

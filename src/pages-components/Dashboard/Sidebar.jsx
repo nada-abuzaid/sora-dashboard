@@ -18,7 +18,7 @@ export default function Sidebar({ isOpen }) {
       <div className='side-content'>
         <div className='side-menu'>
           <Link
-            to='/dashboard'
+            to='/'
             className='side-menu-item'
             activeClassName='active'
           >
@@ -128,7 +128,7 @@ const ASide = styled.div`
     color: ${({ theme: { colors } }) => colors.primaryDark};
 
     p {
-      font-family: NunitoSans;
+      font-family: 'Nunito Sans';
       font-size: 1rem;
       margin-left: 0.7rem;
 
@@ -153,7 +153,7 @@ const ASide = styled.div`
     align-items: center;
     p {
       font-size: 0.7rem;
-      font-family: NunitoSans;
+      font-family: 'Nunito Sans';
       margin-left: 0.6rem;
       ${(props) => (props.isOpen ? null : `display: none`)}
     }

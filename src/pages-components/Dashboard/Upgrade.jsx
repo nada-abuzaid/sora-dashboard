@@ -47,7 +47,6 @@ const UpgradeStyle = styled.div`
       top: 0;
     }
     .title {
-      font-weight: bold;
       font-family: 'DM Serif Text';
       font-size: 1.3rem;
       text-align: center;

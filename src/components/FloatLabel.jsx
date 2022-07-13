@@ -70,7 +70,7 @@ const FloatInputWrapper = styled.div`
   .ant-input {
     padding: 15px 20px;
     border-radius: 6px;
-    font-family: NunitoSans-SemiBold;
+    font-family: 'Nunito Sans';
     font-size: 18px;
     border: 1px solid #c6c6c6;
     outline: none;
