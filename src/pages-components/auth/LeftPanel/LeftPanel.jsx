@@ -17,4 +17,5 @@ const Div = styled.div`
   flex-direction: column;
   align-items: center;
   margin-top: 3rem;
+  width: 100%;
 `;
