@@ -23,7 +23,7 @@ export default SubmitButton;
 const Div = styled.div`
   .btn {
     width: 100%;
-    padding: 0.5rem;
+    padding: 0.7rem;
     border-radius: 5px;
     outline: none;
     border: none;

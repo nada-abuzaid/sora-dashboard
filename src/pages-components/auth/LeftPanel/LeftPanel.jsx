@@ -16,6 +16,10 @@ const Div = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 3rem;
+  margin-top: 5rem;
   width: 100%;
+
+  @media only screen and (max-width: ${({ theme: { screens } }) => screens.mobile}) {
+    margin-top: 1rem;
+  }
 `;

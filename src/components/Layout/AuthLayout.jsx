@@ -22,4 +22,17 @@ const Div = styled.div`
   .main {
     width: 50%;
   }
+
+  @media only screen and (max-width: 991px) {
+    .main {
+      width: 100%;
+    }
+  }
+
+  @media only screen and (max-width: ${({ theme: { screens } }) => screens.mobile}) {
+    flex-direction: column-reverse;
+   .main {
+    width: 100%;
+    }
+  }
 `;

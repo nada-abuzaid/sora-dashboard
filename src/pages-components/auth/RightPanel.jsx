@@ -80,7 +80,18 @@ const Wrapper = styled.div`
       width: 60%;
     }
   }
-  @media only screen and (max-width: 991px) {
-    display: none;
+  @media only screen and (max-width: ${({ theme: { screens } }) => screens.tablet_portrait}) {
+    opacity: 0;
+  }
+  @media only screen and (max-width: ${({ theme: { screens } }) => screens.mobile}) {
+    opacity: 1;
+    width: 100%;
+    .background {
+      width: 100%;
+      height: 50%;
+    }
+    .shadow{
+      display: none;
+    }
   }
 `;

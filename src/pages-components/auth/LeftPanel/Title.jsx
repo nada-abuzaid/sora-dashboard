@@ -21,12 +21,21 @@ const TitleStyle = styled.div`
     position: absolute;
     left: -4rem;
     top: -2.5rem;
-    width: 6rem;
+    width: 6em;
   }
   .section-title {
     font-family: 'DM Serif Text';
-    font-size: 34px;
+    font-size: 2.2em;
     text-align: center;
+  }
+
+  @media only screen and (max-width: ${({ theme: { screens } }) => screens.mobile}) {
+    .scribbles {
+      display: none;
+    }
+    .section-title {
+      font-size: 1.8em;
+    }
   }
 `;
 Title.propTypes = {

@@ -14,7 +14,7 @@ export default function AuthTabs() {
   };
 
   return (
-    <TabsWrapper defaultActiveKey='1' onChange={onChange}>
+    <TabsWrapper defaultActiveKey='register' onChange={onChange}>
       <TabPane tab='Register' key='register'>
         <FormAuth />
       </TabPane>
@@ -51,5 +51,11 @@ const TabsWrapper = styled(Tabs)`
   }
   .ant-tabs-ink-bar.ant-tabs-ink-bar-animated {
     width: 50%;
+  }
+
+  @media only screen and (max-width: ${({ theme: { screens } }) => screens.mobile}) {
+    .ant-tabs-content-holder {
+      width: 70%;
+    }
   }
 `;
