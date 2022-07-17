@@ -59,6 +59,3 @@ const Div = styled.div`
     transition: all 200ms ease-in;
   }
 `;
-
-// , .form__input:valid ~ .form__label
-// .form__input:not(:placeholder-shown).form__input:not(:focus) ~ .form__label

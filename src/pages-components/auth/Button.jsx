@@ -3,10 +3,10 @@ import React from 'react';
 import styled from 'styled-components';
 import '../../css/typography.css';
 
-export default function Button({ text }) {
+export default function Button({ text, link }) {
   return (
     <Div>
-      <Link to='/'>{text}</Link>
+      <Link to={link}>{text}</Link>
     </Div>
   );
 }
@@ -15,7 +15,7 @@ const Div = styled.div`
   background-color: ${({ theme: { colors } }) => colors.primary};
   color: ${({ theme: { colors } }) => colors.white};
   padding: 0.6rem;
-  width: 50%;
+  width: 60%;
   border-radius: 6px;
   text-align: center;
   cursor: pointer;
@@ -23,5 +23,8 @@ const Div = styled.div`
     color: ${({ theme: { colors } }) => colors.primaryLight};
     font-family: 'Nunito Sans';
     font-weight: 600;
+    &:hover {
+      color: ${({ theme: { colors } }) => colors.primaryLight};
+    }
   }
 `;

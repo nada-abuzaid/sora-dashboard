@@ -27,6 +27,7 @@ const Div = styled.div`
     border-radius: 5px;
     outline: none;
     border: none;
+    cursor: pointer;
     background-color: ${({ theme: { colors } }) => colors.primary};
     color: ${({ theme: { colors } }) => colors.white};
   }

@@ -45,7 +45,7 @@ export default function Sidebar({ isOpen }) {
         <div>
           <Upgrade isOpen={isOpen} />
         </div>
-        <Link to='/logout' className='side-menu-item' activeClassName='active'>
+        <Link to='/auth' className='side-menu-item' activeClassName='active'>
           <img src={logout} alt='Logout' className='icon' />
           <p>Sign Out</p>
         </Link>

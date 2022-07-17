@@ -21,6 +21,7 @@ const Div = styled.div`
   height: calc(100%-3.6rem);
   .main {
     width: 50%;
+    display: flex;
   }
 
   @media only screen and (max-width: 991px) {
