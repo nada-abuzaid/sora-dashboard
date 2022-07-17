@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { DashboardLayout } from '../components';
 import WelcomeCarousel from '../pages-components/WelcomeCarousel';
 import { Statistics } from '../pages-components';
-import Chartt from '../pages-components/Dashboard/Charts/Chat';
+import Chartt from '../pages-components/Dashboard/Charts/Chart';
 
 export default function Dashboard() {
   return (

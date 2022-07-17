@@ -1,7 +1,5 @@
-import { Title, LeftPanel, AuthForm, RightPanel } from './auth';
+import { Title, LeftPanel, RightPanel } from './auth';
 import {
-  DoughnutChart,
-  HorizontalChart,
   Sidebar,
   Upgrade,
   Statistics,
@@ -11,10 +9,7 @@ import {
 export {
   Title,
   LeftPanel,
-  AuthForm,
   RightPanel,
-  DoughnutChart,
-  HorizontalChart,
   Sidebar,
   Upgrade,
   Statistics,
