@@ -106,7 +106,7 @@ const ASide = styled.div`
   .side-logo {
     display: flex;
     align-items: center;
-    padding: 1.4rem;
+    padding: 1.2rem;
     .sora {
       text-transform: uppercase;
       font-family: 'Nunito Sans';
@@ -131,12 +131,12 @@ const ASide = styled.div`
       font-family: 'Nunito Sans';
       font-size: 1rem;
       margin-left: 0.7rem;
-
-      padding: 1.4rem 0;
+      padding: 1.3rem 0;
       ${(props) => (props.isOpen ? null : `display:none`)}
     }
     .icon {
-      margin-left: 1.4rem;
+      margin-left: 1.3rem;
+      width: 1.5rem;
       ${(props) => (props.isOpen ? null : `margin: 1.4rem`)}
     }
   }

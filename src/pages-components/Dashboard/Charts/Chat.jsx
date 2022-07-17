@@ -133,7 +133,7 @@ const Chartt = ({ type }) => {
         <p>Top features used</p>
       )}
 
-      <div className='chart'>
+      <div className={type === 'bar-health' ? 'chart-bar' : 'chart'}>
         <Chart
           type={type === 'doughnut' ? 'doughnut' : 'bar'}
           data={
@@ -168,10 +168,14 @@ const ChartStyle = styled.div`
   max-height: 100%;
   p {
     font-family: 'DM Serif Text';
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
   .chart {
     width: 85%;
+    height: 95%;
+  }
+  .chart-bar {
+    width: 100%;
     height: 95%;
   }
 `;

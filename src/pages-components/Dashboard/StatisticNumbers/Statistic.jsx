@@ -38,7 +38,7 @@ const StatisticStyle = styled.div`
   }
   .statistic-number {
     font-family: 'DM Serif Text';
-    font-size: 1.7rem;
+    font-size: 1.5rem;
   }
   p {
     font-size: 0.8rem;

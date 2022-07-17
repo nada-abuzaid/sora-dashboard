@@ -28,9 +28,8 @@ const UpgradeStyle = styled.div`
   justify-content: center;
   height: 100%;
   position: relative;
-  margin-top: 0.5rem;
   .upgrade {
-    gap: 0.5rem;
+    gap: 0.3rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -38,23 +37,26 @@ const UpgradeStyle = styled.div`
     padding: 4rem 1rem 2rem 1rem;
     margin-top: 2rem;
     background-color: #f4f7f7;
-    width: 75%;
-    height: 80%;
+    width: 80%;
+    height: 83%;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     .upgrade-img {
-      width: 45%;
+      width: 40%;
       position: absolute;
       top: 0;
     }
     .title {
       font-family: 'DM Serif Text';
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       text-align: center;
       margin-bottom: 0;
+      width: 60%;
     }
     .desc {
       font-family: 'Nunito Sans';
       text-align: center;
+      font-size: 0.9rem;
+      width: 100%;
     }
     a.btn-more {
       padding: 0.5rem 2rem;
