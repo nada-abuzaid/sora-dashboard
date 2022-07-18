@@ -11,7 +11,7 @@ export default function FormAuth() {
   let initialValues = {};
   let validationSchema = {};
 
-  if (url === 'register') {
+  if (url === 'register' || url === '') {
     initialValues = {
       firstName: '',
       lastName: '',
@@ -29,11 +29,10 @@ export default function FormAuth() {
       email: '',
     };
     validationSchema = loginSchema;
-  } else if (url === 'forgot-password') {
   }
 
   const handleSubmit = () => {
-    if (url === 'register') {
+    if (url === 'register' || url === '') {
       navigate('/auth?verify-email');
     } else if (url === 'login') {
       navigate('/');

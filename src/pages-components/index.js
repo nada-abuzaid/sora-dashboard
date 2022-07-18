@@ -4,6 +4,7 @@ import {
   Upgrade,
   Statistics,
   DashHeader,
+  WelcomeCarousel,
 } from './Dashboard';
 
 export {
@@ -14,4 +15,5 @@ export {
   Upgrade,
   Statistics,
   DashHeader,
+  WelcomeCarousel
 };

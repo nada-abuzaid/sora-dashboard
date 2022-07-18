@@ -1,8 +1,7 @@
-import { Link } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
-import PRO from '../../assets/svgs/PRO.svg';
-import '../../css/typography.css';
+import PRO from '../../../assets/svgs/PRO.svg';
+import '../../../css/typography.css';
 
 export default function Upgrade({ isOpen }) {
   return (
@@ -13,9 +12,9 @@ export default function Upgrade({ isOpen }) {
         <p className='desc'>
           Upgrade to unlock premium data for your employers.
         </p>
-        <Link className='btn-more' to='/'>
+        <button className='btn-more'>
           Learn more
-        </Link>
+        </button>
       </div>
     </UpgradeStyle>
   );
@@ -58,9 +57,11 @@ const UpgradeStyle = styled.div`
       font-size: 0.9rem;
       width: 100%;
     }
-    a.btn-more {
+    .btn-more {
       padding: 0.5rem 2rem;
       border-radius: 6px;
+      border: none;
+      cursor: pointer;
       background: ${({
         theme: {
           colors: { primary },

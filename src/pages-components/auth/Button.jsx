@@ -15,7 +15,6 @@ const Div = styled.div`
   background-color: ${({ theme: { colors } }) => colors.primary};
   color: ${({ theme: { colors } }) => colors.white};
   padding: 0.6rem;
-  width: 60%;
   border-radius: 6px;
   text-align: center;
   cursor: pointer;
