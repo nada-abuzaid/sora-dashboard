@@ -8,55 +8,63 @@ import logout from '../../assets/svgs/Logout.svg';
 import logo from '../../assets/svgs/syrona.svg';
 import AppLogo from '../../assets/svgs/AppLogo.svg';
 import '../../css/typography.css';
-export default function Sidebar({ isOpen }) {
+export default function Sidebar({ isOpen, setisOpen }) {
   return (
-    <ASide isOpen={isOpen}>
-      <div className='side-logo'>
-        <img src={AppLogo} alt='App Logo' />
-        <p className='sora'>Sora</p>
-      </div>
-      <div className='side-content'>
-        <div className='side-menu'>
-          <Link
-            to='/'
-            className='side-menu-item'
-            activeClassName='active'
-          >
+    <>
+      <Div isOpen={isOpen}></Div>
+      <ASide isOpen={isOpen}>
+        <div className='side-logo'>
+          <div className='logo'>
+            <img src={AppLogo} alt='App Logo' />
+            <p className='sora'>Sora</p>
+          </div>
+          <div className='close-btn' onClick={() => setisOpen(!isOpen)}>
             <StaticImage
-              src='../../assets/svgs/Menu.svg'
-              alt='Dashboard'
-              className='icon'
+              alt='close'
+              src='../../assets/svgs/close.svg'
+              width={14}
             />
-            <p>Dashboard</p>
-          </Link>
-          <Link
-            to='/profile'
-            className='side-menu-item'
-            activeClassName='active'
-          >
-            <StaticImage
-              src='../../assets/svgs/Account.svg'
-              alt='Account'
-              className='icon'
-            />
-            <p>Profile</p>
+          </div>
+        </div>
+        <div className='side-content'>
+          <div className='side-menu'>
+            <Link to='/' className='side-menu-item' activeClassName='active'>
+              <StaticImage
+                src='../../assets/svgs/Menu.svg'
+                alt='Dashboard'
+                className='icon'
+              />
+              <p>Dashboard</p>
+            </Link>
+            <Link
+              to='/account'
+              className='side-menu-item'
+              activeClassName='active'
+            >
+              <StaticImage
+                src='../../assets/svgs/Account.svg'
+                alt='Account'
+                className='icon'
+              />
+              <p>Account</p>
+            </Link>
+          </div>
+          <div>
+            <Upgrade isOpen={isOpen} />
+          </div>
+          <Link to='/auth' className='side-menu-item' activeClassName='active'>
+            <img src={logout} alt='Logout' className='icon' />
+            <p>Sign Out</p>
           </Link>
         </div>
-        <div>
-          <Upgrade isOpen={isOpen} />
+        <div className='footer'>
+          <p>© 2022 Syrona Health. All rights reserved.</p>
+          <span>
+            <img src={logo} alt='App Logo' />
+          </span>
         </div>
-        <Link to='/auth' className='side-menu-item' activeClassName='active'>
-          <img src={logout} alt='Logout' className='icon' />
-          <p>Sign Out</p>
-        </Link>
-      </div>
-      <div className='footer'>
-        <p>© 2022 Syrona Health. All rights reserved.</p>
-        <span>
-          <img src={logo} alt='App Logo' />
-        </span>
-      </div>
-    </ASide>
+      </ASide>
+    </>
   );
 }
 
@@ -105,16 +113,27 @@ const ASide = styled.div`
   }
   .side-logo {
     display: flex;
-    align-items: center;
     padding: 1.2rem;
-    .sora {
-      text-transform: uppercase;
-      font-family: 'Nunito Sans';
-      font-weight: bold;
-      color: ${({ theme: { colors } }) => colors.primary};
-      font-size: 1.3rem;
-      margin-left: 0.5rem;
-      ${(props) => (props.isOpen ? null : `display:none`)}
+    align-items: center;
+    justify-content: space-between;
+    .close-btn {
+      opacity: 0;
+      @media only screen and (max-width: 600px) {
+        opacity: 1;
+      }
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      .sora {
+        text-transform: uppercase;
+        font-family: 'Nunito Sans';
+        font-weight: bold;
+        color: ${({ theme: { colors } }) => colors.primary};
+        font-size: 1.3rem;
+        margin-left: 0.5rem;
+        ${(props) => (props.isOpen ? null : `display:none`)}
+      }
     }
   }
   .side-menu {
@@ -173,6 +192,22 @@ const ASide = styled.div`
   }
 
   @media only screen and (max-width: 600px) {
-    display: none;
+    z-index: 100;
+    width: 80%;
+    height: 100%;
+    background-color: ${({ theme: { colors } }) => colors.white};
+    ${(props) => (props.isOpen ? null : `display: none`)}
+  }
+`;
+
+const Div = styled.div`
+  @media only screen and (max-width: 600px) {
+    position: absolute;
+    top: 0;
+    z-index: 90;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    ${(props) => (props.isOpen ? null : `display: none`)}
   }
 `;

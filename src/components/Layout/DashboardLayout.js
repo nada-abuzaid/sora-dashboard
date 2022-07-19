@@ -11,7 +11,7 @@ export default function DashboardLayout({ children }) {
         <Header isOpen={isOpen} setisOpen={setisOpen} />
         <div className='main-content'>{children}</div>
       </div>
-      <Sidebar isOpen={isOpen} />
+      <Sidebar isOpen={isOpen} setisOpen={setisOpen} />
     </Wrapper>
   );
 }

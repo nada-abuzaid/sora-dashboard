@@ -47,7 +47,7 @@ export default function FormAuth() {
     <Form
       initialValues={initialValues}
       onSubmit={handleSubmit}
-      validationSchema={validationSchema}
+      // validationSchem  a={validationSchema}
     >
       {url === 'register' || url === '' ? (
         <RegisterDiv>

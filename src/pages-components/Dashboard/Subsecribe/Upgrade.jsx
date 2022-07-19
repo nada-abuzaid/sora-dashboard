@@ -39,10 +39,16 @@ const UpgradeStyle = styled.div`
     width: 80%;
     height: 83%;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    @media only screen and (max-width: 600px) {
+      width: 70%;
+    }
     .upgrade-img {
       width: 40%;
       position: absolute;
       top: 0;
+      @media screen and (max-width: 600px) {
+        top: -1.5rem;
+      }
     }
     .title {
       font-family: 'DM Serif Text';

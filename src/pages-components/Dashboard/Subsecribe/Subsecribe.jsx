@@ -126,7 +126,7 @@ const Div = styled.div`
   }
   .right {
     width: 50%;
-    height: 100%;
+    /* height: 100%; */
     background-color: #275c61;
     padding-top: 2rem;
     display: flex;
@@ -140,7 +140,7 @@ const Div = styled.div`
     .mobile-container {
       background-color: #fff;
       width: 60%;
-      height: 90%;
+      height: 86%;
       border-radius: 10px;
       filter: drop-shadow(0px 0px 5px #e9e9e9);
       padding: 0.4rem 1rem;
@@ -193,7 +193,7 @@ const Div = styled.div`
         gap: 0.1rem;
         .btn {
           width: 100%;
-          margin: 0.5rem 0 ;
+          /* margin: 0.5rem 0 ; */
         }
       }
       .save {
