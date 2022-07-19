@@ -115,6 +115,9 @@ const Div = styled.div`
   display: flex;
   flex-direction: row;
   height: 100%;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
   .right {
     width: 50%;
     height: 100%;
@@ -124,6 +127,9 @@ const Div = styled.div`
     align-items: center;
     justify-content: center;
     position: relative;
+    @media screen and (max-width: 768px) {
+      width: 100%;
+    }
     .mobile-container {
       background-color: #fff;
       width: 60%;
@@ -219,12 +225,12 @@ const Div = styled.div`
         top: 16rem;
         left: 0;
       }
-      &:nth-child(5){
+      &:nth-child(5) {
         width: 15%;
         top: 12rem;
         right: -0.5rem;
       }
-      &:nth-child(6){
+      &:nth-child(6) {
         width: 6%;
         top: 23rem;
         right: 2rem;
@@ -235,6 +241,9 @@ const Div = styled.div`
     width: 50%;
     background-color: #fff;
     padding: 2rem 1rem;
+    @media screen and (max-width: 768px) {
+      width: 100%;
+    }
     .left {
       display: flex;
       flex-direction: column;

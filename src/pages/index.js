@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { DashboardLayout } from '../components';
-import {WelcomeCarousel,Statistics} from '../pages-components';
+import { WelcomeCarousel, Statistics } from '../pages-components';
 import Chartt from '../pages-components/Dashboard/Charts/Chart';
+import Coins from '../pages-components/Dashboard/Coins/EarnedCoins';
 import Subsecribe from '../pages-components/Dashboard/Subsecribe/Subsecribe';
 
 export default function Dashboard() {
@@ -16,6 +17,10 @@ export default function Dashboard() {
           <Chartt type='doughnut' />
           <Chartt type='bar' />
         </Wrapper>
+        <CoinsStyle>
+          <Coins type='Earned coins' coins='10 000 coins' price='£100.00'/>
+          <Coins type='Redeemed coins' coins='5 000 coins' price='£50.00'/>
+        </CoinsStyle>
         <Chartt type='bar-health' />
       </DashboardLayout>
     </>
@@ -33,3 +38,15 @@ const Wrapper = styled.div`
     width: 100%;
   }
 `;
+
+const CoinsStyle = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  gap: 2rem; 
+  @media only screen and (max-width: 600px) {
+    flex-direction: column;
+    width: 100%;
+  }
+`;
+

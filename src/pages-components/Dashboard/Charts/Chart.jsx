@@ -51,6 +51,7 @@ const Chartt = ({ type }) => {
         data: [70, 50, 25, 15],
         backgroundColor: ['#73314F', '#275C61', '#89AAAD', '#E3E3E3'],
         hoverBackgroundColor: ['#80445f', '#346266', '#a4c6c9', '#eeeeee'],
+        borderRadius: '5',
       },
     ],
   });
@@ -98,6 +99,7 @@ const Chartt = ({ type }) => {
         data: [20, 10, 25, 15, 10, 40, 20, 10, 25, 15],
         backgroundColor: '#73314F',
         hoverBackgroundColor: '#80445f',
+        borderRadius: '8',
       },
     ],
   });
