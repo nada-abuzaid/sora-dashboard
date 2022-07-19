@@ -54,6 +54,13 @@ export default function Subsecribe() {
             src='../../../assets/svgs/Subsecibe.svg'
             className='image'
           />
+          <StyledCloseButton onClick={closeModal}>
+            <StaticImage
+              alt='close'
+              src='../../assets/svgs/close.svg'
+              width={14}
+            />
+          </StyledCloseButton>
         </div>
         <div className='right'>
           <div className='mobile-container'>
@@ -114,7 +121,6 @@ export default function Subsecribe() {
 const Div = styled.div`
   display: flex;
   flex-direction: row;
-  height: 100%;
   @media screen and (max-width: 768px) {
     flex-direction: column;
   }
@@ -127,6 +133,7 @@ const Div = styled.div`
     align-items: center;
     justify-content: center;
     position: relative;
+    overflow: hidden;
     @media screen and (max-width: 768px) {
       width: 100%;
     }
@@ -186,6 +193,7 @@ const Div = styled.div`
         gap: 0.1rem;
         .btn {
           width: 100%;
+          margin: 0.5rem 0 ;
         }
       }
       .save {
@@ -200,6 +208,10 @@ const Div = styled.div`
         font-family: 'Nunito Sans', sans-serif;
         font-weight: bold;
       }
+      @media screen and (max-width: 768px) {
+        height: 96%;
+        margin: 1rem;
+      }
     }
     .close-btn {
       color: #fff;
@@ -212,6 +224,10 @@ const Div = styled.div`
       top: 20px;
       right: 20px;
       z-index: 10;
+      opacity: 1;
+      @media screen and (max-width: 768px) {
+        opacity: 0;
+      }
     }
     .scribble {
       position: absolute;
@@ -241,6 +257,7 @@ const Div = styled.div`
     width: 50%;
     background-color: #fff;
     padding: 2rem 1rem;
+    position: relative;
     @media screen and (max-width: 768px) {
       width: 100%;
     }
@@ -268,5 +285,19 @@ const Div = styled.div`
       height: 40%;
       margin: 2rem;
     }
+  }
+`;
+
+const StyledCloseButton = styled.button`
+  border: none;
+  background: none;
+  cursor: pointer;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  z-index: 10;
+  opacity: 0;
+  @media screen and (max-width: 768px) {
+    opacity: 1;
   }
 `;

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Chart } from 'primereact/chart';
-import coinsImg from '../../../assets/svgs/coin1.svg'
-import coinImg from '../../../assets/svgs/coin.svg'
+import coinsImg from '../../../assets/svgs/coin1.svg';
+import coinImg from '../../../assets/svgs/coin.svg';
 
 export default function Coins({ type, coins, price }) {
   const [VerticalChartData] = useState({
@@ -52,16 +52,8 @@ export default function Coins({ type, coins, price }) {
       <>
         {type === 'Earned coins' ? (
           <>
-            <img
-              src={coinsImg}
-              className='coin-img head'
-              alt='Coin Image'
-            />
-            <img
-              src={coinImg}
-              className='coin-img coin'
-              alt='Coin Image'
-            />
+            <img src={coinsImg} className='coin-img head' alt='Coin-head' />
+            <img src={coinImg} className='coin-img coin' alt='Coins' />
           </>
         ) : (
           <>
@@ -105,7 +97,10 @@ const Div = styled.div`
   .texts {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    text-align: left;
+    p{
+      text-align: left;
+    }
     .earned {
       font-size: 1.5rem;
       font-family: 'DM Serif Text', serif;

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { DashboardLayout } from '../components';
 import { WelcomeCarousel, Statistics } from '../pages-components';
 import Chartt from '../pages-components/Dashboard/Charts/Chart';
-import Coins from '../pages-components/Dashboard/Coins/EarnedCoins';
+import Coins from '../pages-components/Dashboard/Coins/';
 import Subsecribe from '../pages-components/Dashboard/Subsecribe/Subsecribe';
 
 export default function Dashboard() {
@@ -31,9 +31,8 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
   width: 90%;
-  max-height: 250px;
   gap: 2rem;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 900px) {
     flex-direction: column;
     width: 100%;
   }
@@ -44,7 +43,7 @@ const CoinsStyle = styled.div`
   flex-direction: row;
   width: 90%;
   gap: 2rem; 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 900px) {
     flex-direction: column;
     width: 100%;
   }

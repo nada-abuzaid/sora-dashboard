@@ -179,6 +179,9 @@ const ChartStyle = styled.div`
   max-height: 100%;
   &:last-child {
     width: 90%;
+    @media only screen and (max-width: 900px){
+      width: 100%;
+    }
   }
   p {
     font-family: 'DM Serif Text';
