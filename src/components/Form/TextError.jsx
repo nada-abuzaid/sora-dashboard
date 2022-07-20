@@ -1,14 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
+import { TextErrorStyle } from '../styled/FormStyles';
 
 function TextError({ children }) {
-  return <Div className='invalid'>{children}</Div>;
+  return <TextErrorStyle className='invalid'>{children}</TextErrorStyle>;
 }
 
 export default TextError;
-
-const Div = styled.div`
-  color: #DA1E28;
-  position: absolute;
-  top: 3rem;
-`;

@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import '../../../css/modal.css';
 import Modal from 'react-modal';
-import styled from 'styled-components';
 import Title from '../../auth/LeftPanel/Title';
 import Button from '../../auth/Button';
 import { StaticImage } from 'gatsby-plugin-image';
 import Feature from './Feature';
 import { AiOutlineClose } from 'react-icons/ai';
+import { LeftStyle, StyledCloseButton } from './styles';
+import '../../../css/modal.css';
 
 export default function Subsecribe() {
   const [modalIsOpen, setIsOpen] = useState(true);
@@ -31,7 +31,7 @@ export default function Subsecribe() {
       onRequestClose={closeModal}
       overlayClassName='overlay'
     >
-      <Div>
+      <LeftStyle>
         <div className='left-container'>
           <div className='left'>
             <div className='title'>
@@ -57,7 +57,7 @@ export default function Subsecribe() {
           <StyledCloseButton onClick={closeModal}>
             <StaticImage
               alt='close'
-              src='../../assets/svgs/close.svg'
+              src='../../../assets/svgs/close.svg'
               width={14}
             />
           </StyledCloseButton>
@@ -113,191 +113,7 @@ export default function Subsecribe() {
             className='scribble'
           />
         </div>
-      </Div>
+      </LeftStyle>
     </Modal>
   );
 }
-
-const Div = styled.div`
-  display: flex;
-  flex-direction: row;
-  @media screen and (max-width: 768px) {
-    flex-direction: column;
-  }
-  .right {
-    width: 50%;
-    /* height: 100%; */
-    background-color: #275c61;
-    padding-top: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-    @media screen and (max-width: 768px) {
-      width: 100%;
-    }
-    .mobile-container {
-      background-color: #fff;
-      width: 60%;
-      height: 86%;
-      border-radius: 10px;
-      filter: drop-shadow(0px 0px 5px #e9e9e9);
-      padding: 0.4rem 1rem;
-      position: relative;
-      .mobile-header {
-        display: flex;
-        flex-direction: column;
-        .price {
-          display: flex;
-          flex-direction: row;
-          align-items: flex-end;
-          p {
-            color: ${(props) => props.theme.colors.primary};
-            font-family: 'DM Serif Text', serif;
-            font-size: 2.5rem;
-            margin: 0;
-          }
-          span {
-            margin: 0 0 0.5rem 0.8rem;
-            color: ${(props) => props.theme.colors.emptyBasket};
-            font-size: 1rem;
-          }
-        }
-        .free {
-          font-family: 'Nunito Sans', sans-serif;
-          font-size: 0.8rem;
-          color: ${(props) => props.theme.colors.primaryDark};
-        }
-        .premium {
-          font-family: 'DM Serif Text', sans-serif;
-          font-size: 1.3rem;
-        }
-        .desc {
-          color: ${(props) => props.theme.colors.lightGray1};
-          font-size: 0.78rem;
-          text-align: justify;
-          width: 95%;
-        }
-        .line {
-          width: 90%;
-          height: 1px;
-          background-color: ${(props) => props.theme.colors.lightGray};
-          margin: 0.5rem 0;
-          align-self: center;
-        }
-      }
-      .mobile-features {
-        display: flex;
-        flex-direction: column;
-        gap: 0.1rem;
-        .btn {
-          width: 100%;
-          /* margin: 0.5rem 0 ; */
-        }
-      }
-      .save {
-        background-color: ${({ theme: { colors } }) => colors.primary};
-        color: ${({ theme: { colors } }) => colors.white};
-        padding: 0.6rem;
-        position: absolute;
-        border-radius: 5px;
-        top: -1.2rem;
-        right: -2.2rem;
-        font-size: 0.8rem;
-        font-family: 'Nunito Sans', sans-serif;
-        font-weight: bold;
-      }
-      @media screen and (max-width: 768px) {
-        height: 96%;
-        margin: 1rem;
-      }
-    }
-    .close-btn {
-      color: #fff;
-      border: none;
-      background: none;
-      cursor: pointer;
-      font-size: 1.5rem;
-      box-shadow: none;
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      z-index: 10;
-      opacity: 1;
-      @media screen and (max-width: 768px) {
-        opacity: 0;
-      }
-    }
-    .scribble {
-      position: absolute;
-      &:nth-child(3) {
-        width: 30%;
-        top: -1rem;
-        left: 0;
-      }
-      &:nth-child(4) {
-        width: 20%;
-        top: 16rem;
-        left: 0;
-      }
-      &:nth-child(5) {
-        width: 15%;
-        top: 12rem;
-        right: -0.5rem;
-      }
-      &:nth-child(6) {
-        width: 6%;
-        top: 23rem;
-        right: 2rem;
-      }
-    }
-  }
-  .left-container {
-    width: 50%;
-    background-color: #fff;
-    padding: 2rem 1rem;
-    position: relative;
-    @media screen and (max-width: 768px) {
-      width: 100%;
-    }
-    .left {
-      display: flex;
-      flex-direction: column;
-      gap: 0.8rem;
-      p:not(:first-child) {
-        color: ${({ theme: { colors } }) => colors.lightGray2};
-        padding: 0 2rem;
-        text-align: justify;
-        font-size: 0.85rem;
-      }
-      .btn {
-        width: 50%;
-        padding: 0 2rem;
-      }
-      .title {
-        align-self: center;
-        margin-top: 0.2rem;
-      }
-    }
-    .image {
-      width: 50%;
-      height: 40%;
-      margin: 2rem;
-    }
-  }
-`;
-
-const StyledCloseButton = styled.button`
-  border: none;
-  background: none;
-  cursor: pointer;
-  position: absolute;
-  top: 30px;
-  right: 30px;
-  z-index: 10;
-  opacity: 0;
-  @media screen and (max-width: 768px) {
-    opacity: 1;
-  }
-`;

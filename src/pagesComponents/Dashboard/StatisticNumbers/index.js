@@ -1,6 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
 import Statistic from './Statistic';
+import { StatisticsStyle } from './styles';
 
 export default function Statistics() {
   const data = [
@@ -47,16 +47,3 @@ export default function Statistics() {
     </StatisticsStyle>
   );
 }
-
-const StatisticsStyle = styled.div`
-  display: flex;
-  flex-direction: row;
-  width: 90%;
-  min-width: 90%;
-  border-radius: 10px;
-  box-shadow: 1px 1px 4px 2px #e1e1e1;
-  @media only screen and (max-width: 990px) {
-    flex-wrap: wrap;
-    width: 100%;
-  }
-`;

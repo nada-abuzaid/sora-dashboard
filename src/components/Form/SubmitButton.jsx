@@ -1,11 +1,11 @@
 import { useFormikContext } from 'formik';
 import React from 'react';
-import styled from 'styled-components';
+import { SubmitStyle } from '../styled/FormStyles';
 
 const SubmitButton = ({ title }) => {
   const { handleSubmit, isValid } = useFormikContext();
   return (
-    <Div>
+    <SubmitStyle>
       <button
         type='submit'
         onClick={handleSubmit}
@@ -14,21 +14,8 @@ const SubmitButton = ({ title }) => {
       >
         {title}
       </button>
-    </Div>
+    </SubmitStyle>
   );
 };
 
 export default SubmitButton;
-
-const Div = styled.div`
-  .btn {
-    width: 100%;
-    padding: 0.7rem;
-    border-radius: 5px;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    background-color: ${({ theme: { colors } }) => colors.primary};
-    color: ${({ theme: { colors } }) => colors.white};
-  }
-`;

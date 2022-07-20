@@ -3,7 +3,13 @@ import { Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { StaticImage } from 'gatsby-plugin-image';
 import Modal from 'react-modal';
-import styled from 'styled-components';
+import {
+  SlideWrapper,
+  SlideTitle,
+  StyledCloseButton,
+  SlideParagraph,
+  ImagesWrapper,
+} from './styles';
 
 import 'swiper/css';
 import 'swiper/css/bundle';
@@ -121,51 +127,12 @@ export default function WelcomeCarousel() {
         </SwiperSlide>
       </Swiper>
       <StyledCloseButton onClick={closeModal}>
-        <StaticImage alt='close' src={'../../assets/svgs/close.svg'} width={14} />
+        <StaticImage
+          alt='close'
+          src={'../../assets/svgs/close.svg'}
+          width={14}
+        />
       </StyledCloseButton>
     </Modal>
   );
 }
-const SlideWrapper = styled.div`
-  width: 80%;
-  height: 80%;
-  background-color: ${({ theme: { colors } }) => colors.white};
-`;
-const SlideTitle = styled.p`
-  font-family: 'DM Serif Text';
-  font-size: 24px;
-  @media only screen and (max-width: ${({ theme: { screens } }) => screens.tablet_portrait}) {
-    font-size: 22px;
-    margin-bottom: 10px;
-  }
-  @media only screen and (max-width: ${({ theme: { screens } }) => screens.mobile}) {
-    font-size: 16px;
-  }
-`;
-const SlideParagraph = styled.p`
-  text-align: justify;
-  font-family: 'Nunito Sans';
-  margin-bottom: 50px;
-  font-size: 16px;
-  @media only screen and (max-width: ${({ theme: { screens } }) => screens.tablet_portrait}) {
-    margin-bottom: 20px;
-    font-size: 14px;
-  }
-  @media only screen and (max-width: ${({ theme: { screens } }) => screens.mobile}) {
-    font-size: 13px;
-    text-align: justify;
-  }
-`;
-const StyledCloseButton = styled.button`
-  border: none;
-  background: none;
-  cursor: pointer;
-  position: absolute;
-  top: 30px;
-  right: 30px;
-  z-index: 10;
-`;
-const ImagesWrapper = styled.div`
-  position: relative;
-  margin-block: 30px;
-`;
