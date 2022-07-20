@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import Header from '../../pages-components/Dashboard/DashHeader';
-import Sidebar from '../../pages-components/Dashboard/Sidebar';
+import Header from '../../pagesComponents/Dashboard/DashHeader';
+import Sidebar from '../../pagesComponents/Dashboard/Sidebar';
 
 export default function DashboardLayout({ children }) {
   const [isOpen, setisOpen] = useState(true);

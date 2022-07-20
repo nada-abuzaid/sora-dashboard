@@ -1,5 +1,5 @@
 import React from 'react';
-import Title from '../pages-components/auth/LeftPanel/Title';
+import Title from '../pagesComponents/auth/LeftPanel/Title';
 
 export default {
   title: 'Components/Title',

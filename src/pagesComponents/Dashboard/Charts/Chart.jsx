@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Chart } from 'primereact/chart';
+import { Chart as ChartComponents } from 'primereact/chart';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 
-const Chartt = ({ type }) => {
+const Chart = ({ type }) => {
   const [chartData] = useState({
     labels: [
       'Tracking health - 30%',
@@ -145,7 +145,7 @@ const Chartt = ({ type }) => {
       )}
 
       <div className={type === 'bar-health' ? 'chart-bar' : 'chart'}>
-        <Chart
+        <ChartComponents
           type={type === 'doughnut' ? 'doughnut' : 'bar'}
           data={
             type === 'bar'
@@ -168,7 +168,7 @@ const Chartt = ({ type }) => {
   );
 };
 
-export default Chartt;
+export default Chart;
 
 const ChartStyle = styled.div`
   box-shadow: 1px 1px 4px 2px #e1e1e1;

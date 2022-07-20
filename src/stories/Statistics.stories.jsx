@@ -1,4 +1,4 @@
-import AllStatistics from '../pages-components/Dashboard/StatisticNumbers/';
+import AllStatistics from '../pagesComponents/Dashboard/StatisticNumbers/';
 
 export default {
   title: 'Components/Statictics',

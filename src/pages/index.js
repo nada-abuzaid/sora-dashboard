@@ -1,16 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import { DashboardLayout } from '../components';
-import { WelcomeCarousel, Statistics } from '../pages-components';
-import Chartt from '../pages-components/Dashboard/Charts/Chart';
-import Coins from '../pages-components/Dashboard/Coins/';
-import Subsecribe from '../pages-components/Dashboard/Subsecribe/Subsecribe';
+import { WelcomeCarousel, Statistics } from '../pagesComponents';
+import Chartt from '../pagesComponents/Dashboard/Charts/Chart';
+import Coins from '../pagesComponents/Dashboard/Coins';
 
 export default function Dashboard() {
   return (
     <>
-      {/* <WelcomeCarousel /> */}
-      <Subsecribe />
+      <WelcomeCarousel />
       <DashboardLayout>
         <Statistics />
         <Wrapper>

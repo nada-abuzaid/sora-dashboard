@@ -47,7 +47,7 @@ export default function FormAuth() {
     <Form
       initialValues={initialValues}
       onSubmit={handleSubmit}
-      // validationSchem  a={validationSchema}
+      validationSchema={validationSchema}
     >
       {url === 'register' || url === '' ? (
         <RegisterDiv>
@@ -74,8 +74,16 @@ export default function FormAuth() {
       ) : url === 'set-password' ? (
         <RegisterDiv>
           <FormField name='email' placeholder='Email*' />
-          <FormField name='new-password' placeholder='New pasword*' />
-          <FormField name='confirm-password' placeholder='Confirm pasword*' />
+          <FormField
+            type='password'
+            name='new-password'
+            placeholder='New pasword*'
+          />
+          <FormField
+            type='password'
+            name='confirm-password'
+            placeholder='Confirm pasword*'
+          />
           <SubmitButton title='Register' />
         </RegisterDiv>
       ) : (

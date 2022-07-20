@@ -1,5 +1,5 @@
 import React from 'react';
-import Horizontalchart from '../pages-components/Dashboard/Charts/HorizontalChart';
+import Horizontalchart from '../pagesComponents/Dashboard/Charts/HorizontalChart';
 
 export default {
   title: 'Components/Charts',

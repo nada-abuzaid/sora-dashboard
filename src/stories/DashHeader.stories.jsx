@@ -1,5 +1,5 @@
 import React from 'react';
-import DashHeader from '../pages-components/Dashboard/DashHeader';
+import DashHeader from '../pagesComponents/Dashboard/DashHeader';
 
 export default {
   title: 'Components/Header',

@@ -8,6 +8,7 @@ import logout from '../../assets/svgs/Logout.svg';
 import logo from '../../assets/svgs/syrona.svg';
 import AppLogo from '../../assets/svgs/AppLogo.svg';
 import '../../css/typography.css';
+
 export default function Sidebar({ isOpen, setisOpen }) {
   return (
     <>

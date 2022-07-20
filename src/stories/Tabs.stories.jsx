@@ -1,4 +1,4 @@
-// import Tabs from '../pages-components/auth/LeftPanel/Tabs';
+// import Tabs from '../pagesComponents/auth/LeftPanel/Tabs';
 
 // export default {
 //   title: 'Components/Tabs',

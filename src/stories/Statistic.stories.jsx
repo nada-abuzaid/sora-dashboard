@@ -1,11 +1,11 @@
-import React from "react";
-import Statistic from "../pages-components/Dashboard/StatisticNumbers/Statistic";
+import React from 'react';
+import Statistic from '../pagesComponents/Dashboard/StatisticNumbers/Statistic';
 
 export default {
-  title: "Components/Statictics",
+  title: 'Components/Statictics',
   component: Statistic,
   parameters: {
-    layout: "fullscreen",
+    layout: 'fullscreen',
   },
 };
 

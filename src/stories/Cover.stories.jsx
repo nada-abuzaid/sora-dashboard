@@ -1,5 +1,5 @@
 import React from 'react';
-import RightPanell from '../pages-components/auth/RightPanel';
+import RightPanell from '../pagesComponents/auth/RightPanel';
 
 export default {
   title: 'Components/Panels',

@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../Header';
 import styled from 'styled-components';
-import { RightPanel } from '../../pages-components';
+import { RightPanel } from '../../pagesComponents';
 
 export default function AuthLayout({ children }) {
   return (

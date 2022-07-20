@@ -1,5 +1,5 @@
 import React from 'react';
-import Doughnutchart from '../pages-components/Dashboard/Charts/DoughnutChart';
+import Doughnutchart from '../pagesComponents/Dashboard/Charts/DoughnutChart';
 
 export default {
   title: 'Components/Charts',
