@@ -193,8 +193,6 @@ const ImagesWrapper = styled.div`
   margin-block: 30px;
 `;
 
-
-
 export {
     Nav,
     ASide,

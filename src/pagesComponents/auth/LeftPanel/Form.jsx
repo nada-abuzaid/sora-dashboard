@@ -10,7 +10,7 @@ export default function FormAuth() {
   const url = window.location.search.substring(1);
   let initialValues = {};
   let validationSchema = {};
-
+console.log(Form);
   if (url === 'register' || url === '') {
     initialValues = {
       firstName: '',
