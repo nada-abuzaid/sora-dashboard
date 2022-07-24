@@ -1,19 +1,14 @@
-import React from 'react';
-import { MdOutlineModeEditOutline } from 'react-icons/md';
-import { DashboardLayout } from '../components';
-import { AccountStyle } from '../css/styles';
+import React, { useState } from 'react';
+import Data from '../pagesComponents/Account/Data';
+import AccountHeader from '../pagesComponents/Account/Header';
+import { AccountStyle } from '../styles/dashboard';
 
 export default function Account() {
+  const [isEdit, setIsEdit] = useState(false);
   return (
-    <DashboardLayout>
-      <AccountStyle>
-        <div className='head'>
-          <p>Profile Information</p>
-          <button className='edit-icon'>
-            <MdOutlineModeEditOutline />
-          </button>
-        </div>
-      </AccountStyle>
-    </DashboardLayout>
+    <AccountStyle>
+      <AccountHeader setIsEdit={setIsEdit} isEdit={isEdit} />
+      <Data name="Jenny Smith" email="jennys@gmail.com" password="123456" setIsEdit={setIsEdit} isEdit={isEdit} />
+    </AccountStyle>
   );
 }

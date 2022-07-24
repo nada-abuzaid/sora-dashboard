@@ -1,10 +1,10 @@
 import React from 'react';
-import { LeftPanel } from '../pagesComponents';
+import { LeftPanel } from '../pagesComponents/Auth/LeftPanel';
 import { AuthLayout } from '../components';
 
-export default function Register() {
+export default function Auth() {
   const url = window.location.search.substring(1);
-  let title;
+  let title = '';
   if (url === 'set-password') {
     title = 'Set your password';
   } else if (url === 'verify-email') {

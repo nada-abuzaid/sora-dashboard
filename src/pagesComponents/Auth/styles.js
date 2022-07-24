@@ -87,6 +87,7 @@ const ButtonStyle = styled.div`
   padding: 0.6rem;
   border-radius: 6px;
   text-align: center;
+  width: 55%;
   cursor: pointer;
   a {
     color: ${({ theme: { colors } }) => colors.primaryLight};

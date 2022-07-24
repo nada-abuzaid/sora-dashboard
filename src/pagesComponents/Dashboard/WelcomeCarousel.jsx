@@ -1,7 +1,7 @@
+/* eslint-disable import/no-unresolved */
 import React, { useState } from 'react';
 import { Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { StaticImage } from 'gatsby-plugin-image';
 import Modal from 'react-modal';
 import {
   SlideWrapper,
@@ -14,8 +14,14 @@ import {
 import 'swiper/css';
 import 'swiper/css/bundle';
 import 'swiper/css/pagination';
-import '../../css/welcome-carousel.css';
-import '../../css/modal.css';
+import '../../styles/welcome-carousel.css';
+import '../../styles/modal.css';
+
+import popup1 from '../../assets/svgs/welcome-popup-1-lock.svg';
+import popup2 from '../../assets/svgs/welcome-popup-1-lock-scribbles.svg';
+import close from '../../assets/svgs/close.svg';
+import popup3 from '../../assets/svgs/welcome-popup-2.svg';
+import popup4 from '../../assets/svgs/welcome-popup-2-upper-pop.svg';
 
 export default function WelcomeCarousel() {
   const [modalIsOpen, setIsOpen] = useState(true);
@@ -26,9 +32,10 @@ export default function WelcomeCarousel() {
   return (
     <Modal
       isOpen={modalIsOpen}
-      className='modal'
+      className="modal"
       onRequestClose={closeModal}
-      overlayClassName='overlay'
+      overlayClassName="overlay"
+      ariaHideApp={false}
     >
       <Swiper
         pagination={{
@@ -38,29 +45,24 @@ export default function WelcomeCarousel() {
       >
         <SwiperSlide>
           <SlideWrapper>
-            <ImagesWrapper className='images'>
-              <StaticImage
-                width={138}
-                src={'../../assets/svgs/welcome-popup-1-lock.svg'}
-                alt='Popup image'
+            <ImagesWrapper className="images">
+              <img
+                src={popup1}
+                alt="Popup"
+                className="popup1"
               />
-              <StaticImage
-                width={175.25}
-                src={'../../assets/svgs/welcome-popup-1-lock-scribbles.svg'}
-                alt='Popup image'
-                style={{
-                  position: 'absolute',
-                  top: '50%',
-                  left: '50%',
-                  transform: 'translate(-45%, -65%)',
-                  marginBottom: '20px',
-                }}
+              <img
+                src={popup2}
+                alt="Popup"
+                className="popup2"
               />
             </ImagesWrapper>
             <SlideTitle>Welcome to Syrona Health Dashboard</SlideTitle>
             <SlideParagraph>
               We wanted to reach to you personally and thank you for choosing
-              Syrona Health! <br /> You’ve just logged in our customised web
+              Syrona Health!
+              <br />
+              You’ve just logged in our customised web
               dashboard that extracts health data about your employees presented
               through graphs and charts. The visualised information is
               aggregated and completely anonymous.
@@ -69,16 +71,14 @@ export default function WelcomeCarousel() {
         </SwiperSlide>
         <SwiperSlide>
           <SlideWrapper>
-            <ImagesWrapper className='images'>
-              <StaticImage
-                width={138}
-                src={'../../assets/svgs/welcome-popup-2.svg'}
-                alt='Popup image'
+            <ImagesWrapper className="images">
+              <img
+                src={popup3}
+                alt="Popup"
               />
-              <StaticImage
-                width={155.25}
-                src={'../../assets/svgs/welcome-popup-2-upper-pop.svg'}
-                alt='Popup image'
+              <img
+                src={popup4}
+                alt="Popup"
                 style={{
                   position: 'absolute',
                   top: '40%',
@@ -100,16 +100,14 @@ export default function WelcomeCarousel() {
         </SwiperSlide>
         <SwiperSlide>
           <SlideWrapper>
-            <ImagesWrapper className='images'>
-              <StaticImage
-                width={138}
-                src={'../../assets/svgs/welcome-popup-1-lock.svg'}
-                alt='Popup image'
+            <ImagesWrapper className="images">
+              <img
+                src={popup1}
+                alt="Popup"
               />
-              <StaticImage
-                width={175.25}
-                src={'../../assets/svgs/welcome-popup-1-lock-scribbles.svg'}
-                alt='Popup image'
+              <img
+                src={popup2}
+                alt="Popup"
                 style={{
                   position: 'absolute',
                   top: '50%',
@@ -127,9 +125,9 @@ export default function WelcomeCarousel() {
         </SwiperSlide>
       </Swiper>
       <StyledCloseButton onClick={closeModal}>
-        <StaticImage
-          alt='close'
-          src={'../../assets/svgs/close.svg'}
+        <img
+          alt="close"
+          src={close}
           width={14}
         />
       </StyledCloseButton>

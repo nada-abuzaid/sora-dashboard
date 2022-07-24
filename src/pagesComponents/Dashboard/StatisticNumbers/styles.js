@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const StatisticStyle = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 0.5rem;
+  padding: 1.2rem 0.5rem;
   width: 20%;
   justify-content: center;
   align-items: center;

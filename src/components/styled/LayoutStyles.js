@@ -9,13 +9,11 @@ const DashboardWrapper = styled.div`
     display: flex;
     flex-direction: column;
     height: 100vh;
-    ${({ isOpen, theme: { sizes } }) => {
-      return isOpen
-        ? `margin-left: ${sizes.MENU_WIDTH}px;`
-        : `
+    ${({ isOpen, theme: { sizes } }) => (isOpen
+    ? `margin-left: ${sizes.MENU_WIDTH}px;`
+    : `
 margin-left: ${sizes.COLLAPSED_MENU_WIDTH}px;
-`;
-    }}
+`)}
     transition: all 0.5s ease;
   }
   .main-content {

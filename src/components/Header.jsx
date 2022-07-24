@@ -5,7 +5,7 @@ import HeaderStyle from './styled/Header';
 export default function Header() {
   return (
     <HeaderStyle>
-      <img className='logo-img' src={logo} alt='Logo Img' />
+      <img className="logo-img" src={logo} alt="Logo Img" />
     </HeaderStyle>
   );
 }

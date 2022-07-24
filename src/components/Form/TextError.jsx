@@ -1,8 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { TextErrorStyle } from '../styled/FormStyles';
 
-function TextError({ children }) {
-  return <TextErrorStyle className='invalid'>{children}</TextErrorStyle>;
+export default function TextError({ children }) {
+  return <TextErrorStyle className="invalid">{children}</TextErrorStyle>;
 }
 
-export default TextError;
+TextError.propTypes = {
+  children: PropTypes.node.isRequired,
+};

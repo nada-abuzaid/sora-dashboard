@@ -1,24 +1,25 @@
 import { Tabs } from 'antd';
 import React from 'react';
-import 'antd/dist/antd.css';
+import 'antd/dist/antd.min.css';
+import { useNavigate } from 'react-router-dom';
 import FormAuth from './Form';
-import { navigate } from 'gatsby';
 import { TabsWrapper } from './styles';
 
 const { TabPane } = Tabs;
 
 export default function AuthTabs() {
+  const navigate = useNavigate();
+
   const onChange = (key) => {
-    console.log(key, 'ffffff');
-    navigate(`?${key}`);
+    navigate(`/auth?${key}`);
   };
 
   return (
-    <TabsWrapper defaultActiveKey='register' onChange={onChange}>
-      <TabPane tab='Register' key='register'>
+    <TabsWrapper defaultActiveKey="login" onChange={onChange}>
+      <TabPane tab="Register" key="register">
         <FormAuth />
       </TabPane>
-      <TabPane tab='Login' key='login'>
+      <TabPane tab="Login" key="login">
         <FormAuth />
       </TabPane>
     </TabsWrapper>

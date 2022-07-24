@@ -1,13 +1,11 @@
 import styled from 'styled-components';
 
 const CoinsStyle = styled.div`
-  ${({ type }) =>
-    type === 'Earned coins'
-      ? `background-color: rgba(39, 92, 97, 0.2);`
-      : `background-color: #fff; box-shadow: 1px 1px 4px 2px #E1E1E1;`}
+  ${({ type }) => (type === 'Earned coins'
+    ? 'background-color: rgba(39, 92, 97, 0.2);width: 100%;'
+    : 'background-color: #fff; box-shadow: 1px 1px 4px 2px #E1E1E1;width: 90%; justify-content: space-around;')}
   border-radius: 15px;
   padding: 1rem 1.5rem;
-  width: 100%;
   height: 100%;
   max-height: 100%;
   display: flex;
@@ -33,10 +31,10 @@ const CoinsStyle = styled.div`
     }
     .earned {
       font-size: 1.5rem;
-      font-family: 'DM Serif Text', serif;
+      font-family: "DM Serif Text", serif;
     }
     .coins {
-      font-family: 'Nunito Sans', sans-serif;
+      font-family: "Nunito Sans", sans-serif;
       font-size: 1.2rem;
     }
     .line {
@@ -46,13 +44,16 @@ const CoinsStyle = styled.div`
       margin: 0.5rem 0;
     }
     .price {
-      font-family: 'Nunito Sans', sans-serif;
+      font-family: "Nunito Sans", sans-serif;
       font-size: 1.2rem;
     }
   }
   .chart {
     height: 80%;
     width: 50%;
+  }
+  @media screen and (max-width: 900px) {
+    width: 100%;
   }
 `;
 

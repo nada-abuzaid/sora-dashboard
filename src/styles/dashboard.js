@@ -2,19 +2,23 @@ import styled from 'styled-components';
 
 const AccountStyle = styled.div`
   box-shadow: 1px 1px 4px 2px #e1e1e1;
-  width: 90%;
+  width: 85%;
   border-radius: 15px;
-  padding: 1rem 1.5rem;
+  padding: 2.5rem;
   height: 100%;
   max-height: 100%;
   background-color: ${({ theme: { colors } }) => colors.white};
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.2rem;
   .head {
     display: flex;
     align-items: center;
     justify-content: space-between;
     p {
-      font-family: 'DM Serif Text', serif;
-      font-size: 1.2rem;
+      font-family: "DM Serif Text", serif;
+      font-size: 1.4rem;
     }
     .edit-icon {
       background: none;
@@ -49,4 +53,32 @@ const CoinsStyle = styled.div`
   }
 `;
 
-export { AccountStyle, Wrapper, CoinsStyle };
+const ContactStyle = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 2rem;
+  p:first-child {
+    font-family: "DM Serif Text", serif;
+    font-size: 2rem;
+  }
+  .contact-email,
+  .email {
+    font-family: "Nunito Sans", serif;
+    font-size: 1.2rem;
+  }
+  .email {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  .image {
+    width: 80%;
+    height: 70%;
+    margin-top: 3rem;
+  }
+`;
+
+export {
+  AccountStyle, Wrapper, CoinsStyle, ContactStyle,
+};

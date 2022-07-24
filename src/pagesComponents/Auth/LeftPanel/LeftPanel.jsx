@@ -1,28 +1,30 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import Tabs from './Tabs';
 import Title from './Title';
 import Button from '../Button';
 import { Form, FormField, SubmitButton } from '../../../components/Form';
-import { navigate } from 'gatsby';
-import {Container, TitleWrapper} from './styles';
+import { Container, TitleWrapper } from './styles';
 
 export default function LeftSide({ title }) {
+  const navigate = useNavigate();
   const url = window.location.search.substring(1);
   return (
     <Container>
-      {title === 'verify-email' || url === 'verify-email' ? (
+      {title === 'Verify email' || url === 'verify-email' ? (
         <TitleWrapper>
-          <Title title={title} />
-          <p className='desc'>
+          <Title title="Verify email" />
+          <p className="desc">
             Please check your email and click on the provided link to verify it.
           </p>
-          <Button text='Continue' link='/auth?set-password' />
+          <Button text="Continue" link="/auth?set-password" />
         </TitleWrapper>
       ) : title === 'Forgot password' || url === 'forgot-password' ? (
         <TitleWrapper>
-          <Title title={title} />
+          <Title title="Forgot password" />
           <p>Please enter your email address and recover your passoword</p>
-          <div className='form'>
+          <div className="form">
             <Form
               initialValues={{
                 email: '',
@@ -31,8 +33,10 @@ export default function LeftSide({ title }) {
                 navigate('/auth?login');
               }}
             >
-              <FormField name='email' placeholder='Email*' />
-              <SubmitButton title='Reset password' />
+              <>
+                <FormField name="email" placeholder="Email*" />
+                <SubmitButton title="Reset password" />
+              </>
             </Form>
           </div>
         </TitleWrapper>
@@ -45,3 +49,7 @@ export default function LeftSide({ title }) {
     </Container>
   );
 }
+
+LeftSide.propTypes = {
+  title: PropTypes.string.isRequired,
+};

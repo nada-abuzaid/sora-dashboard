@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const Nav = styled.nav`
   position: fixed;
@@ -30,14 +30,13 @@ const ASide = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  ${(props) =>
-    props.isOpen
-      ? `
+  ${(props) => (props.isOpen
+    ? `
     width:280px;
     `
-      : `
+    : `
     width:80px;
-    `}
+    `)}
   .side-content {
     height: 100%;
     display: flex;
@@ -49,8 +48,12 @@ const ASide = styled.div`
     padding: 1.2rem;
     align-items: center;
     justify-content: space-between;
+    background: none;
     .close-btn {
       opacity: 0;
+      background: none;
+      border: none;
+      outline: none;
       @media only screen and (max-width: 600px) {
         opacity: 1;
       }
@@ -60,12 +63,12 @@ const ASide = styled.div`
       align-items: center;
       .sora {
         text-transform: uppercase;
-        font-family: 'Nunito Sans';
+        font-family: "Nunito Sans";
         font-weight: bold;
         color: ${({ theme: { colors } }) => colors.primary};
         font-size: 1.3rem;
         margin-left: 0.5rem;
-        ${(props) => (props.isOpen ? null : `display:none`)}
+        ${(props) => (props.isOpen ? null : 'display:none')}
       }
     }
   }
@@ -80,16 +83,16 @@ const ASide = styled.div`
     color: ${({ theme: { colors } }) => colors.primaryDark};
 
     p {
-      font-family: 'Nunito Sans';
+      font-family: "Nunito Sans";
       font-size: 1rem;
       margin-left: 0.7rem;
       padding: 1.3rem 0;
-      ${(props) => (props.isOpen ? null : `display:none`)}
+      ${(props) => (props.isOpen ? null : 'display:none')}
     }
     .icon {
       margin-left: 1.3rem;
       width: 1.5rem;
-      ${(props) => (props.isOpen ? null : `margin: 1.4rem`)}
+      ${(props) => (props.isOpen ? null : 'margin: 1.4rem')}
     }
   }
   .active {
@@ -105,9 +108,9 @@ const ASide = styled.div`
     align-items: center;
     p {
       font-size: 0.7rem;
-      font-family: 'Nunito Sans';
+      font-family: "Nunito Sans";
       margin-left: 0.6rem;
-      ${(props) => (props.isOpen ? null : `display: none`)}
+      ${(props) => (props.isOpen ? null : 'display: none')}
     }
     span {
       height: 100%;
@@ -117,10 +120,9 @@ const ASide = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
-      ${(props) =>
-        props.isOpen
-          ? `border-radius: 0.5rem 0 0 0`
-          : `border-radius: 0; width: 100%;`}
+      ${(props) => (props.isOpen
+    ? 'border-radius: 0.5rem 0 0 0'
+    : 'border-radius: 0; width: 100%;')}
     }
   }
 
@@ -129,7 +131,7 @@ const ASide = styled.div`
     width: 80%;
     height: 100%;
     background-color: ${({ theme: { colors } }) => colors.white};
-    ${(props) => (props.isOpen ? null : `display: none`)}
+    ${(props) => (props.isOpen ? null : 'display: none')}
   }
 `;
 
@@ -141,7 +143,7 @@ const Background = styled.div`
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
-    ${(props) => (props.isOpen ? null : `display: none`)}
+    ${(props) => (props.isOpen ? null : 'display: none')}
   }
 `;
 
@@ -152,7 +154,7 @@ const SlideWrapper = styled.div`
 `;
 
 const SlideTitle = styled.p`
-  font-family: 'DM Serif Text';
+  font-family: "DM Serif Text";
   font-size: 24px;
   @media only screen and (max-width: ${({ theme: { screens } }) => screens.tablet_portrait}) {
     font-size: 22px;
@@ -165,7 +167,7 @@ const SlideTitle = styled.p`
 
 const SlideParagraph = styled.p`
   text-align: justify;
-  font-family: 'Nunito Sans';
+  font-family: "Nunito Sans";
   margin-bottom: 50px;
   font-size: 16px;
   @media only screen and (max-width: ${({ theme: { screens } }) => screens.tablet_portrait}) {
@@ -190,16 +192,29 @@ const StyledCloseButton = styled.button`
 
 const ImagesWrapper = styled.div`
   position: relative;
-  margin-block: 30px;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: 30%;
+  }
+  .popup2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 32%;
+    transform: translate(-45%, -65%);
+  }
 `;
 
 export {
-    Nav,
-    ASide,
-    Background,
-    SlideWrapper,
-    SlideTitle,
-    StyledCloseButton,
-    SlideParagraph,
-    ImagesWrapper
-}
+  Nav,
+  ASide,
+  Background,
+  SlideWrapper,
+  SlideTitle,
+  StyledCloseButton,
+  SlideParagraph,
+  ImagesWrapper,
+};

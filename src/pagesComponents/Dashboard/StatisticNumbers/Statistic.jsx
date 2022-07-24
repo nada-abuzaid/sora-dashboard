@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { StatisticStyle } from './styles';
-import '../../../css/typography.css';
+import '../../../styles/typography.css';
+
 export default function Statistic({ number, title }) {
   return (
     <StatisticStyle>
-      <span className='statistic-number'>{number}</span>
-      <p className='statistic-title'>{title}</p>
+      <span className="statistic-number">{number}</span>
+      <p className="statistic-title">{title}</p>
     </StatisticStyle>
   );
 }

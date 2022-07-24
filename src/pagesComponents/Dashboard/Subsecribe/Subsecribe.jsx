@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
-import Title from '../../auth/LeftPanel/Title';
-import Button from '../../auth/Button';
-import { StaticImage } from 'gatsby-plugin-image';
-import Feature from './Feature';
 import { AiOutlineClose } from 'react-icons/ai';
+import Title from '../../Auth/LeftPanel/Title';
+import Button from '../../Auth/Button';
+import Feature from './Feature';
 import { LeftStyle, StyledCloseButton } from './styles';
-import '../../../css/modal.css';
+import '../../../styles/modal.css';
+
+import subsecibe from '../../../assets/svgs/Subsecibe.svg';
+import scribble1 from '../../../assets/svgs/scribble1.svg';
+import scribble2 from '../../../assets/svgs/scribble2.svg';
+import scribble3 from '../../../assets/svgs/scribble3.svg';
+import scribble4 from '../../../assets/svgs/scribble4.svg';
 
 export default function Subsecribe() {
   const [modalIsOpen, setIsOpen] = useState(true);
@@ -22,20 +27,20 @@ export default function Subsecribe() {
     'Engagement rewards',
     'Personalised content',
     'Chat sessions with experts',
-  ];
+  ].map((feature, index) => ({ id: index, name: feature }));
 
   return (
     <Modal
       isOpen={modalIsOpen}
-      className='modal-subsecribe'
+      className="modal-subsecribe"
       onRequestClose={closeModal}
-      overlayClassName='overlay'
+      overlayClassName="overlay"
     >
       <LeftStyle>
-        <div className='left-container'>
-          <div className='left'>
-            <div className='title'>
-              <Title title='Subscribe to Premium' />
+        <div className="left-container">
+          <div className="left">
+            <div className="title">
+              <Title title="Subscribe to Premium" />
             </div>
             <p>
               Supporting people with health transitions during their career by
@@ -46,72 +51,49 @@ export default function Subsecribe() {
               Contact us, if you want to subscribe to Premium and get more
               useful health data about your employees.
             </p>
-            <div className='btn'>
-              <Button text='Contact us' link='' />
+            <div className="btn">
+              <Button text="Contact us" link="" />
             </div>
           </div>
-          <StaticImage
-            src='../../../assets/svgs/Subsecibe.svg'
-            className='image'
-          />
+          <img src={subsecibe} className="image" alt="Subsecibe" />
           <StyledCloseButton onClick={closeModal}>
-            <StaticImage
-              alt='close'
-              src='../../../assets/svgs/close.svg'
-              width={14}
-            />
+            <img alt="close" src="../../../assets/svgs/close.svg" width={14} />
           </StyledCloseButton>
         </div>
-        <div className='right'>
-          <div className='mobile-container'>
-            <div className='mobile-header'>
-              <div className='price'>
+        <div className="right">
+          <div className="mobile-container">
+            <div className="mobile-header">
+              <div className="price">
                 <p>£26.99</p>
                 <span>/annual </span>
               </div>
-              <p className='free'>7 days free trial. Only £2.25/month</p>
-              <p className='premium'>SORA Premium</p>
-              <p className='desc'>
+              <p className="free">7 days free trial. Only £2.25/month</p>
+              <p className="premium">SORA Premium</p>
+              <p className="desc">
                 Unlimited analytics, plans and demographic insights. All you
                 need to level-up your business.
               </p>
-              <span className='line'></span>
+              <span className="line" />
             </div>
-            <div className='mobile-features'>
-              {features.map((feature, index) => {
-                return <Feature key={index} featureName={feature} />;
-              })}
-              <div className='btn'>
-                <Button text='Learn more' link='' />
+            <div className="mobile-features">
+              {features.map(({ name, id }) => (
+                <Feature key={id} featureName={name} />
+              ))}
+              <div className="btn">
+                <Button text="Learn more" link="" />
               </div>
             </div>
-            <div className='save'>
+            <div className="save">
               <p>Save 46%</p>
             </div>
           </div>
-          <button onClick={closeModal} className='close-btn'>
+          <button type="button" onClick={closeModal} className="close-btn">
             <AiOutlineClose />
           </button>
-          <StaticImage
-            src='../../../assets/svgs/scribble1.svg'
-            alt='scribble'
-            className='scribble'
-          />
-          <StaticImage
-            src='../../../assets/svgs/scribble2.svg'
-            alt='scribble'
-            className='scribble'
-          />
-          <StaticImage
-            src='../../../assets/svgs/scribble3.svg'
-            alt='scribble'
-            className='scribble'
-          />
-          <StaticImage
-            src='../../../assets/svgs/scribble4.svg'
-            alt='scribble'
-            className='scribble'
-          />
+          <img src={scribble1} alt="scribble" className="scribble" />
+          <img src={scribble2} alt="scribble" className="scribble" />
+          <img src={scribble3} alt="scribble" className="scribble" />
+          <img src={scribble4} alt="scribble" className="scribble" />
         </div>
       </LeftStyle>
     </Modal>

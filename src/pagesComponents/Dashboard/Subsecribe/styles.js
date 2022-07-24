@@ -9,7 +9,7 @@ const FeatureStyle = styled.div`
     color: ${(props) => props.theme.colors.check};
   }
   p {
-    font-family: 'Nunito Sans', sans-serif;
+    font-family: "Nunito Sans", sans-serif;
     color: ${(props) => props.theme.colors.lightGray4};
   }
 `;
@@ -50,7 +50,7 @@ const LeftStyle = styled.div`
           align-items: flex-end;
           p {
             color: ${(props) => props.theme.colors.primary};
-            font-family: 'DM Serif Text', serif;
+            font-family: "DM Serif Text", serif;
             font-size: 2.5rem;
             margin: 0;
           }
@@ -61,12 +61,12 @@ const LeftStyle = styled.div`
           }
         }
         .free {
-          font-family: 'Nunito Sans', sans-serif;
+          font-family: "Nunito Sans", sans-serif;
           font-size: 0.8rem;
           color: ${(props) => props.theme.colors.primaryDark};
         }
         .premium {
-          font-family: 'DM Serif Text', sans-serif;
+          font-family: "DM Serif Text", sans-serif;
           font-size: 1.3rem;
         }
         .desc {
@@ -101,7 +101,7 @@ const LeftStyle = styled.div`
         top: -1.2rem;
         right: -2.2rem;
         font-size: 0.8rem;
-        font-family: 'Nunito Sans', sans-serif;
+        font-family: "Nunito Sans", sans-serif;
         font-weight: bold;
       }
       @media screen and (max-width: 768px) {
@@ -229,14 +229,14 @@ const UpgradeStyle = styled.div`
       }
     }
     .title {
-      font-family: 'DM Serif Text';
+      font-family: "DM Serif Text";
       font-size: 1.2rem;
       text-align: center;
       margin-bottom: 0;
       width: 60%;
     }
     .desc {
-      font-family: 'Nunito Sans';
+      font-family: "Nunito Sans";
       text-align: center;
       font-size: 0.9rem;
       width: 100%;
@@ -247,17 +247,19 @@ const UpgradeStyle = styled.div`
       border: none;
       cursor: pointer;
       background: ${({
-        theme: {
-          colors: { primary },
-        },
-      }) => primary};
+    theme: {
+      colors: { primary },
+    },
+  }) => primary};
       color: ${({
-        theme: {
-          colors: { white },
-        },
-      }) => white};
+    theme: {
+      colors: { white },
+    },
+  }) => white};
     }
   }
 `;
 
-export { FeatureStyle, LeftStyle, StyledCloseButton, UpgradeStyle };
+export {
+  FeatureStyle, LeftStyle, StyledCloseButton, UpgradeStyle,
+};

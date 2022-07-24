@@ -1,4 +1,4 @@
-export const theme = {
+const theme = {
   colors: {
     primary: '#73314F',
     primaryDark: '#292929',
@@ -45,3 +45,5 @@ export const theme = {
     wide_screen: '1440px',
   },
 };
+
+export default theme;

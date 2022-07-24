@@ -118,4 +118,11 @@ const TitleStyle = styled.div`
   }
 `;
 
-export { LoginDiv, RegisterDiv, Container, TitleWrapper, TabsWrapper, TitleStyle };
+export {
+  LoginDiv,
+  RegisterDiv,
+  Container,
+  TitleWrapper,
+  TabsWrapper,
+  TitleStyle,
+};

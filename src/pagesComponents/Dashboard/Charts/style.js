@@ -14,7 +14,7 @@ const ChartStyle = styled.div`
     }
   }
   p {
-    font-family: 'DM Serif Text';
+    font-family: "DM Serif Text";
     font-size: 1.2rem;
   }
   .chart {
@@ -31,12 +31,12 @@ const ChartStyle = styled.div`
     a {
       color: ${({ theme }) => theme.colors.primary};
       font-weight: 700;
-      font-family: 'Nunito Sans';
+      font-family: "Nunito Sans";
       text-decoration: underline;
     }
     .text2 {
       font-weight: 100;
-      font-family: 'Nunito Sans';
+      font-family: "Nunito Sans";
       font-size: 0.9rem;
     }
   }

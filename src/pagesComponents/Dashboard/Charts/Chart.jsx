@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Chart as ChartComponents } from 'primereact/chart';
-import { Link } from 'gatsby';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import ChartStyle from './style';
 
-const Chart = ({ type }) => {
+export default function Chart({ type }) {
   const [chartData] = useState({
     labels: [
       'Tracking health - 30%',
@@ -49,8 +50,8 @@ const Chart = ({ type }) => {
     datasets: [
       {
         data: [70, 50, 25, 15],
-        backgroundColor: ['#73314F', '#275C61', '#89AAAD', '#E3E3E3'],
-        hoverBackgroundColor: ['#80445f', '#346266', '#a4c6c9', '#eeeeee'],
+        backgroundColor: ['#73314F', '#9E6F85', '#9E6F85', '#9E6F85'],
+        hoverBackgroundColor: ['#80445f', '#9e6f8597', '#9e6f8597', '#9e6f8597'],
         borderRadius: '5',
       },
     ],
@@ -97,8 +98,8 @@ const Chart = ({ type }) => {
     datasets: [
       {
         data: [20, 10, 25, 15, 10, 40, 20, 10, 25, 15],
-        backgroundColor: '#73314F',
-        hoverBackgroundColor: '#80445f',
+        backgroundColor: '#4F7D7D',
+        hoverBackgroundColor: '#4f7d7dd6',
         borderRadius: '8',
       },
     ],
@@ -135,12 +136,12 @@ const Chart = ({ type }) => {
       ) : type === 'doughnut' ? (
         <p>Top features used</p>
       ) : (
-        <div className='texts'>
+        <div className="texts">
           <p>Health conditions</p>
-          <p className='text2'>
+          <p className="text2">
             Based on the logged data of your employees in SORA.
           </p>
-          <Link to='/dashboard/charts'>Find resources</Link>
+          <Link to="/dashboard/charts">Find resources</Link>
         </div>
       )}
 
@@ -151,21 +152,23 @@ const Chart = ({ type }) => {
             type === 'bar'
               ? HorizontalChartData
               : type === 'bar-health'
-              ? VerticalChartData
-              : chartData
+                ? VerticalChartData
+                : chartData
           }
           options={
             type === 'bar'
               ? horizontalOptions
               : type === 'bar-health'
-              ? VerticalOptions
-              : lightOptions
+                ? VerticalOptions
+                : lightOptions
           }
           style={{ height: '90%' }}
         />
       </div>
     </ChartStyle>
   );
-};
+}
 
-export default Chart;
+Chart.propTypes = {
+  type: PropTypes.string.isRequired,
+};
