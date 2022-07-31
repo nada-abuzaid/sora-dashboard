@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
 import { AiOutlineClose } from 'react-icons/ai';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import Title from '../../Auth/LeftPanel/Title';
-import Button from '../../Auth/Button';
 import Feature from './Feature';
 import { LeftStyle, StyledCloseButton } from './styles';
 import '../../../styles/modal.css';
@@ -12,11 +13,15 @@ import scribble1 from '../../../assets/svgs/scribble1.svg';
 import scribble2 from '../../../assets/svgs/scribble2.svg';
 import scribble3 from '../../../assets/svgs/scribble3.svg';
 import scribble4 from '../../../assets/svgs/scribble4.svg';
+import { setPro } from '../../../state/upgrade';
 
 export default function Subsecribe() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [modalIsOpen, setIsOpen] = useState(true);
   const closeModal = () => {
     setIsOpen(false);
+    dispatch(setPro({ open: false }));
   };
 
   const features = [
@@ -52,7 +57,16 @@ export default function Subsecribe() {
               useful health data about your employees.
             </p>
             <div className="btn">
-              <Button text="Contact us" link="" />
+              <button
+                type="button"
+                onClick={() => {
+                  closeModal();
+                  dispatch(setPro({ open: false }));
+                  navigate('/contact');
+                }}
+              >
+                Contact us
+              </button>
             </div>
           </div>
           <img src={subsecibe} className="image" alt="Subsecibe" />
@@ -79,9 +93,6 @@ export default function Subsecribe() {
               {features.map(({ name, id }) => (
                 <Feature key={id} featureName={name} />
               ))}
-              <div className="btn">
-                <Button text="Learn more" link="" />
-              </div>
             </div>
             <div className="save">
               <p>Save 46%</p>

@@ -1,15 +1,20 @@
 import React from 'react';
-// import { DashboardLayout } from '../components';
+import { useSelector } from 'react-redux';
 import WelcomeCarousel from '../pagesComponents/Dashboard/WelcomeCarousel';
 import Chartt from '../pagesComponents/Dashboard/Charts/Chart';
 import Coins from '../pagesComponents/Dashboard/Coins';
 import { Wrapper, CoinsStyle } from '../styles/dashboard';
 import Statistics from '../pagesComponents/Dashboard/StatisticNumbers';
+import Subsecribe from '../pagesComponents/Dashboard/Subsecribe/Subsecribe';
 
 export default function Dashboard() {
+  const { open } = useSelector((state) => state.upgrade.value);
   return (
     <>
       <WelcomeCarousel />
+      {
+        open && <Subsecribe />
+      }
       <Statistics />
       <Wrapper>
         <Chartt type="doughnut" />

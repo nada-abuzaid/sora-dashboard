@@ -22,9 +22,7 @@ const LeftStyle = styled.div`
   }
   .right {
     width: 50%;
-    /* height: 100%; */
     background-color: #275c61;
-    padding-top: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -36,10 +34,10 @@ const LeftStyle = styled.div`
     .mobile-container {
       background-color: #fff;
       width: 60%;
-      height: 86%;
+      height: 75%;
       border-radius: 10px;
       filter: drop-shadow(0px 0px 5px #e9e9e9);
-      padding: 0.4rem 1rem;
+      padding: 0.5rem 1rem;
       position: relative;
       .mobile-header {
         display: flex;
@@ -86,11 +84,7 @@ const LeftStyle = styled.div`
       .mobile-features {
         display: flex;
         flex-direction: column;
-        gap: 0.1rem;
-        .btn {
-          width: 100%;
-          /* margin: 0.5rem 0 ; */
-        }
+        gap: 0.2rem;
       }
       .save {
         background-color: ${({ theme: { colors } }) => colors.primary};
@@ -170,6 +164,14 @@ const LeftStyle = styled.div`
       .btn {
         width: 50%;
         padding: 0 2rem;
+        button {
+          background-color: ${({ theme: { colors } }) => colors.primary};
+          color: ${({ theme: { colors } }) => colors.white};
+          padding: 0.6rem;
+          border-radius: 6px;
+          text-align: center;
+          border: none;
+        }
       }
       .title {
         align-self: center;

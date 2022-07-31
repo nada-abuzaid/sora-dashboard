@@ -30,15 +30,16 @@ export default function FormAuth() {
     validationSchema = loginSchema;
   }
 
-  const handleSubmit = () => {
+  const handleSubmit = (data) => {
     if (url === 'register') {
+      // console.log(data);
       navigate('/auth?verify-email');
-    } else if (url === 'login' || url === '') {
-      navigate('/dashboard');
-    } else if (url === 'set-password') {
-      navigate('/dashboard');
+    } else if (url === 'login' || url === 'set-password' || url === '') {
+      navigate('/');
+      // console.log(data);
     } else if (url === 'forgot-password') {
       navigate('/auth?login');
+      // console.log(data);
     }
   };
 
@@ -46,7 +47,7 @@ export default function FormAuth() {
     <Form
       initialValues={initialValues}
       onSubmit={handleSubmit}
-      // validationSchema={validationSchema}
+      validationSchema={validationSchema}
     >
       {url === 'register' ? (
         <RegisterDiv>

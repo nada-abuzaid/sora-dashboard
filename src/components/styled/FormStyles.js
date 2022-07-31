@@ -23,7 +23,7 @@ const FieldStyle = styled.div`
     background-color: white;
   }
   .form__input:focus ~ .form__label,
-  .filled ~ .form__label {
+  .form__input:not(:placeholder-shown).form__input:not(:focus) ~ .form__label  {
     top: -0.5rem;
     font-size: 0.8rem;
     left: 0.8rem;

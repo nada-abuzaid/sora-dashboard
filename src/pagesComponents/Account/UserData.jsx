@@ -7,14 +7,26 @@ import { FormStyle, UpdateButton } from './style';
 export default function UserData({
   name, email, setIsEdit, isEdit,
 }) {
+  const handleSubmit = () => {
+    setIsEdit(false);
+  };
+  const initialValues = {
+    name,
+    email,
+    oldPassword: '',
+    newPassword: '',
+  };
   return (
-    <Form>
+    <Form
+      initialValues={initialValues}
+      onSubmit={handleSubmit}
+    >
       <>
         <FormStyle>
           <div className="first-col">
             <div>
               <p>Name</p>
-              <Field name="name" placeholder="Name" defaultValue={name} />
+              <Field name="name" placeholder="Name" value={name} />
             </div>
             <div>
               <p>Email</p>
@@ -25,11 +37,11 @@ export default function UserData({
           <div className="second-col">
             <div>
               <p>Old Password</p>
-              <Field name="password" placeholder="Old password" type="password" />
+              <Field name="oldPassword" placeholder="Old password" type="password" />
             </div>
             <div>
               <p>New Password</p>
-              <Field name="password" placeholder="New password" type="password" />
+              <Field name="newPassword" placeholder="New password" type="password" />
             </div>
           </div>
         </FormStyle>

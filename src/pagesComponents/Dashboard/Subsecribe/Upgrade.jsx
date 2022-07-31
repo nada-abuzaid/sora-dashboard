@@ -1,10 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { setPro } from '../../../state/upgrade';
 import PRO from '../../../assets/svgs/PRO.svg';
 import '../../../styles/typography.css';
 import { UpgradeStyle } from './styles';
 
 export default function Upgrade({ isOpen }) {
+  const dispatch = useDispatch();
   return (
     <UpgradeStyle isOpen={isOpen}>
       <div className="upgrade">
@@ -13,7 +16,13 @@ export default function Upgrade({ isOpen }) {
         <p className="desc">
           Upgrade to unlock premium data for your employers.
         </p>
-        <button className="btn-more" type="button">Learn more</button>
+        <button
+          className="btn-more"
+          type="button"
+          onClick={() => dispatch(setPro({ open: true }))}
+        >
+          Learn more
+        </button>
       </div>
     </UpgradeStyle>
   );

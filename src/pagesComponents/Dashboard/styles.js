@@ -81,12 +81,11 @@ const ASide = styled.div`
     text-decoration: none;
     align-items: center;
     color: ${({ theme: { colors } }) => colors.primaryDark};
-
     p {
       font-family: "Nunito Sans";
-      font-size: 1rem;
+      font-size: 0.9rem;
       margin-left: 0.7rem;
-      padding: 1.3rem 0;
+      padding: 1.2rem 0;
       ${(props) => (props.isOpen ? null : 'display:none')}
     }
     .icon {
@@ -125,8 +124,11 @@ const ASide = styled.div`
     : 'border-radius: 0; width: 100%;')}
     }
   }
-
-  @media only screen and (max-width: 600px) {
+.upgrade{
+display: flex;
+align-items: center;
+}  
+@media only screen and (max-width: 600px) {
     z-index: 100;
     width: 80%;
     height: 100%;
