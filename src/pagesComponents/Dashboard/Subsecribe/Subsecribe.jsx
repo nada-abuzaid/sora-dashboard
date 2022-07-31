@@ -8,6 +8,7 @@ import Feature from './Feature';
 import { LeftStyle, StyledCloseButton } from './styles';
 import '../../../styles/modal.css';
 
+import close from '../../../assets/svgs/close.svg';
 import subsecibe from '../../../assets/svgs/Subsecibe.svg';
 import scribble1 from '../../../assets/svgs/scribble1.svg';
 import scribble2 from '../../../assets/svgs/scribble2.svg';
@@ -71,7 +72,7 @@ export default function Subsecribe() {
           </div>
           <img src={subsecibe} className="image" alt="Subsecibe" />
           <StyledCloseButton onClick={closeModal}>
-            <img alt="close" src="../../../assets/svgs/close.svg" width={14} />
+            <img alt="close" src={close} width={14} />
           </StyledCloseButton>
         </div>
         <div className="right">
