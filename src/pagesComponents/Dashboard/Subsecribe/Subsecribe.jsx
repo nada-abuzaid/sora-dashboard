@@ -77,11 +77,6 @@ export default function Subsecribe() {
         <div className="right">
           <div className="mobile-container">
             <div className="mobile-header">
-              <div className="price">
-                <p>£26.99</p>
-                <span>/annual </span>
-              </div>
-              <p className="free">7 days free trial. Only £2.25/month</p>
               <p className="premium">SORA Premium</p>
               <p className="desc">
                 Unlimited analytics, plans and demographic insights. All you
@@ -93,9 +88,6 @@ export default function Subsecribe() {
               {features.map(({ name, id }) => (
                 <Feature key={id} featureName={name} />
               ))}
-            </div>
-            <div className="save">
-              <p>Save 46%</p>
             </div>
           </div>
           <button type="button" onClick={closeModal} className="close-btn">

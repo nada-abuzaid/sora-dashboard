@@ -34,7 +34,7 @@ const LeftStyle = styled.div`
     .mobile-container {
       background-color: #fff;
       width: 60%;
-      height: 75%;
+      height: 72%;
       border-radius: 10px;
       filter: drop-shadow(0px 0px 5px #e9e9e9);
       padding: 0.5rem 1rem;
@@ -42,61 +42,33 @@ const LeftStyle = styled.div`
       .mobile-header {
         display: flex;
         flex-direction: column;
-        .price {
-          display: flex;
-          flex-direction: row;
-          align-items: flex-end;
-          p {
-            color: ${(props) => props.theme.colors.primary};
-            font-family: "DM Serif Text", serif;
-            font-size: 2.5rem;
-            margin: 0;
-          }
-          span {
-            margin: 0 0 0.5rem 0.8rem;
-            color: ${(props) => props.theme.colors.emptyBasket};
-            font-size: 1rem;
-          }
-        }
-        .free {
-          font-family: "Nunito Sans", sans-serif;
-          font-size: 0.8rem;
-          color: ${(props) => props.theme.colors.primaryDark};
-        }
         .premium {
           font-family: "DM Serif Text", sans-serif;
-          font-size: 1.3rem;
+          font-size: 1.8rem;
+          color: ${({ theme }) => theme.colors.primary};
+          text-align: center;
         }
         .desc {
-          color: ${(props) => props.theme.colors.lightGray1};
-          font-size: 0.78rem;
+          color: #404040;
+          font-size: 0.85rem;
           text-align: justify;
-          width: 95%;
+          width: 85%;
+          margin: 0 auto;
+          font-family: 'Nunito Sans', sans-serif;
         }
         .line {
           width: 90%;
           height: 1px;
           background-color: ${(props) => props.theme.colors.lightGray};
-          margin: 0.5rem 0;
+          margin: 1rem 0;
           align-self: center;
         }
       }
       .mobile-features {
         display: flex;
         flex-direction: column;
-        gap: 0.2rem;
-      }
-      .save {
-        background-color: ${({ theme: { colors } }) => colors.primary};
-        color: ${({ theme: { colors } }) => colors.white};
-        padding: 0.6rem;
-        position: absolute;
-        border-radius: 5px;
-        top: -1.2rem;
-        right: -2.2rem;
-        font-size: 0.8rem;
-        font-family: "Nunito Sans", sans-serif;
-        font-weight: bold;
+        gap: 0.4rem;
+        padding: 0 1rem;
       }
       @media screen and (max-width: 768px) {
         height: 96%;
