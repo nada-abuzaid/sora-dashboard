@@ -32,14 +32,11 @@ export default function FormAuth() {
 
   const handleSubmit = (data) => {
     if (url === 'register') {
-      // console.log(data);
       navigate('/auth?verify-email');
     } else if (url === 'login' || url === 'set-password' || url === '') {
       navigate('/');
-      // console.log(data);
     } else if (url === 'forgot-password') {
       navigate('/auth?login');
-      // console.log(data);
     }
   };
 

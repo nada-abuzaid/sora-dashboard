@@ -67,6 +67,9 @@ const TabsWrapper = styled(Tabs)`
     width: 100%;
     justify-content: center;
   }
+  .ant-tabs-tab:hover{
+    color: ${({ theme: { colors } }) => colors.primary};
+  }
   .ant-tabs-content-holder {
     width: 50%;
   }

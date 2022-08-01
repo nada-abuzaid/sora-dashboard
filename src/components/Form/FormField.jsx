@@ -7,22 +7,9 @@ import TextError from './TextError';
 export default function FormField({
   placeholder, name, className, ...rest
 }) {
-  // const [value, setValue] = useState('');
-  // const handleChange = (e) => {
-  //   setValue(e.target.value);
-  // };
-
-  // const [error, setError] = useState('');
   return (
     <FieldStyle>
-      <Field
-        id={name}
-        name={name}
-        {...rest}
-        // onChange={handleChange}
-        // className={`${value ? 'filled form__input' : 'form__input'}`}
-        className={className}
-      />
+      <Field id={name} name={name} {...rest} className="form__input" required />
       <label htmlFor={name} className="form__label">
         {placeholder}
       </label>
