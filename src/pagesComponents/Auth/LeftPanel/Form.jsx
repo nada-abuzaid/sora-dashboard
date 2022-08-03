@@ -45,6 +45,13 @@ export default function FormAuth() {
       initialValues={initialValues}
       onSubmit={handleSubmit}
       validationSchema={validationSchema}
+      validate={
+        (values) => {
+          const errors = {};
+          if (!values.example) errors.example = 'Required';
+          return errors;
+        }
+      }
     >
       {url === 'register' ? (
         <RegisterDiv>
