@@ -2,6 +2,16 @@ import styled from 'styled-components';
 
 const FieldStyle = styled.div`
   position: relative;
+  ${(props) => (!props.error
+    ? `
+  .form__input  {
+    border: 1px solid red !important;
+  }
+  .form__label{
+    color: red !important;
+  }
+  `
+    : 'border: none;')}
   .form__input {
     position: absolute;
     top: 0;
@@ -22,7 +32,7 @@ const FieldStyle = styled.div`
     transition: all 200ms ease-in;
     background-color: white;
   }
-  .form__input:focus + .form__label, 
+  .form__input:focus + .form__label,
   .form__input:valid + .form__label {
     top: -0.5rem;
     font-size: 0.8rem;

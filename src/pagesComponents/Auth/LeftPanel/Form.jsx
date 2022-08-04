@@ -45,39 +45,48 @@ export default function FormAuth() {
       initialValues={initialValues}
       onSubmit={handleSubmit}
       validationSchema={validationSchema}
-      validate={
-        (values) => {
-          const errors = {};
-          if (!values.example) errors.example = 'Required';
-          return errors;
-        }
-      }
+      validate={(values) => {
+        const errors = {};
+        if (!values.example) errors.example = 'Required';
+        return errors;
+      }}
     >
-      {url === 'register' ? (
-        <RegisterDiv>
-          <FormField name="firstName" placeholder="First name*" />
-          <FormField name="lastName" placeholder="Last name*" />
-          <FormField name="email" placeholder="Email*" />
-          <SubmitButton title="Register" />
-        </RegisterDiv>
-      ) : url === 'login' || url === '' ? (
-        <LoginDiv>
-          <div className="inputs">
-            <FormField name="email" placeholder="Email*" />
-            <FormField
-              name="password"
-              placeholder="Password*"
-              type="password"
-            />
-            <Link to="/auth?forgot-password" className="forgot-password">
-              Forgot your password?
-            </Link>
-          </div>
-          <SubmitButton title="Login" />
-        </LoginDiv>
-      ) : (
-        <LoginDiv />
-      )}
+      {
+      ({ errors, error, touched }) => (
+        <>
+          {' '}
+          {url === 'register' ? (
+            <RegisterDiv>
+              {
+                console.log(error, touched, 'errrrr')
+              }
+              <FormField name="firstName" placeholder="First name*" errors={errors} />
+              <FormField name="lastName" placeholder="Last name*" errors={errors} />
+              <FormField name="email" placeholder="Email*" errors={errors} />
+              <SubmitButton title="Register" />
+            </RegisterDiv>
+          ) : url === 'login' || url === '' ? (
+            <LoginDiv>
+              <div className="inputs">
+                <FormField name="email" placeholder="Email*" errors={errors} />
+                <FormField
+                  name="password"
+                  placeholder="Password*"
+                  type="password"
+                  errors={errors}
+                />
+                <Link to="/auth?forgot-password" className="forgot-password">
+                  Forgot your password?
+                </Link>
+              </div>
+              <SubmitButton title="Login" />
+            </LoginDiv>
+          ) : (
+            <LoginDiv />
+          )}
+        </>
+      )
+     }
     </Form>
   );
 }

@@ -6,17 +6,17 @@ import { FieldStyle } from '../styled/FormStyles';
 import TextError from './TextError';
 
 export default function FormField({
-  placeholder, name, ...rest
+  placeholder, name, errors, ...rest
 }) {
-  // function getStyles(errors, fieldName) {
-  //   if (getIn(errors, fieldName)) {
+  // function getStyles(errorss, fieldName) {
+  //   if (getIn(errorss, fieldName)) {
   //     return {
   //       border: '1px solid red',
   //     };
   //   }
   // }
   return (
-    <FieldStyle>
+    <FieldStyle error={!errors[name]}>
       <Field id={name} name={name} {...rest} className="form__input" required />
       <label htmlFor={name} className="form__label">
         {placeholder}
