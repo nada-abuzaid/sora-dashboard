@@ -17,6 +17,7 @@ const FeatureStyle = styled.div`
 const LeftStyle = styled.div`
   display: flex;
   flex-direction: row;
+  height: 100%;
   @media screen and (max-width: 768px) {
     flex-direction: column;
   }
@@ -120,6 +121,7 @@ const LeftStyle = styled.div`
     background-color: #fff;
     padding: 2rem 1rem;
     position: relative;
+    margin-top: 2rem;
     @media screen and (max-width: 768px) {
       width: 100%;
     }

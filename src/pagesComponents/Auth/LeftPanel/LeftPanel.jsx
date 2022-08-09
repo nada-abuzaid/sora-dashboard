@@ -33,10 +33,15 @@ export default function LeftSide({ title }) {
                 navigate('/auth?login');
               }}
             >
-              <>
-                <FormField name="email" placeholder="Email*" />
-                <SubmitButton title="Reset password" />
-              </>
+              {
+                 ({ errors }) => (
+                   <>
+                     <FormField name="email" placeholder="Email*" errors={errors} />
+                     <SubmitButton title="Reset password" />
+                   </>
+                 )
+              }
+
             </Form>
           </div>
         </TitleWrapper>

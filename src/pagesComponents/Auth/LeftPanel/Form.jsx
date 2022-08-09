@@ -52,14 +52,11 @@ export default function FormAuth() {
       }}
     >
       {
-      ({ errors, error, touched }) => (
+      ({ errors }) => (
         <>
           {' '}
           {url === 'register' ? (
             <RegisterDiv>
-              {
-                console.log(error, touched, 'errrrr')
-              }
               <FormField name="firstName" placeholder="First name*" errors={errors} />
               <FormField name="lastName" placeholder="Last name*" errors={errors} />
               <FormField name="email" placeholder="Email*" errors={errors} />
