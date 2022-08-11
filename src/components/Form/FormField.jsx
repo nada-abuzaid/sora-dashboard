@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { Field, ErrorMessage } from 'formik';
 import PropTypes from 'prop-types';
-import { FieldStyle } from '../styled/FormStyles';
+import { FieldStyle, FieldWrapper } from '../styled/FormStyles';
 import TextError from './TextError';
 
 export default function FormField({
@@ -15,13 +15,15 @@ export default function FormField({
     }
   }, [errors[name]]);
   return (
-    <FieldStyle error={!error}>
-      <Field id={name} name={name} {...rest} className={error ? 'form__input error' : 'form__input'} required />
-      <label htmlFor={name} className="form__label">
-        {placeholder}
-      </label>
+    <FieldWrapper>
+      <FieldStyle error={!error}>
+        <Field id={name} name={name} {...rest} className={error ? 'form__input error' : 'form__input'} required />
+        <label htmlFor={name} className="form__label">
+          {placeholder}
+        </label>
+      </FieldStyle>
       <ErrorMessage name={name} component={TextError} />
-    </FieldStyle>
+    </FieldWrapper>
   );
 }
 

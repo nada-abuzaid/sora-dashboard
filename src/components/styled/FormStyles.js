@@ -1,19 +1,23 @@
 import styled from 'styled-components';
 
+const FieldWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
 const FieldStyle = styled.div`
   position: relative;
   ${(props) => (!props.error
     ? `
   .form__input  {
-    border: 1px solid red !important;
+    border: 1px solid #DA1E28 !important;
   }
   .form__label{
-    color: red !important;
+    color: #DA1E28 !important;
   }
   `
     : 'border: none;')}
   .form__input {
-    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -21,12 +25,12 @@ const FieldStyle = styled.div`
     border: 1px solid #c6c6c6;
     border-radius: 5px;
     outline: none;
-    padding: 1.4rem;
+    padding: 1rem;
   }
   .form__label {
     position: absolute;
     left: 1rem;
-    top: 0.8rem;
+    top: 1rem;
     color: ${({ theme: { colors } }) => colors.primaryDark};
     cursor: text;
     transition: all 200ms ease-in;
@@ -56,9 +60,9 @@ const SubmitStyle = styled.div`
 `;
 
 const TextErrorStyle = styled.div`
-  color: #da1e28;
-  position: absolute;
-  top: 3rem;
+  color: ${({ theme: { colors } }) => colors.error};
 `;
 
-export { FieldStyle, SubmitStyle, TextErrorStyle };
+export {
+  FieldStyle, SubmitStyle, TextErrorStyle, FieldWrapper,
+};

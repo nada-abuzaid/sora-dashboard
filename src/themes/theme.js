@@ -8,7 +8,7 @@ const theme = {
     white: '#fff',
     accordion: '#F6F6F6',
     checkoutGray: '#F5F4F4',
-    error: '#FF3A44',
+    error: '#DA1E28',
     productCard: '#F6F6F6',
     lightGreen: '#E6EDED',
     emptyBasket: '#6F6F6F',

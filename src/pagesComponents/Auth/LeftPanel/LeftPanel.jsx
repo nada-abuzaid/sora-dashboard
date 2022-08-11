@@ -45,6 +45,11 @@ export default function LeftSide({ title }) {
             </Form>
           </div>
         </TitleWrapper>
+      ) : url === 'set-password' ? (
+        <>
+          <Title title={title} />
+          <Tabs />
+        </>
       ) : (
         <>
           <Title title={title} />

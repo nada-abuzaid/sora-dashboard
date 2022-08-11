@@ -5,10 +5,14 @@ import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 import App from './App';
 import upgradeReducer from './state/upgrade';
+import loadingReducer from './state/loading';
+import dashboardReducer from './state/dashboard';
 
 const store = configureStore({
   reducer: {
     upgrade: upgradeReducer,
+    loading: loadingReducer,
+    dashboard: dashboardReducer,
   },
 });
 

@@ -13,11 +13,9 @@ export default function Statistic({ number, title }) {
 }
 
 Statistic.propTypes = {
-  number: PropTypes.number,
-  title: PropTypes.string,
+  number: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
 };
 
 Statistic.defaultProps = {
-  number: 250,
-  title: 'Employees',
 };

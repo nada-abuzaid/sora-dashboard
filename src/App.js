@@ -9,6 +9,7 @@ import Account from './pages/account';
 import Contact from './pages/contact';
 import Auth from './pages/auth';
 import { DashboardLayout } from './components';
+import AdminDashboard from './pages/adminDashboard';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/auth" element={<Auth />} />
         <Route path="/" element={<DashboardLayout />}>
           <Route index element={<Dashboard />} />
+          <Route path="/admin" element={<AdminDashboard />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/account" element={<Account />} />
         </Route>

@@ -1,25 +1,42 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Chart as ChartComponents } from 'primereact/chart';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import axios from 'axios';
 import ChartStyle from './style';
 
 export default function Chart({ type }) {
-  const [chartData] = useState({
-    labels: [
-      'Tracking health - 30%',
-      'Reading articles - 10%',
-      'Using the care plan - 50%',
-      'Other - 10',
-    ],
+  const [featuresData, setFeaturesData] = useState([]);
+  const [interestsData, setInterestsData] = useState([]);
+  const [id, setId] = useState(1);
+
+  useEffect(() => {
+    setId(1);
+    const fetchData = async () => {
+      try {
+        const { data: { data: { company: { totalEngagements } } } } = await axios.get(`/api/v1/companies/${id}/users-engagements`);
+        const { data: { data: { company: { totalInterests } } } } = await axios.get(`/api/v1/companies/${id}/users-interests`);
+        setFeaturesData(totalEngagements);
+        setInterestsData(totalInterests);
+        return totalEngagements;
+      } catch (error) {
+        return error;
+      }
+    };
+    fetchData();
+  }, []);
+
+  const chartData = {
+    labels:
+    featuresData.map(({ label, counter }) => ` ${label} - ${counter}%`),
     datasets: [
       {
-        data: [30, 10, 50, 10],
+        data: featuresData.map(({ counter }) => counter),
         backgroundColor: ['#73314F', '#275C61', '#89AAAD', '#E3E3E3'],
         hoverBackgroundColor: ['#80445f', '#346266', '#a4c6c9', '#eeeeee'],
       },
     ],
-  });
+  };
 
   const [lightOptions] = useState({
     cutout: '60%',
@@ -45,17 +62,18 @@ export default function Chart({ type }) {
     },
   });
 
-  const [HorizontalChartData] = useState({
-    labels: ['Parenthood', 'Infertility', 'Mental Health', 'Diet & Nutrition'],
+  const HorizontalChartData = {
+    labels: interestsData.map(({ label }) => label),
     datasets: [
       {
-        data: [70, 50, 25, 15],
+
+        data: interestsData.map(({ counter }) => counter),
         backgroundColor: ['#73314F', '#9E6F85', '#9E6F85', '#9E6F85'],
         hoverBackgroundColor: ['#80445f', '#9e6f8597', '#9e6f8597', '#9e6f8597'],
         borderRadius: '5',
       },
     ],
-  });
+  };
 
   const horizontalOptions = {
     responsive: true,
@@ -66,6 +84,15 @@ export default function Chart({ type }) {
       legend: {
         display: false,
       },
+      datalabels: {
+        color: '#36A2EB',
+      },
+      // datalabels: {
+      //   formatter: (value) => `${value} %`,
+      //   align: 'end',
+      //   anchor: 'end',
+      //   clip: true,
+      // },
     },
     scales: {
       x: {

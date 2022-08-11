@@ -1,19 +1,20 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 import logout from '../../assets/svgs/Logout.svg';
 import logo from '../../assets/svgs/syrona.svg';
 import AppLogo from '../../assets/svgs/AppLogo.svg';
 import { Background, ASide } from './styles';
 import '../../styles/typography.css';
 import Upgrade from './Subsecribe/Upgrade';
-
 import close from '../../assets/svgs/close.svg';
 import menu from '../../assets/svgs/Menu.svg';
 import account from '../../assets/svgs/Account.svg';
 import contact from '../../assets/svgs/contact-form.svg';
 
 export default function Sidebar({ isOpen, setisOpen }) {
+  const { dashboard } = useSelector((state) => state.dashboard.value);
   return (
     <>
       <Background isOpen={isOpen} />
@@ -41,14 +42,22 @@ export default function Sidebar({ isOpen, setisOpen }) {
               <img src={account} alt="Account" className="icon" />
               <p>Account</p>
             </NavLink>
-            <NavLink to="/contact" className="side-menu-item">
-              <img src={contact} alt="Logout" className="icon" />
-              <p>Contact Us</p>
-            </NavLink>
+            {
+              dashboard !== 'admin' && (
+              <NavLink to="/contact" className="side-menu-item">
+                <img src={contact} alt="Logout" className="icon" />
+                <p>Contact Us</p>
+              </NavLink>
+              )
+            }
           </div>
-          <div className="upgrade">
-            <Upgrade isOpen={isOpen} />
-          </div>
+          {
+              dashboard !== 'admin' && (
+              <div className="upgrade">
+                <Upgrade isOpen={isOpen} />
+              </div>
+              )
+          }
           <NavLink to="/auth" className="side-menu-item">
             <img src={logout} alt="Logout" className="icon" />
             <p>Sign Out</p>

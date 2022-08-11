@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Form, FormField, SubmitButton } from '../../../components/Form';
@@ -30,7 +29,7 @@ export default function FormAuth() {
     validationSchema = loginSchema;
   }
 
-  const handleSubmit = (data) => {
+  const handleSubmit = () => {
     if (url === 'register') {
       navigate('/auth?verify-email');
     } else if (url === 'login' || url === 'set-password' || url === '') {
@@ -45,11 +44,6 @@ export default function FormAuth() {
       initialValues={initialValues}
       onSubmit={handleSubmit}
       validationSchema={validationSchema}
-      validate={(values) => {
-        const errors = {};
-        if (!values.example) errors.example = 'Required';
-        return errors;
-      }}
     >
       {
       ({ errors }) => (

@@ -8,7 +8,7 @@ const LoginDiv = styled.div`
   .inputs {
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    gap: 1rem;
   }
   .forgot-password {
     color: ${({ theme: { colors } }) => colors.primary};
@@ -22,7 +22,7 @@ const LoginDiv = styled.div`
 const RegisterDiv = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 1rem;
 `;
 
 const Container = styled.div`

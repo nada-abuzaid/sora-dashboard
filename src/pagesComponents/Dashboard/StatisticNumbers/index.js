@@ -48,7 +48,7 @@ export default function Statistics() {
   return (
     <StatisticsStyle>
       {data.map(({ id, number, title }) => (
-        <Statistic key={id} statisticNumber={number} title={title} />
+        <Statistic key={id} number={number} title={title} />
       ))}
     </StatisticsStyle>
   );
