@@ -5,7 +5,6 @@
   },
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://syronahealth-clinicians-api.herokuapp.com",
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.3",
     "@testing-library/jest-dom": "^5.16.4",
@@ -16,6 +15,7 @@
     "chart.js": "^3.8.0",
     "classnames": "^2.3.1",
     "formik": "^2.2.9",
+    "http-proxy-middleware": "^2.0.6",
     "primereact": "^8.3.0",
     "prop-types": "^15.8.1",
     "rc-resize-observer": "^1.2.0",
