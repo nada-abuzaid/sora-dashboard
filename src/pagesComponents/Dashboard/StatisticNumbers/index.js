@@ -1,55 +1,31 @@
-import React from 'react';
+/* eslint-disable no-return-assign */
+/* eslint-disable no-param-reassign */
+/* eslint-disable react/no-array-index-key */
+import axios from 'axios';
+import React, { useEffect } from 'react';
 import Statistic from './Statistic';
 import { StatisticsStyle } from './styles';
 
 export default function Statistics() {
-  const data = [
-    {
-      id: 1,
-      number: 250,
-      title: 'Employees',
-    },
-    {
-      id: 2,
-      number: 100,
-      title: 'Female',
-    },
-    {
-      id: 3,
-      number: 50,
-      title: 'Male',
-    },
-    {
-      id: 4,
-      number: 25,
-      title: 'Transfemale',
-    },
-    {
-      id: 5,
-      number: 25,
-      title: 'Transmale',
-    },
-    {
-      id: 6,
-      number: 25,
-      title: 'None or agender',
-    },
-    {
-      id: 7,
-      number: 20,
-      title: 'Other',
-    },
-    {
-      id: 8,
-      number: 5,
-      title: 'Prefer not to say',
-    },
-  ];
+  const [data, setData] = React.useState([]);
+  const [employees, setEmployees] = React.useState(0);
+  useEffect(() => {
+    const fetchData = async () => {
+      const { data: { data: { company: { employeesGender, employeesCount } } } } = await axios.get('/api/v1/companies/3/employees-gender');
+      setData(employeesGender);
+      setEmployees(employeesCount);
+    };
+    fetchData();
+  }, []);
+
   return (
     <StatisticsStyle>
-      {data.map(({ id, number, title }) => (
-        <Statistic key={id} number={number} title={title} />
-      ))}
+      <Statistic number={employees} title="Employees" />
+      {
+      data.map(({ count, label }, index) => (
+        <Statistic key={index} number={count} title={label} />
+      ))
+      }
     </StatisticsStyle>
   );
 }

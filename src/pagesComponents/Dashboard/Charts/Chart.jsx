@@ -11,7 +11,7 @@ export default function Chart({ type }) {
   const [id, setId] = useState(1);
 
   useEffect(() => {
-    setId(1);
+    setId(5);
     const fetchData = async () => {
       try {
         const { data: { data: { company: { totalEngagements } } } } = await axios.get(`/api/v1/companies/${id}/users-engagements`);
@@ -28,10 +28,10 @@ export default function Chart({ type }) {
 
   const chartData = {
     labels:
-    featuresData.map(({ label, counter }) => ` ${label} - ${counter}%`),
+    featuresData.map(({ label, percentage }) => ` ${label} - ${Math.round(percentage)}%`),
     datasets: [
       {
-        data: featuresData.map(({ counter }) => counter),
+        data: featuresData.map(({ percentage }) => percentage),
         backgroundColor: ['#73314F', '#275C61', '#89AAAD', '#E3E3E3'],
         hoverBackgroundColor: ['#80445f', '#346266', '#a4c6c9', '#eeeeee'],
       },
@@ -66,8 +66,7 @@ export default function Chart({ type }) {
     labels: interestsData.map(({ label }) => label),
     datasets: [
       {
-
-        data: interestsData.map(({ counter }) => counter),
+        data: interestsData.map(({ percentage }) => percentage),
         backgroundColor: ['#73314F', '#9E6F85', '#9E6F85', '#9E6F85'],
         hoverBackgroundColor: ['#80445f', '#9e6f8597', '#9e6f8597', '#9e6f8597'],
         borderRadius: '5',
@@ -87,12 +86,6 @@ export default function Chart({ type }) {
       datalabels: {
         color: '#36A2EB',
       },
-      // datalabels: {
-      //   formatter: (value) => `${value} %`,
-      //   align: 'end',
-      //   anchor: 'end',
-      //   clip: true,
-      // },
     },
     scales: {
       x: {
