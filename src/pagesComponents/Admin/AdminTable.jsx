@@ -46,7 +46,7 @@ function AdminTable() {
     const fetchData = async () => {
       dispatch(setLoading({ loading: true }));
       try {
-        const { data: { message, data } } = await axios.get('/api/v1/companies');
+        const { data: { message, data } } = await axios.get(`${process.env.REACT_APP_API_URL}/api/v1/companies`);
         if (message === 'success') {
           setDataSource(data);
           dispatch(setLoading({ loading: false }));

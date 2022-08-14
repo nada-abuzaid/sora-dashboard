@@ -11,7 +11,7 @@ export default function Statistics() {
   const [employees, setEmployees] = React.useState(0);
   useEffect(() => {
     const fetchData = async () => {
-      const { data: { data: { company: { employeesGender, employeesCount } } } } = await axios.get('/api/v1/companies/3/employees-gender');
+      const { data: { data: { company: { employeesGender, employeesCount } } } } = await axios.get(`${process.env.REACT_APP_API_URL}/api/v1/companies/3/employees-gender`);
       setData(employeesGender);
       setEmployees(employeesCount);
     };

@@ -14,8 +14,8 @@ export default function Chart({ type }) {
     setId(5);
     const fetchData = async () => {
       try {
-        const { data: { data: { company: { totalEngagements } } } } = await axios.get(`/api/v1/companies/${id}/users-engagements`);
-        const { data: { data: { company: { totalInterests } } } } = await axios.get(`/api/v1/companies/${id}/users-interests`);
+        const { data: { data: { company: { totalEngagements } } } } = await axios.get(`${process.env.REACT_APP_API_URL}/api/v1/companies/${id}/users-engagements`);
+        const { data: { data: { company: { totalInterests } } } } = await axios.get(`${process.env.REACT_APP_API_URL}/api/v1/companies/${id}/users-interests`);
         setFeaturesData(totalEngagements);
         setInterestsData(totalInterests);
         return totalEngagements;
@@ -185,6 +185,13 @@ export default function Chart({ type }) {
           style={{ height: '90%' }}
         />
       </div>
+      {
+        type === 'bar-health' && (
+        <div className="topThree">
+          <p>Health conditions</p>
+        </div>
+        )
+      }
     </ChartStyle>
   );
 }

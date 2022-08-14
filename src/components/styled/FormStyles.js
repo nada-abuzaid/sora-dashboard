@@ -61,6 +61,7 @@ const SubmitStyle = styled.div`
 
 const TextErrorStyle = styled.div`
   color: ${({ theme: { colors } }) => colors.error};
+  font-size: 0.8rem;
 `;
 
 export {
