@@ -8,23 +8,29 @@ import ChartStyle from './style';
 export default function Chart({ type }) {
   const [featuresData, setFeaturesData] = useState([]);
   const [interestsData, setInterestsData] = useState([]);
-  const [id, setId] = useState(1);
+  const [topHealthConditionsData, setTopHealthConditionsData] = useState([]);
+  const [healthConditionsData, setHealthConditionsData] = useState([]);
+
+  const [id, setId] = useState(0);
 
   useEffect(() => {
-    setId(5);
+    setId(4);
     const fetchData = async () => {
       try {
         const { data: { data: { company: { totalEngagements } } } } = await axios.get(`${process.env.REACT_APP_API_URL}/api/v1/companies/${id}/users-engagements`);
         const { data: { data: { company: { totalInterests } } } } = await axios.get(`${process.env.REACT_APP_API_URL}/api/v1/companies/${id}/users-interests`);
+        const { data: { data: { company: { topThreeHealthConditions, allHealthConditions } } } } = await axios.get(`${process.env.REACT_APP_API_URL}/api/v1/companies/${id}/users-health-conditions`);
         setFeaturesData(totalEngagements);
         setInterestsData(totalInterests);
+        setHealthConditionsData(allHealthConditions);
+        setTopHealthConditionsData(topThreeHealthConditions);
         return totalEngagements;
       } catch (error) {
         return error;
       }
     };
     fetchData();
-  }, []);
+  }, [id]);
 
   const chartData = {
     labels:
@@ -103,27 +109,17 @@ export default function Chart({ type }) {
     },
   };
 
-  const [VerticalChartData] = useState({
-    labels: [
-      'Infertility',
-      'Stress',
-      'PCOS',
-      'Diabetes',
-      'Hair loss',
-      'Heart Disease',
-      'Endo',
-      'Menopause',
-      'Mental Health',
-    ],
+  const VerticalChartData = {
+    labels: healthConditionsData.map(({ label }) => label),
     datasets: [
       {
-        data: [20, 10, 25, 15, 10, 40, 20, 10, 25, 15],
+        data: healthConditionsData.map(({ percentage }) => percentage),
         backgroundColor: '#4F7D7D',
         hoverBackgroundColor: '#4f7d7dd6',
         borderRadius: '8',
       },
     ],
-  });
+  };
 
   const VerticalOptions = {
     responsive: true,
@@ -188,7 +184,31 @@ export default function Chart({ type }) {
       {
         type === 'bar-health' && (
         <div className="topThree">
-          <p>Health conditions</p>
+          <p className="topThree-title">Top 3 Health conditions</p>
+          {
+            topHealthConditionsData.map(({ label, percentage }, index) => (
+              <div className="topthree-item">
+                {' '}
+                <span className="top-number">
+                  {' '}
+                  {index + 1}
+                  #
+                  {' '}
+                </span>
+                <p className="top-item">
+                  {label}
+                  {' '}
+                  -
+                  {' '}
+                  {Math.round(percentage)}
+                  {' '}
+                  %
+                </p>
+
+              </div>
+
+            ))
+          }
         </div>
         )
       }

@@ -7,6 +7,7 @@ const ChartStyle = styled.div`
   padding: 1rem 1.5rem;
   height: 100%;
   max-height: 100%;
+  position: relative;
   &:last-child {
     width: 90%;
     @media only screen and (max-width: 900px) {
@@ -38,6 +39,31 @@ const ChartStyle = styled.div`
       font-weight: 100;
       font-family: "Nunito Sans";
       font-size: 0.9rem;
+    }
+  }
+  .topThree{
+    position: absolute;
+    background-color: #E6EBEC;
+    top: 1rem;
+    right: 1.5rem;
+    padding: 0.6rem 1.4rem;
+    border-radius: 6px;
+    .topThree-title{
+      font-size: 1.1rem;
+      font-family: 'DM Serif Text';
+    }
+    .top-item{
+      font-family: 'Nunito Sans';
+      font-size: 0.9rem;
+      display: inline;
+    }
+    .top-number{
+      font-family: 'Nunito Sans';
+      font-weight: bold;
+      display: inline;
+    }
+    .topthree-item{
+      display: block;
     }
   }
 `;
