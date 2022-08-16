@@ -3,13 +3,15 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
-import Auth0ProviderWithHistory from './auth/auth0-provider-with-history';
+import Auth0ProviderFunc from './auth/auth0Provider';
 import App from './App';
-import upgradeReducer from './state/upgrade';
-import loadingReducer from './state/loading';
-import dashboardReducer from './state/dashboard';
-import tokenReducer from './state/token';
-import companiesReducer from './state/companies';
+import {
+  upgradeReducer,
+  loadingReducer,
+  dashboardReducer,
+  tokenReducer,
+  companiesReducer,
+} from './state';
 
 const store = configureStore({
   reducer: {
@@ -25,9 +27,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
     <Provider store={store}>
-      <Auth0ProviderWithHistory>
+      <Auth0ProviderFunc>
         <App />
-      </Auth0ProviderWithHistory>
+      </Auth0ProviderFunc>
     </Provider>
   </BrowserRouter>,
 );

@@ -15,7 +15,11 @@
     "rules": {
       "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
       "react/jsx-props-no-spreading": "off",
-      "no-nested-ternary": "off"
+      "no-nested-ternary": "off",
+      "no-param-reassign": "off",
+      "react/jsx-no-useless-fragment": "off",
+      "import/no-unresolved": "off",
+      "react/no-array-index-key" : "off"
     }
   }
   

@@ -5,14 +5,14 @@ import { useSelector } from 'react-redux';
 import logoutImg from '../../assets/svgs/Logout.svg';
 import logo from '../../assets/svgs/syrona.svg';
 import AppLogo from '../../assets/svgs/AppLogo.svg';
-import { Background, ASide } from './styles';
-import '../../styles/typography.css';
 import Upgrade from './Subsecribe/Upgrade';
 import close from '../../assets/svgs/close.svg';
 import menu from '../../assets/svgs/Menu.svg';
 import account from '../../assets/svgs/Account.svg';
 import contact from '../../assets/svgs/contact-form.svg';
-import LogoutButton from '../../components/logout-button';
+import { LogoutButton } from '../../components/Auths';
+import { Background, ASide } from './styles';
+import '../../styles/typography.css';
 
 export default function Sidebar({ isOpen, setisOpen }) {
   const { dashboard } = useSelector((state) => state.dashboard.value);

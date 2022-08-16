@@ -100,7 +100,7 @@ export default function Chart({ type }) {
       y: {
         ticks: {
           color: '#495057',
-          crossAlign: 'far', // to align the label to the left
+          crossAlign: 'far',
         },
         grid: {
           display: false,

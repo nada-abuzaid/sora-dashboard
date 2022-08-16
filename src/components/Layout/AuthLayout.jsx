@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Header from '../Header';
 import { Main } from '../styled/LayoutStyles';
-import { RightPanel } from '../../pagesComponents/Auth';
+import MobileScreen from '../../pagesComponents/Auth/RightPanel';
 
 export default function AuthLayout({ children }) {
   return (
@@ -10,7 +10,7 @@ export default function AuthLayout({ children }) {
       <Header />
       <Main>
         <div className="main">{children}</div>
-        <RightPanel />
+        <MobileScreen />
       </Main>
     </div>
   );

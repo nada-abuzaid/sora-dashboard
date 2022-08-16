@@ -1,28 +1,24 @@
-/* eslint-disable no-unused-vars */
-import { Table, Select, Checkbox } from 'antd';
+import { Select } from 'antd';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import styled from 'styled-components';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { setLoading } from '../../state/loading';
-import formatDate from '../../utils/formatDate';
-import { AutoCompleteStyle, AutoCompleteContainer } from '../Dashboard/styles';
+import { formatDate } from '../../utils';
+import {
+  AutoCompleteStyle, AutoCompleteContainer, TableTitle, TableContent, StyledTable,
+} from '../Dashboard/styles';
 
-function AdminTable() {
+export default function AdminTable() {
   const dispatch = useDispatch();
   const [dataSource, setDataSource] = useState([]);
   const [filtredDataSource, setFiltredDataSource] = useState([]);
-  const [options, setOptions] = useState([]);
+  const [setOptions] = useState([]);
   const [sort, setSort] = useState('');
   const [searchValue, setSearchValue] = useState('');
   const { loading } = useSelector((state) => state.loading.value);
 
   const { Option } = Select;
-
-  const handleChange = (value) => {
-    setSearchValue(value);
-  };
 
   const columns = [
     {
@@ -62,7 +58,7 @@ function AdminTable() {
       dispatch(setLoading({ loading: true }));
       try {
         const {
-          data: { message, data },
+          data: { data },
         } = await axios.get(
           `${process.env.REACT_APP_API_URL}/api/v1/companies`,
           {
@@ -82,6 +78,10 @@ function AdminTable() {
       source.cancel();
     };
   }, [searchValue, sort]);
+
+  const handleChange = (value) => {
+    setSearchValue(value);
+  };
 
   const onSearchChange = (value) => {
     const filteredData = dataSource.filter(
@@ -143,60 +143,3 @@ function AdminTable() {
     </>
   );
 }
-
-const StyledTable = styled(Table)`
-  padding: 0 40px;
-  thead > tr > th {
-    background-color: #89aaad33;
-  }
-
-  .ant-table-header {
-    border-radius: 20px 20px 0 0;
-  }
-
-  .ant-table-container {
-    border-radius: 20px 20px 0 0;
-    box-shadow: inset 0px -4px 12px rgba(0, 0, 0, 0.1);
-    width: 95%;
-    height: 95%;
-  }
-
-  .ant-table.ant-table-fixed-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .ant-table-body::-webkit-scrollbar {
-    width: 20px;
-    height: 20px;
-  }
-
-  .ant-table-body::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 14px 14px transparent;
-    border: solid 4px transparent;
-  }
-
-  .ant-table-body::-webkit-scrollbar-thumb {
-    border-radius: 20px;
-    box-shadow: inset 0 0 14px 14px #bbbbbe;
-    border: solid 9px transparent;
-  }
-
-  && tbody > tr:hover > td {
-    background: rgba(137, 170, 173, 0.1);
-  }
-`;
-
-const TableTitle = styled.p`
-  font-size: 16px;
-  color: #275c61;
-  font-weight: bold;
-`;
-
-const TableContent = styled.p`
-  font-size: 16px;
-  color: #292929;
-`;
-
-export default AdminTable;

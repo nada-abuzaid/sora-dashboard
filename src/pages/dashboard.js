@@ -1,10 +1,10 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { withAuthenticationRequired } from '@auth0/auth0-react';
-import WelcomeCarousel from '../pagesComponents/Dashboard/WelcomeCarousel';
+import WelcomeCarousel from '../pagesComponents/Dashboard/Popup';
 import Chartt from '../pagesComponents/Dashboard/Charts/Chart';
 import Coins from '../pagesComponents/Dashboard/Coins';
-import { Wrapper, CoinsStyle } from '../styles/dashboard';
+import { Wrapper, CoinsStyle } from '../styles';
 import Statistics from '../pagesComponents/Dashboard/StatisticNumbers';
 import Subsecribe from '../pagesComponents/Dashboard/Subsecribe/Subsecribe';
 

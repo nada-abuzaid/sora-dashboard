@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { ContactStyle } from '../styles/dashboard';
 import subsecibe from '../assets/svgs/Subsecibe.svg';
 import Subsecribe from '../pagesComponents/Dashboard/Subsecribe/Subsecribe';
-import Mailto from '../pagesComponents/Dashboard/Email';
+import { Mailto } from '../components';
 
 export default function Contact() {
   const { open } = useSelector((state) => state.upgrade.value);
