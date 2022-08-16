@@ -14,7 +14,7 @@ export default function Chart({ type }) {
   const [id, setId] = useState(0);
 
   useEffect(() => {
-    setId(4);
+    setId(3);
     const fetchData = async () => {
       try {
         const { data: { data: { company: { totalEngagements } } } } = await axios.get(`${process.env.REACT_APP_API_URL}/api/v1/companies/${id}/users-engagements`);

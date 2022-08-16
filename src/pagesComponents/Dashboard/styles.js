@@ -1,9 +1,10 @@
+import { AutoComplete } from 'antd';
 import styled from 'styled-components';
 
 const Nav = styled.nav`
   position: fixed;
   width: 100%;
-  height: 3.4rem;
+
   display: flex;
   align-items: center;
   box-shadow: 2px 2px 4px #b5b5b5;
@@ -14,6 +15,65 @@ const Nav = styled.nav`
     margin-left: 1rem;
     font-weight: normal;
     cursor: pointer;
+  }
+  ${({ dashboard }) => (dashboard === 'admin'
+    ? `
+  height: 4rem;
+  `
+    : 'height: 3.4rem;')}
+`;
+
+const AutoCompleteStyle = styled(AutoComplete)`
+  width: 100%;
+  .ant-select-selector {
+    height: 2.5rem !important;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    span {
+      display: flex;
+      align-items: center;
+      input {
+        height: 100% !important;
+      }
+    }
+  }
+`;
+
+const AutoCompleteContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+  top: 0.7rem;
+  width: 40%;
+  font-size: 1.3rem;
+  color: ${({ theme: { colors } }) => colors.white};
+  .icon {
+    background-color: ${({ theme: { colors } }) => colors.primary};
+    height: 2.5rem;
+    border-radius: 0 5px 5px 0;
+    width: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .ant-select.ant-select-single.ant-select-show-arrow{
+    margin-left: 1rem;
+    height: 2.5rem !important;
+    width: 50%;
+    div {
+      height: 2.5rem;
+      display: flex;
+      align-items: center;
+      .ant-select-selection-search, .ant-select-selection-item{
+        height: 2.5rem;
+        border: red;
+      }
+    }
   }
 `;
 
@@ -81,12 +141,19 @@ const ASide = styled.div`
     text-decoration: none;
     align-items: center;
     color: ${({ theme: { colors } }) => colors.primaryDark};
-    p {
+    p,
+    button {
       font-family: "Nunito Sans";
       font-size: 0.9rem;
       margin-left: 0.7rem;
       padding: 1.2rem 0;
       ${(props) => (props.isOpen ? null : 'display:none')}
+    }
+    button {
+      background-color: ${({ theme: { colors } }) => colors.white};
+      border: none;
+      outline: none;
+      cursor: pointer;
     }
     .icon {
       margin-left: 1.3rem;
@@ -124,11 +191,11 @@ const ASide = styled.div`
     : 'border-radius: 0; width: 100%;')}
     }
   }
-.upgrade{
-display: flex;
-align-items: center;
-}  
-@media only screen and (max-width: 600px) {
+  .upgrade {
+    display: flex;
+    align-items: center;
+  }
+  @media only screen and (max-width: 600px) {
     z-index: 100;
     width: 80%;
     height: 100%;
@@ -219,4 +286,6 @@ export {
   StyledCloseButton,
   SlideParagraph,
   ImagesWrapper,
+  AutoCompleteStyle,
+  AutoCompleteContainer,
 };

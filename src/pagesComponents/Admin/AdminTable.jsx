@@ -1,15 +1,28 @@
-import { Table } from 'antd';
+/* eslint-disable no-unused-vars */
+import { Table, Select, Checkbox } from 'antd';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
+import { AiOutlineSearch } from 'react-icons/ai';
 import { setLoading } from '../../state/loading';
 import formatDate from '../../utils/formatDate';
+import { AutoCompleteStyle, AutoCompleteContainer } from '../Dashboard/styles';
 
 function AdminTable() {
   const dispatch = useDispatch();
   const [dataSource, setDataSource] = useState([]);
+  const [filtredDataSource, setFiltredDataSource] = useState([]);
+  const [options, setOptions] = useState([]);
+  const [sort, setSort] = useState('');
+  const [searchValue, setSearchValue] = useState('');
   const { loading } = useSelector((state) => state.loading.value);
+
+  const { Option } = Select;
+
+  const handleChange = (value) => {
+    setSearchValue(value);
+  };
 
   const columns = [
     {
@@ -43,33 +56,91 @@ function AdminTable() {
   ];
 
   useEffect(() => {
+    const { CancelToken } = axios;
+    const source = CancelToken.source();
     const fetchData = async () => {
       dispatch(setLoading({ loading: true }));
       try {
-        const { data: { message, data } } = await axios.get(`${process.env.REACT_APP_API_URL}/api/v1/companies`);
-        if (message === 'success') {
-          setDataSource(data);
-          dispatch(setLoading({ loading: false }));
-          return data;
-        }
-        return [];
+        const {
+          data: { message, data },
+        } = await axios.get(
+          `${process.env.REACT_APP_API_URL}/api/v1/companies`,
+          {
+            cancelToken: source.token,
+          },
+        );
+        setDataSource(data);
+        setOptions(data.map((company) => company.name));
+        dispatch(setLoading({ loading: false }));
+        return data;
       } catch (error) {
         return error;
       }
     };
     fetchData();
-  }, []);
+    return () => {
+      source.cancel();
+    };
+  }, [searchValue, sort]);
+
+  const onSearchChange = (value) => {
+    const filteredData = dataSource.filter(
+      (item) => item.name.toUpperCase().includes(value.toUpperCase()),
+    );
+    setFiltredDataSource(filteredData);
+  };
+
+  const handleSort = ({ value }) => {
+    if (value === 'From A to Z') {
+      setSort(value);
+      setFiltredDataSource(dataSource.sort((a, b) => a.name > b.name));
+    } else if (value === 'Newest first') {
+      setSort(value);
+      setFiltredDataSource(dataSource.sort((a, b) => a.timestamp > b.timestamp));
+    }
+  };
 
   return (
-    <StyledTable
-      columns={columns}
-      dataSource={dataSource}
-      scroll={{
-        y: 600,
-      }}
-      loading={loading}
-      pagination={false}
-    />
+    <>
+      <AutoCompleteContainer>
+        <AutoCompleteStyle
+          onSearch={onSearchChange}
+          value={searchValue}
+          placeholder="Search"
+          onChange={handleChange}
+        />
+        <div className="icon">
+          <AiOutlineSearch />
+        </div>
+        <Select
+          labelInValue
+          defaultValue={{
+            value: '',
+            label: 'Sort by',
+          }}
+          onChange={handleSort}
+        >
+          <Option value="Newest first">
+            Newest first
+          </Option>
+          <Option value="Oldesr first">
+            Oldesr first
+          </Option>
+          <Option value="From A to Z">
+            From A to Z
+          </Option>
+        </Select>
+      </AutoCompleteContainer>
+      <StyledTable
+        columns={columns}
+        dataSource={!filtredDataSource.length ? dataSource : filtredDataSource}
+        scroll={{
+          y: 600,
+        }}
+        loading={loading}
+        pagination={false}
+      />
+    </>
   );
 }
 

@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { SubmitStyle } from '../styled/FormStyles';
 
-export default function SubmitButton({ title }) {
+export default function SubmitButton({ title, ...args }) {
   const { handleSubmit, isValid } = useFormikContext();
   return (
     <SubmitStyle>
@@ -12,6 +12,7 @@ export default function SubmitButton({ title }) {
         onClick={handleSubmit}
         disabled={!isValid}
         className="btn"
+        {...args}
       >
         {title}
       </button>

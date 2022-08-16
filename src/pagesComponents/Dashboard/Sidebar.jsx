@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
-import logout from '../../assets/svgs/Logout.svg';
+import logoutImg from '../../assets/svgs/Logout.svg';
 import logo from '../../assets/svgs/syrona.svg';
 import AppLogo from '../../assets/svgs/AppLogo.svg';
 import { Background, ASide } from './styles';
@@ -12,9 +12,11 @@ import close from '../../assets/svgs/close.svg';
 import menu from '../../assets/svgs/Menu.svg';
 import account from '../../assets/svgs/Account.svg';
 import contact from '../../assets/svgs/contact-form.svg';
+import LogoutButton from '../../components/logout-button';
 
 export default function Sidebar({ isOpen, setisOpen }) {
   const { dashboard } = useSelector((state) => state.dashboard.value);
+
   return (
     <>
       <Background isOpen={isOpen} />
@@ -34,7 +36,7 @@ export default function Sidebar({ isOpen, setisOpen }) {
         </div>
         <div className="side-content">
           <div className="side-menu">
-            <NavLink to="/" className="side-menu-item">
+            <NavLink to={dashboard !== 'admin' ? '/' : '/admin'} className="side-menu-item">
               <img src={menu} alt="Dashboard" className="icon" />
               <p>Dashboard</p>
             </NavLink>
@@ -59,8 +61,8 @@ export default function Sidebar({ isOpen, setisOpen }) {
               )
           }
           <NavLink to="/auth" className="side-menu-item">
-            <img src={logout} alt="Logout" className="icon" />
-            <p>Sign Out</p>
+            <img src={logoutImg} alt="Logout" className="icon" />
+            <LogoutButton />
           </NavLink>
         </div>
         <div className="footer">

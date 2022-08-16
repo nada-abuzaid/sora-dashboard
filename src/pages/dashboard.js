@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { withAuthenticationRequired } from '@auth0/auth0-react';
 import WelcomeCarousel from '../pagesComponents/Dashboard/WelcomeCarousel';
 import Chartt from '../pagesComponents/Dashboard/Charts/Chart';
 import Coins from '../pagesComponents/Dashboard/Coins';
@@ -7,7 +8,7 @@ import { Wrapper, CoinsStyle } from '../styles/dashboard';
 import Statistics from '../pagesComponents/Dashboard/StatisticNumbers';
 import Subsecribe from '../pagesComponents/Dashboard/Subsecribe/Subsecribe';
 
-export default function Dashboard() {
+function Dashboard() {
   const { open } = useSelector((state) => state.upgrade.value);
   return (
     <>
@@ -28,3 +29,5 @@ export default function Dashboard() {
     </>
   );
 }
+
+export default withAuthenticationRequired(Dashboard, { returnTo: window.location.origin });

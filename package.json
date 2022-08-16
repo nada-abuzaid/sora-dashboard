@@ -7,6 +7,7 @@
   "private": true,
   "proxy": "https://syronahealth-clinicians-api.herokuapp.com",
   "dependencies": {
+    "@auth0/auth0-react": "^1.10.2",
     "@reduxjs/toolkit": "^1.8.3",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
