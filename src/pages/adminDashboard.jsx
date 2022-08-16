@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import AdminTable from '../pagesComponents/Admin/AdminTable';
-import { setDashboard } from '../state/dashboard';
+import AdminTable from '../pagesComponents/Admin';
+import { setDashboard } from '../state';
 
 function AdminDashboard() {
   const dispatch = useDispatch();

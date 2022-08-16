@@ -1,10 +1,9 @@
-/* eslint-disable react/jsx-no-useless-fragment */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Field } from 'formik';
 import { Datastyle } from './style';
 import UserData from './UserData';
-import { Form } from '../../components/Form';
+import { Form } from '../../components';
 
 export default function Data({
   name, email, password, isEdit, setIsEdit,

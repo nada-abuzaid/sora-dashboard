@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Tabs from './Tabs';
 import Title from './Title';
 import Button from '../Button';
-import { Form, FormField, SubmitButton } from '../../../components/Form';
+import { Form, FormField, SubmitButton } from '../../../components';
 import { Container, TitleWrapper } from './styles';
 
 export default function LeftSide({ title }) {

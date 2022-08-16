@@ -1,9 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Auth0Provider } from '@auth0/auth0-react';
+import propTypes from 'prop-types';
 
-// eslint-disable-next-line react/prop-types
-function Auth0ProviderWithHistory({ children }) {
+export default function Auth0ProviderFunc({ children }) {
   const domain = process.env.REACT_APP_AUTH0_DOMAIN;
   const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
 
@@ -25,4 +25,6 @@ function Auth0ProviderWithHistory({ children }) {
   );
 }
 
-export default Auth0ProviderWithHistory;
+Auth0ProviderFunc.propTypes = {
+  children: propTypes.node.isRequired,
+};

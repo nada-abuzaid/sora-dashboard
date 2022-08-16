@@ -1,6 +1,3 @@
-/* eslint-disable no-return-assign */
-/* eslint-disable no-param-reassign */
-/* eslint-disable react/no-array-index-key */
 import axios from 'axios';
 import React, { useEffect } from 'react';
 import Statistic from './Statistic';

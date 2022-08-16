@@ -14,7 +14,7 @@ import scribble1 from '../../../assets/svgs/scribble1.svg';
 import scribble2 from '../../../assets/svgs/scribble2.svg';
 import scribble3 from '../../../assets/svgs/scribble3.svg';
 import scribble4 from '../../../assets/svgs/scribble4.svg';
-import { setPro } from '../../../state/upgrade';
+import { setPro } from '../../../state';
 
 export default function Subsecribe() {
   const dispatch = useDispatch();

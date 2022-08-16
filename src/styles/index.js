@@ -1,3 +1,8 @@
 import GlobalStyle from './Global';
+import {
+  AccountStyle, Wrapper, CoinsStyle, ContactStyle,
+} from './dashboard';
 
-export default GlobalStyle;
+export {
+  GlobalStyle, AccountStyle, Wrapper, CoinsStyle, ContactStyle,
+};

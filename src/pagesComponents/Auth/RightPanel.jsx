@@ -4,7 +4,7 @@ import Arrow from '../../assets/svgs/Arrow.svg';
 import Mobile from '../../assets/svgs/Mobile.svg';
 import { Shadow, Wrapper } from './styles';
 
-export default function RightPanel() {
+export default function MobileScreen() {
   return (
     <Wrapper>
       <img src={SoraImg} alt="Sora App!" className="background" />

@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
-import { Form, FormField, SubmitButton } from '../../../components/Form';
+import {
+  Form, FormField, SubmitButton, LoginButton,
+} from '../../../components';
 import { loginSchema, registerSchema } from '../../../utils';
 import { LoginDiv, RegisterDiv } from './styles';
-import LoginButton from '../../../components/login-button';
 
 export default function FormAuth() {
   const navigate = useNavigate();
@@ -12,14 +13,6 @@ export default function FormAuth() {
   const { loginWithRedirect } = useAuth0();
   let initialValues = {};
   let validationSchema = {};
-
-  // email: "nada.b.abu.zaid@gmail.com"
-  // email_verified: false
-  // name: "nada.b.abu.zaid@gmail.com"
-  // nickname: "nada.b.abu.zaid"
-  // picture: "https://s.gravatar.com/avatar/4b2f8fec63ca9c58fd4abcab8efff0…?s=480&r=pg&d=https%3A%2F%2Fcdn.auth0.com%2Favatars%2Fna.png"
-  // sub: "auth0|62f9bc74276e28eb38cf3b4c"
-  // updated_at: "2022-08-15T03:29:18.081Z"
 
   if (url === 'register') {
     initialValues = {

@@ -1,4 +1,4 @@
-import { AutoComplete } from 'antd';
+import { AutoComplete, Table } from 'antd';
 import styled from 'styled-components';
 
 const Nav = styled.nav`
@@ -90,12 +90,10 @@ const ASide = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  ${(props) => (props.isOpen
-    ? `
-    width:280px;
-    `
+  ${({ isOpen, theme: { sizes } }) => (isOpen
+    ? `width: ${sizes.MENU_WIDTH}px;`
     : `
-    width:80px;
+    width: ${sizes.COLLAPSED_MENU_WIDTH}px;
     `)}
   .side-content {
     height: 100%;
@@ -277,6 +275,61 @@ const ImagesWrapper = styled.div`
   }
 `;
 
+const StyledTable = styled(Table)`
+padding: 0 40px;
+thead > tr > th {
+  background-color: #89aaad33;
+}
+
+.ant-table-header {
+  border-radius: 20px 20px 0 0;
+}
+
+.ant-table-container {
+  border-radius: 20px 20px 0 0;
+  box-shadow: inset 0px -4px 12px rgba(0, 0, 0, 0.1);
+  width: 95%;
+  height: 95%;
+}
+
+.ant-table.ant-table-fixed-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ant-table-body::-webkit-scrollbar {
+  width: 20px;
+  height: 20px;
+}
+
+.ant-table-body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 14px 14px transparent;
+  border: solid 4px transparent;
+}
+
+.ant-table-body::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  box-shadow: inset 0 0 14px 14px #bbbbbe;
+  border: solid 9px transparent;
+}
+
+&& tbody > tr:hover > td {
+  background: rgba(137, 170, 173, 0.1);
+}
+`;
+
+const TableTitle = styled.p`
+font-size: 16px;
+color: #275c61;
+font-weight: bold;
+`;
+
+const TableContent = styled.p`
+font-size: 16px;
+color: #292929;
+`;
+
 export {
   Nav,
   ASide,
@@ -288,4 +341,7 @@ export {
   ImagesWrapper,
   AutoCompleteStyle,
   AutoCompleteContainer,
+  TableContent,
+  StyledTable,
+  TableTitle,
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { setPro } from '../../../state/upgrade';
+import { setPro } from '../../../state';
 import PRO from '../../../assets/svgs/PRO.svg';
 import '../../../styles/typography.css';
 import { UpgradeStyle } from './styles';
