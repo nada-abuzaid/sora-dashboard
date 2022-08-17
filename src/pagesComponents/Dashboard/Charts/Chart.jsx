@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Chart as ChartComponents } from 'primereact/chart';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import axios from 'axios';
 import ChartStyle from './style';
+import { getUserEngagements, getUserInterests, getHealthConditions } from '../../../services/callApi';
 
 export default function Chart({ type }) {
   const [featuresData, setFeaturesData] = useState([]);
@@ -17,9 +17,9 @@ export default function Chart({ type }) {
     setId(3);
     const fetchData = async () => {
       try {
-        const { data: { data: { company: { totalEngagements } } } } = await axios.get(`${process.env.REACT_APP_API_URL}/api/v1/companies/${id}/users-engagements`);
-        const { data: { data: { company: { totalInterests } } } } = await axios.get(`${process.env.REACT_APP_API_URL}/api/v1/companies/${id}/users-interests`);
-        const { data: { data: { company: { topThreeHealthConditions, allHealthConditions } } } } = await axios.get(`${process.env.REACT_APP_API_URL}/api/v1/companies/${id}/users-health-conditions`);
+        const totalEngagements = await getUserEngagements(id);
+        const totalInterests = await getUserInterests(id);
+        const { topThreeHealthConditions, allHealthConditions } = await getHealthConditions(id);
         setFeaturesData(totalEngagements);
         setInterestsData(totalInterests);
         setHealthConditionsData(allHealthConditions);
