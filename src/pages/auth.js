@@ -1,6 +1,6 @@
 import React from 'react';
 import { LeftPanel } from '../pagesComponents/Auth/LeftPanel';
-import { AuthLayout } from '../components';
+import { AuthLayout } from '../layouts';
 
 export default function Auth() {
   const url = window.location.search.substring(1);

@@ -29,19 +29,10 @@ const theme = {
     COLLAPSED_MENU_WIDTH: 80,
   },
   screens: {
-    // max width for mobile
     mobile: '600px',
-
-    // max width for tablet (portrait mode)
     tablet_portrait: '990px',
-
-    // max width for tablet (landscape mode)
     tablet_landscape: '1200px',
-
-    // max width for desktop
     desktop: '1440px',
-
-    // min width for desktop
     wide_screen: '1440px',
   },
 };

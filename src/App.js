@@ -4,14 +4,9 @@ import { Route, Routes } from 'react-router-dom';
 import { GlobalStyle } from './styles';
 import 'antd/dist/antd.min.css';
 import theme from './themes';
-import { DashboardLayout } from './components';
-import {
-  Contact,
-  Account,
-  Dashboard,
-  AdminDashboard,
-  Auth,
-} from './pages';
+import { DashboardLayout } from './layouts';
+import { Auth } from './pages';
+import routes from './utils/routes';
 
 export default function App() {
   return (
@@ -20,10 +15,24 @@ export default function App() {
       <Routes>
         <Route path="/auth" element={<Auth />} />
         <Route path="/" element={<DashboardLayout />}>
-          <Route index element={<Dashboard />} />
-          <Route path="/admin" element={<AdminDashboard />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/account" element={<Account />} />
+          {routes.map((route) => {
+            if (route.path === '') {
+              return (
+                <Route
+                  index
+                  key={route.key}
+                  element={<route.componentName />}
+                />
+              );
+            }
+            return (
+              <Route
+                key={route.key}
+                path={route.path}
+                element={<route.componentName />}
+              />
+            );
+          })}
         </Route>
       </Routes>
     </ThemeProvider>

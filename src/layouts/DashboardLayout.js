@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Outlet } from 'react-router-dom';
-import Sidebar from '../../pagesComponents/Dashboard/Sidebar';
-import Header from '../../pagesComponents/Dashboard/DashHeader';
-import { DashboardWrapper } from '../styled/LayoutStyles';
+import { DashboardWrapper } from '../components/styled/LayoutStyles';
+import Sidebar from '../pagesComponents/Dashboard/Sidebar';
+import Header from '../pagesComponents/Dashboard/DashHeader';
 
 export default function DashboardLayout() {
   const [isOpen, setisOpen] = useState(true);

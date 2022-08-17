@@ -4,10 +4,15 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { setLoading } from '../../state/loading';
-import { formatDate } from '../../utils';
+import formatDate from '../../utils/formatDate';
 import {
-  AutoCompleteStyle, AutoCompleteContainer, TableTitle, TableContent, StyledTable,
+  AutoCompleteStyle,
+  AutoCompleteContainer,
+  TableTitle,
+  TableContent,
+  StyledTable,
 } from '../Dashboard/styles';
+import { COMPANIES_DATA } from '../../utils/endpoints';
 
 export default function AdminTable() {
   const dispatch = useDispatch();
@@ -59,12 +64,9 @@ export default function AdminTable() {
       try {
         const {
           data: { data },
-        } = await axios.get(
-          `${process.env.REACT_APP_API_URL}/api/v1/companies`,
-          {
-            cancelToken: source.token,
-          },
-        );
+        } = await axios.get(`${COMPANIES_DATA}`, {
+          cancelToken: source.token,
+        });
         setDataSource(data);
         setOptions(data.map((company) => company.name));
         dispatch(setLoading({ loading: false }));
@@ -96,7 +98,9 @@ export default function AdminTable() {
       setFiltredDataSource(dataSource.sort((a, b) => a.name > b.name));
     } else if (value === 'Newest first') {
       setSort(value);
-      setFiltredDataSource(dataSource.sort((a, b) => a.timestamp > b.timestamp));
+      setFiltredDataSource(
+        dataSource.sort((a, b) => a.timestamp > b.timestamp),
+      );
     }
   };
 
@@ -120,15 +124,9 @@ export default function AdminTable() {
           }}
           onChange={handleSort}
         >
-          <Option value="Newest first">
-            Newest first
-          </Option>
-          <Option value="Oldesr first">
-            Oldesr first
-          </Option>
-          <Option value="From A to Z">
-            From A to Z
-          </Option>
+          <Option value="Newest first">Newest first</Option>
+          <Option value="Oldesr first">Oldesr first</Option>
+          <Option value="From A to Z">From A to Z</Option>
         </Select>
       </AutoCompleteContainer>
       <StyledTable

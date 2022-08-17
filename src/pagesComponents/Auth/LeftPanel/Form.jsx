@@ -4,7 +4,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 import {
   Form, FormField, SubmitButton, LoginButton,
 } from '../../../components';
-import { loginSchema, registerSchema } from '../../../utils';
+import { loginSchema, registerSchema } from '../../../utils/validation';
 import { LoginDiv, RegisterDiv } from './styles';
 
 export default function FormAuth() {
