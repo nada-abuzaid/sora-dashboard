@@ -1,5 +1,7 @@
-import { HEALTH_CONDITIONS, USER_ENGAGEMENTS, USER_INTERESTS } from '../api/endpoints';
-import axiosRequest from '../utils/http';
+import {
+  EMPLOYEES_GENDER, HEALTH_CONDITIONS, USER_ENGAGEMENTS, USER_INTERESTS,
+} from '../api/endpoints';
+import axiosRequest from '../http';
 
 export async function getUserEngagements(id) {
   const { data: { data: { company: { totalEngagements } } } } = await axiosRequest(`${USER_ENGAGEMENTS(id)}`, 'GET');
@@ -13,5 +15,10 @@ export async function getUserInterests(id) {
 
 export async function getHealthConditions(id) {
   const { data: { data: { company } } } = await axiosRequest(`${HEALTH_CONDITIONS(id)}`, 'GET');
+  return company;
+}
+
+export async function getEmployeesGender(id) {
+  const { data: { data: { company } } } = await axiosRequest(`${EMPLOYEES_GENDER(id)}`, 'GET');
   return company;
 }

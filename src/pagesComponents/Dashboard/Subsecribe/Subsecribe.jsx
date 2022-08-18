@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Modal from 'react-modal';
 import { AiOutlineClose } from 'react-icons/ai';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 import Title from '../../Auth/LeftPanel/Title';
 import Feature from './Feature';
 import { LeftStyle, StyledCloseButton } from './styles';
@@ -15,10 +14,10 @@ import scribble2 from '../../../assets/svgs/scribble2.svg';
 import scribble3 from '../../../assets/svgs/scribble3.svg';
 import scribble4 from '../../../assets/svgs/scribble4.svg';
 import { setPro } from '../../../state';
+import { Mailto } from '../../../components';
 
 export default function Subsecribe() {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const [modalIsOpen, setIsOpen] = useState(true);
   const closeModal = () => {
     setIsOpen(false);
@@ -54,20 +53,13 @@ export default function Subsecribe() {
               our certified Class I Medical Device App.
             </p>
             <p>
-              Contact us, if you want to subscribe to Premium and get more
-              useful health data about your employees.
+              Contact us on info@syronahealth.com, if you want to subscribe to
+              Premium and get more useful health data about your employees.
             </p>
             <div className="btn">
-              <button
-                type="button"
-                onClick={() => {
-                  closeModal();
-                  dispatch(setPro({ open: false }));
-                  navigate('/contact');
-                }}
-              >
+              <Mailto email="info@syronahealth.com" className="email">
                 Contact us
-              </button>
+              </Mailto>
             </div>
           </div>
           <img src={subsecibe} className="image" alt="Subsecibe" />

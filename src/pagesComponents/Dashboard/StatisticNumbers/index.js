@@ -1,28 +1,41 @@
-import axios from 'axios';
 import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getEmployeesGender } from '../../../services/callApi';
 import Statistic from './Statistic';
 import { StatisticsStyle } from './styles';
+import { setEmployees } from '../../../state';
 
 export default function Statistics() {
   const [data, setData] = React.useState([]);
-  const [employees, setEmployees] = React.useState(0);
+
+  const { employees, companyId } = useSelector(
+    (state) => state.employees.value,
+  );
+  const dispatch = useDispatch();
+
   useEffect(() => {
     const fetchData = async () => {
-      const { data: { data: { company: { employeesGender, employeesCount } } } } = await axios.get(`${process.env.REACT_APP_API_URL}/api/v1/companies/3/employees-gender`);
+      const { employeesGender, employeesCount } = await getEmployeesGender(companyId);
+      dispatch(setEmployees({ employees: employeesCount, companyId }));
       setData(employeesGender);
-      setEmployees(employeesCount);
     };
     fetchData();
-  }, []);
+  }, [companyId]);
 
   return (
-    <StatisticsStyle>
-      <Statistic number={employees} title="Employees" />
-      {
-      data.map(({ count, label }, index) => (
-        <Statistic key={index} number={count} title={label} />
-      ))
-      }
-    </StatisticsStyle>
+    <>
+      {companyId === 0 ? (
+        <>Loading...</>
+      ) : companyId !== 0 && employees ? (
+        <StatisticsStyle>
+          <Statistic number={employees} title="Employees" />
+          {data.map(({ count, label }, index) => (
+            <Statistic key={index} number={count} title={label} />
+          ))}
+        </StatisticsStyle>
+      ) : (
+        <></>
+      )}
+    </>
   );
 }

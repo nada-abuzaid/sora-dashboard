@@ -42,7 +42,7 @@ export default function Sidebar({ isOpen, setisOpen }) {
             </NavLink>
             <NavLink to="/account" className="side-menu-item">
               <img src={account} alt="Account" className="icon" />
-              <p>Account</p>
+              <p>Account settings</p>
             </NavLink>
             {
               dashboard !== 'admin' && (

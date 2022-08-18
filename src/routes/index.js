@@ -1,6 +1,6 @@
 import {
   Account, AdminDashboard, Contact, Dashboard,
-} from '../../pages';
+} from '../pages';
 
 const routes = [
   {

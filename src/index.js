@@ -11,6 +11,7 @@ import {
   dashboardReducer,
   tokenReducer,
   companiesReducer,
+  employeesReducer,
 } from './state';
 
 const store = configureStore({
@@ -20,6 +21,7 @@ const store = configureStore({
     dashboard: dashboardReducer,
     token: tokenReducer,
     companies: companiesReducer,
+    employees: employeesReducer,
   },
 });
 
