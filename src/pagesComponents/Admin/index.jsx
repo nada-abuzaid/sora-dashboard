@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { Select } from 'antd';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
@@ -12,7 +13,8 @@ import {
   TableContent,
   StyledTable,
 } from '../Dashboard/styles';
-import { COMPANIES_DATA } from '../../api/endpoints';
+// import { COMPANIES_DATA } from '../../api/endpoints';
+import Empty from '../Dashboard/Empty';
 
 export default function AdminTable() {
   const dispatch = useDispatch();
@@ -62,15 +64,13 @@ export default function AdminTable() {
     const fetchData = async () => {
       dispatch(setLoading({ loading: true }));
       try {
-        const {
-          data: { data },
-        } = await axios.get(`${COMPANIES_DATA}`, {
-          cancelToken: source.token,
-        });
-        setDataSource(data);
-        setOptions(data.map((company) => company.name));
+        // const {
+        //   data: { data },
+        // } = await axios.get(`${COMPANIES_DATA}`);
         dispatch(setLoading({ loading: false }));
-        return data;
+        // setDataSource(data);
+        setOptions(dataSource.map((company) => company.name));
+        return dataSource;
       } catch (error) {
         return error;
       }
@@ -106,38 +106,47 @@ export default function AdminTable() {
 
   return (
     <>
-      <AutoCompleteContainer>
-        <AutoCompleteStyle
-          onSearch={onSearchChange}
-          value={searchValue}
-          placeholder="Search"
-          onChange={handleChange}
-        />
-        <div className="icon">
-          <AiOutlineSearch />
-        </div>
-        <Select
-          labelInValue
-          defaultValue={{
-            value: '',
-            label: 'Sort by',
-          }}
-          onChange={handleSort}
-        >
-          <Option value="Newest first">Newest first</Option>
-          <Option value="Oldesr first">Oldesr first</Option>
-          <Option value="From A to Z">From A to Z</Option>
-        </Select>
-      </AutoCompleteContainer>
-      <StyledTable
-        columns={columns}
-        dataSource={!filtredDataSource.length ? dataSource : filtredDataSource}
-        scroll={{
-          y: 600,
-        }}
-        loading={loading}
-        pagination={false}
-      />
+      {
+      dataSource.length > 0 ? (
+        <>
+          <AutoCompleteContainer>
+            <AutoCompleteStyle
+              onSearch={onSearchChange}
+              value={searchValue}
+              placeholder="Search"
+              onChange={handleChange}
+            />
+            <div className="icon">
+              <AiOutlineSearch />
+            </div>
+            <Select
+              labelInValue
+              defaultValue={{
+                value: '',
+                label: 'Sort by',
+              }}
+              onChange={handleSort}
+            >
+              <Option value="Newest first">Newest first</Option>
+              <Option value="Oldesr first">Oldesr first</Option>
+              <Option value="From A to Z">From A to Z</Option>
+            </Select>
+          </AutoCompleteContainer>
+          <StyledTable
+            columns={columns}
+            dataSource={!filtredDataSource.length ? dataSource : filtredDataSource}
+            scroll={{
+              y: 600,
+            }}
+            loading={loading}
+            pagination={false}
+          />
+        </>
+      ) : (
+        <Empty />
+      )
+    }
+
     </>
   );
 }

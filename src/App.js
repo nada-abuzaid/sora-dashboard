@@ -6,7 +6,7 @@ import 'antd/dist/antd.min.css';
 import theme from './themes';
 import { DashboardLayout } from './layouts';
 import { Auth } from './pages';
-import routes from './utils/routes';
+import routes from './routes';
 
 export default function App() {
   return (

@@ -138,7 +138,7 @@ const LeftStyle = styled.div`
       .btn {
         width: 50%;
         padding: 0 2rem;
-        button {
+        a {
           background-color: ${({ theme: { colors } }) => colors.primary};
           color: ${({ theme: { colors } }) => colors.white};
           padding: 0.6rem;

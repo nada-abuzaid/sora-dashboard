@@ -59,6 +59,7 @@ const ContactStyle = styled.div`
   align-items: center;
   justify-content: space-around;
   padding: 2rem;
+  height: 80vh;
   p:first-child {
     font-family: "DM Serif Text", serif;
     font-size: 2rem;
