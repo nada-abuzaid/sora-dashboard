@@ -1,4 +1,4 @@
-import { BASE_URL } from '../config';
+import { BASE_URL } from '../../config';
 
 export const USER_URL = `${BASE_URL}/api/v1/auth/user`;
 

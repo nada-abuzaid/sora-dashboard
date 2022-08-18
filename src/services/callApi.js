@@ -1,4 +1,4 @@
-import { HEALTH_CONDITIONS, USER_ENGAGEMENTS, USER_INTERESTS } from '../utils/endpoints';
+import { HEALTH_CONDITIONS, USER_ENGAGEMENTS, USER_INTERESTS } from '../api/endpoints';
 import axiosRequest from '../utils/http';
 
 export async function getUserEngagements(id) {
