@@ -12,7 +12,7 @@ import {
   TableContent,
   StyledTable,
 } from '../Dashboard/styles';
-import { COMPANIES_DATA } from '../../utils/endpoints';
+import { COMPANIES_DATA } from '../../api/endpoints';
 
 export default function AdminTable() {
   const dispatch = useDispatch();
