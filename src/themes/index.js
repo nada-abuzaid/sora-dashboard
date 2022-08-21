@@ -4,6 +4,7 @@ const theme = {
     primaryDark: '#292929',
     primaryLight: '#FBFBFB',
     secondary: '#CCDDDE',
+    secondaryGreen: '#275C61',
     black: '#000',
     white: '#fff',
     accordion: '#F6F6F6',

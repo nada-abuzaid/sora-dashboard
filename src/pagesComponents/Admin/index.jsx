@@ -4,6 +4,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { AiOutlineSearch } from 'react-icons/ai';
+import PropTypes from 'prop-types';
 import { setLoading } from '../../state/loading';
 import formatDate from '../../utils/formatDate';
 import {
@@ -16,7 +17,7 @@ import {
 // import { COMPANIES_DATA } from '../../api/endpoints';
 import Empty from '../Dashboard/Empty';
 
-export default function AdminTable() {
+export default function AdminTable({ setIsOpen, isOpen }) {
   const dispatch = useDispatch();
   const [dataSource, setDataSource] = useState([]);
   const [filtredDataSource, setFiltredDataSource] = useState([]);
@@ -143,10 +144,14 @@ export default function AdminTable() {
           />
         </>
       ) : (
-        <Empty />
+        <Empty page="admin" isOpen={isOpen} setIsOpen={setIsOpen} />
       )
     }
-
     </>
   );
 }
+
+AdminTable.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  setIsOpen: PropTypes.func.isRequired,
+};

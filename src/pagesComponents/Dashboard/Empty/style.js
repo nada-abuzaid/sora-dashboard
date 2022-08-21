@@ -6,6 +6,7 @@ const EmptySection = styled.div`
   align-items: center;
   justify-content: center;
   height: 80vh;
+  gap: 1rem;
   .title {
     font-family: "DM Serif Text", sans-serif;
     font-size: 2rem;
@@ -17,6 +18,15 @@ const EmptySection = styled.div`
   img {
     width: 70%;
     margin-top: 2rem;
+  }
+  button{
+    background-color: ${({ theme: { colors } }) => colors.secondaryGreen};
+    color:  ${({ theme: { colors } }) => colors.white};
+    padding: 1rem 4rem;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
   }
 `;
 
