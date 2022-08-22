@@ -2,10 +2,11 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Auth0Provider } from '@auth0/auth0-react';
 import propTypes from 'prop-types';
+import { DOMAIN, CLIENT_ID } from '../config';
 
 export default function Auth0ProviderFunc({ children }) {
-  const domain = process.env.REACT_APP_AUTH0_DOMAIN;
-  const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
+  const domain = DOMAIN;
+  const clientId = CLIENT_ID;
 
   const navigate = useNavigate();
 

@@ -2,8 +2,9 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
 import {
-  Form, FormField, SubmitButton, LoginButton,
-} from '../../../components';
+  Form, FormField, SubmitButton,
+} from '../..';
+import LoginButton from '../loginButton';
 import { loginSchema, registerSchema } from '../../../utils/validation';
 import { LoginDiv, RegisterDiv } from './styles';
 

@@ -10,7 +10,7 @@ import close from '../../assets/svgs/close.svg';
 import menu from '../../assets/svgs/Menu.svg';
 import account from '../../assets/svgs/Account.svg';
 import contact from '../../assets/svgs/contact-form.svg';
-import { LogoutButton } from '../../components/Auths';
+import LogoutButton from '../Auth/logoutButton';
 import { Background, ASide } from './styles';
 import '../../styles/typography.css';
 

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import AdminTable from '../pagesComponents/Admin';
-import { setDashboard } from '../state';
-import Form from '../pagesComponents/Admin/Form';
+import Form from '../components/Admin/Form';
+import AdminTable from '../components/Admin';
+import { setDashboard } from '../store';
 
 function AdminDashboard() {
   const [isOpen, setIsOpen] = useState(false);

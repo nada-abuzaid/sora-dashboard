@@ -7,11 +7,17 @@ import {
 export default function Slide({
   image1, image2, title, paragraph,
 }) {
+  const images = [
+    image1,
+    image2,
+  ];
+
   return (
     <SlideWrapper>
       <ImagesWrapper className="images">
-        <img src={image1} alt="Popup" className="popup1" />
-        <img src={image2} alt="Popup" className="popup2" />
+        {
+          images.map((item, index) => <img src={item} alt="Popup" className={`popup${index + 1}`} />)
+        }
       </ImagesWrapper>
       <SlideTitle>{title}</SlideTitle>
       <SlideParagraph>

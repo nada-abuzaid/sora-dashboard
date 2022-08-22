@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Field } from 'formik';
 import { Datastyle } from './style';
 import UserData from './UserData';
-import { Form } from '../../components';
+import { Form } from '..';
 
 export default function Data({
   name, email, password, isEdit, setIsEdit,
