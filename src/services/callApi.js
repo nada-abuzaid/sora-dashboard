@@ -1,24 +1,48 @@
-import {
-  EMPLOYEES_GENDER, HEALTH_CONDITIONS, USER_ENGAGEMENTS, USER_INTERESTS,
-} from '../api/endpoints';
 import axiosRequest from '../http';
+import { BASE_URL } from '../config';
 
-export async function getUserEngagements(id) {
-  const { data: { data: { company: { totalEngagements } } } } = await axiosRequest(`${USER_ENGAGEMENTS(id)}`, 'GET');
-  return totalEngagements;
+// Endpoints
+const COMPANIES_DATA = `${BASE_URL}/api/v1/companies`;
+const COMPANY_DATA = (id) => `${COMPANIES_DATA}/${id}`;
+const USER_ENGAGEMENTS_DATA = (id) => `${COMPANY_DATA(id)}/users-engagements`;
+const USER_INTERESTS_DATA = (id) => `${COMPANY_DATA(id)}/users-interests`;
+const HEALTH_CONDITIONS_DATA = (id) => `${COMPANY_DATA(id)}/users-health-conditions`;
+const EMPLOYEES_GENDER_DATA = (id) => `${COMPANY_DATA(id)}/employees-gender`;
+
+// const USER_ENGAGEMENTS_DATA = [];
+
+// Axios Requests
+async function getUserEngagements(id) {
+  try {
+    const { data: { data: { company: { totalEngagements } } } } = await axiosRequest(`${USER_ENGAGEMENTS_DATA(id)}`, 'GET');
+    return totalEngagements;
+  } catch (error) {
+    return [];
+  }
 }
 
-export async function getUserInterests(id) {
-  const { data: { data: { company: { totalInterests } } } } = await axiosRequest(`${USER_INTERESTS(id)}`, 'GET');
-  return totalInterests;
+async function getUserInterests(id) {
+  try {
+    const { data: { data: { company: { totalInterests } } } } = await axiosRequest(`${USER_INTERESTS_DATA(id)}`, 'GET');
+    return totalInterests;
+  } catch (error) {
+    return [];
+  }
 }
 
-export async function getHealthConditions(id) {
-  const { data: { data: { company } } } = await axiosRequest(`${HEALTH_CONDITIONS(id)}`, 'GET');
+async function getHealthConditions(id) {
+  const { data: { data: { company } } } = await axiosRequest(`${HEALTH_CONDITIONS_DATA(id)}`, 'GET');
   return company;
 }
 
-export async function getEmployeesGender(id) {
-  const { data: { data: { company } } } = await axiosRequest(`${EMPLOYEES_GENDER(id)}`, 'GET');
+async function getEmployeesGender(id) {
+  const { data: { data: { company } } } = await axiosRequest(`${EMPLOYEES_GENDER_DATA(id)}`, 'GET');
   return company;
 }
+
+export {
+  getEmployeesGender,
+  getUserEngagements,
+  getUserInterests,
+  getHealthConditions,
+};

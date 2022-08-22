@@ -1,5 +1,5 @@
 import React from 'react';
-import { LeftPanel } from '../pagesComponents/Auth/LeftPanel';
+import { LeftPanel } from '../components/Auth/LeftPanel';
 import { AuthLayout } from '../layouts';
 
 export default function Auth() {

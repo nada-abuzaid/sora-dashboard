@@ -13,8 +13,8 @@ import scribble1 from '../../../assets/svgs/scribble1.svg';
 import scribble2 from '../../../assets/svgs/scribble2.svg';
 import scribble3 from '../../../assets/svgs/scribble3.svg';
 import scribble4 from '../../../assets/svgs/scribble4.svg';
-import { setPro } from '../../../state';
-import { Mailto } from '../../../components';
+import { setPro } from '../../../store';
+import { Mailto } from '../..';
 
 export default function Subsecribe() {
   const dispatch = useDispatch();
@@ -33,6 +33,8 @@ export default function Subsecribe() {
     'Personalised content',
     'Chat sessions with experts',
   ].map((feature, index) => ({ id: index, name: feature }));
+
+  const scribblesImages = [scribble1, scribble2, scribble3, scribble4];
 
   return (
     <Modal
@@ -86,10 +88,9 @@ export default function Subsecribe() {
           <button type="button" onClick={closeModal} className="close-btn">
             <AiOutlineClose />
           </button>
-          <img src={scribble1} alt="scribble" className="scribble" />
-          <img src={scribble2} alt="scribble" className="scribble" />
-          <img src={scribble3} alt="scribble" className="scribble" />
-          <img src={scribble4} alt="scribble" className="scribble" />
+          {scribblesImages.map((image) => (
+            <img src={image} alt="scribble" className="scribble" />
+          ))}
         </div>
       </LeftStyle>
     </Modal>

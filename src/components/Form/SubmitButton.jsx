@@ -1,7 +1,7 @@
 import { useFormikContext } from 'formik';
 import React from 'react';
 import PropTypes from 'prop-types';
-import { SubmitStyle } from '../styled/FormStyles';
+import { SubmitStyle } from '../../styles/FormStyle';
 
 export default function SubmitButton({ title, ...args }) {
   const { handleSubmit, isValid } = useFormikContext();

@@ -19,7 +19,8 @@
       "no-param-reassign": "off",
       "react/jsx-no-useless-fragment": "off",
       "import/no-unresolved": "off",
-      "react/no-array-index-key" : "off"
+      "react/no-array-index-key" : "off",
+      "react/prop-types": "off"
     }
   }
   

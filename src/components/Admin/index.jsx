@@ -4,7 +4,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { AiOutlineSearch } from 'react-icons/ai';
-import { setLoading } from '../../state/loading';
+import { setLoading } from '../../store/loading';
 import formatDate from '../../utils/formatDate';
 import {
   AutoCompleteStyle,
