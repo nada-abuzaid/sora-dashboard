@@ -1,5 +1,5 @@
 import Header from './Header';
-import Mailto from './SendEmail';
+import Mailto from './Mailto';
 import {
   FormField, SubmitButton, Form, TextError,
 } from './Form';

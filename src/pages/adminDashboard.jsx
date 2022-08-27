@@ -13,9 +13,7 @@ function AdminDashboard() {
 
   return (
     <>
-      {
-      isOpen && <Form />
-    }
+      {isOpen && <Form />}
       <AdminTable setIsOpen={setIsOpen} isOpen={isOpen} />
     </>
   );

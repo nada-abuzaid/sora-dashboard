@@ -1,5 +1,6 @@
 import axiosRequest from '../http';
 import { BASE_URL } from '../config';
+import companies from '../companies';
 
 // Endpoints
 const COMPANIES_DATA = `${BASE_URL}/api/v1/companies`;
@@ -9,9 +10,14 @@ const USER_INTERESTS_DATA = (id) => `${COMPANY_DATA(id)}/users-interests`;
 const HEALTH_CONDITIONS_DATA = (id) => `${COMPANY_DATA(id)}/users-health-conditions`;
 const EMPLOYEES_GENDER_DATA = (id) => `${COMPANY_DATA(id)}/employees-gender`;
 
-// const USER_ENGAGEMENTS_DATA = [];
-
 // Axios Requests
+
+async function getCompaniesData() {
+  return companies;
+  // const { data: { data } } = await axiosRequest(`${COMPANIES_DATA}`);
+  // return data;
+}
+
 async function getUserEngagements(id) {
   try {
     const { data: { data: { company: { totalEngagements } } } } = await axiosRequest(`${USER_ENGAGEMENTS_DATA(id)}`, 'GET');
@@ -45,4 +51,5 @@ export {
   getUserEngagements,
   getUserInterests,
   getHealthConditions,
+  getCompaniesData,
 };

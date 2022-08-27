@@ -31,6 +31,9 @@ const AutoCompleteStyle = styled(AutoComplete)`
     display: flex;
     align-items: center;
     justify-content: center;
+    .ant-select-selector:focus{
+      border-color: ${({ theme: { colors } }) => colors.primary};
+    }
     span {
       display: flex;
       align-items: center;
@@ -47,7 +50,7 @@ const AutoCompleteContainer = styled.div`
   position: fixed;
   justify-content: center;
   align-items: center;
-  z-index: 20;
+  z-index: 11;
   top: 0.7rem;
   width: 40%;
   font-size: 1.3rem;
@@ -60,20 +63,6 @@ const AutoCompleteContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  .ant-select.ant-select-single.ant-select-show-arrow{
-    margin-left: 1rem;
-    height: 2.5rem !important;
-    width: 50%;
-    div {
-      height: 2.5rem;
-      display: flex;
-      align-items: center;
-      .ant-select-selection-search, .ant-select-selection-item{
-        height: 2.5rem;
-        border: red;
-      }
-    }
   }
 `;
 

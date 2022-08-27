@@ -6,7 +6,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { AiOutlineSearch } from 'react-icons/ai';
 import PropTypes from 'prop-types';
 import { setLoading } from '../../store/loading';
-import formatDate from '../../utils/formatDate';
 import {
   AutoCompleteStyle,
   AutoCompleteContainer,
@@ -14,8 +13,12 @@ import {
   TableContent,
   StyledTable,
 } from '../Dashboard/styles';
-// import { COMPANIES_DATA } from '../../api/endpoints';
+import { getCompaniesData } from '../../services/callApi';
 import Empty from '../Dashboard/Empty';
+import Upload from './Upload';
+import Actions from './Actions';
+import Subscription from './Subscription';
+import Header from './Header';
 
 export default function AdminTable({ setIsOpen, isOpen }) {
   const dispatch = useDispatch();
@@ -26,36 +29,50 @@ export default function AdminTable({ setIsOpen, isOpen }) {
   const [searchValue, setSearchValue] = useState('');
   const { loading } = useSelector((state) => state.loading.value);
 
-  const { Option } = Select;
-
   const columns = [
     {
-      title: <TableTitle>Company Name</TableTitle>,
+      title: <TableTitle>Name</TableTitle>,
       dataIndex: 'name',
       key: '0',
-      width: 200,
+      width: 100,
       render: (text) => <TableContent>{text}</TableContent>,
     },
     {
-      title: <TableTitle>Number of employees</TableTitle>,
-      dataIndex: 'registeredEmployees',
+      title: <TableTitle>Email addresses</TableTitle>,
+      dataIndex: 'email',
       key: '1',
-      width: 150,
+      width: 120,
       render: (text) => <TableContent>{text}</TableContent>,
     },
     {
-      title: <TableTitle>Date of entry</TableTitle>,
-      dataIndex: 'timestamp',
+      title: <TableTitle>Coins bonus</TableTitle>,
+      dataIndex: 'coins',
       key: '2',
-      width: 150,
-      render: (text) => <TableContent>{formatDate(text)}</TableContent>,
+      width: 70,
+      render: (text) => <TableContent>{text}</TableContent>,
     },
     {
-      title: <TableTitle>Company ID</TableTitle>,
-      dataIndex: 'uniqueCode',
+      title: <TableTitle>Employees allowed</TableTitle>,
+      dataIndex: 'allowedEmployees',
       key: '3',
-      width: 150,
+      width: 70,
       render: (text) => <TableContent>{text}</TableContent>,
+    }, {
+      title: <TableTitle>Subscription type</TableTitle>,
+      dataIndex: 'subscriptionType',
+      key: '4',
+      width: 70,
+      render: (text) => <Subscription type={text} />,
+    }, {
+      title: <TableTitle>Manage details</TableTitle>,
+      key: '5',
+      width: 80,
+      render: (record) => (
+        <Actions
+          item={record}
+          setDataSource={setDataSource}
+        />
+      ),
     },
   ];
 
@@ -65,11 +82,9 @@ export default function AdminTable({ setIsOpen, isOpen }) {
     const fetchData = async () => {
       dispatch(setLoading({ loading: true }));
       try {
-        // const {
-        //   data: { data },
-        // } = await axios.get(`${COMPANIES_DATA}`);
+        const data = await getCompaniesData();
         dispatch(setLoading({ loading: false }));
-        // setDataSource(data);
+        setDataSource(data);
         setOptions(dataSource.map((company) => company.name));
         return dataSource;
       } catch (error) {
@@ -93,23 +108,16 @@ export default function AdminTable({ setIsOpen, isOpen }) {
     setFiltredDataSource(filteredData);
   };
 
-  const handleSort = ({ value }) => {
-    if (value === 'From A to Z') {
-      setSort(value);
-      setFiltredDataSource(dataSource.sort((a, b) => a.name > b.name));
-    } else if (value === 'Newest first') {
-      setSort(value);
-      setFiltredDataSource(
-        dataSource.sort((a, b) => a.timestamp > b.timestamp),
-      );
-    }
-  };
-
   return (
     <>
-      {
-      dataSource.length > 0 ? (
+      {dataSource.length > 0 ? (
         <>
+          <Header
+            setSort={setSort}
+            setFiltredDataSource={setFiltredDataSource}
+            dataSource={dataSource}
+            setIsOpen={setIsOpen}
+          />
           <AutoCompleteContainer>
             <AutoCompleteStyle
               onSearch={onSearchChange}
@@ -120,22 +128,12 @@ export default function AdminTable({ setIsOpen, isOpen }) {
             <div className="icon">
               <AiOutlineSearch />
             </div>
-            <Select
-              labelInValue
-              defaultValue={{
-                value: '',
-                label: 'Sort by',
-              }}
-              onChange={handleSort}
-            >
-              <Option value="Newest first">Newest first</Option>
-              <Option value="Oldesr first">Oldesr first</Option>
-              <Option value="From A to Z">From A to Z</Option>
-            </Select>
           </AutoCompleteContainer>
           <StyledTable
             columns={columns}
-            dataSource={!filtredDataSource.length ? dataSource : filtredDataSource}
+            dataSource={
+              !filtredDataSource.length ? dataSource : filtredDataSource
+            }
             scroll={{
               y: 600,
             }}
@@ -145,8 +143,7 @@ export default function AdminTable({ setIsOpen, isOpen }) {
         </>
       ) : (
         <Empty page="admin" isOpen={isOpen} setIsOpen={setIsOpen} />
-      )
-    }
+      )}
     </>
   );
 }
