@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { DashboardWrapper } from '../components/styled/LayoutStyles';
+import { DashboardWrapper } from './styles';
 import Sidebar from '../components/Dashboard/Sidebar';
 import Header from '../components/Dashboard/DashHeader';
-import Subsecribe from '../components/Dashboard/Subsecribe/Subsecribe';
+import Subsecribe from '../components/Subsecribe/Subsecribe';
 
 export default function DashboardLayout() {
   const [isOpen, setisOpen] = useState(true);

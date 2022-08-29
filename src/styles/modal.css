@@ -150,3 +150,7 @@ input.emails {
   z-index: 10;
   opacity: 1;
 }
+
+.ant-notification .ant-notification-topRight{
+  z-index: 100;
+}

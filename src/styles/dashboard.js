@@ -30,18 +30,6 @@ const AccountStyle = styled.div`
   }
 `;
 
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  width: 90%;
-  gap: 2rem;
-  position: relative;
-  @media only screen and (max-width: 900px) {
-    flex-direction: column;
-    width: 100%;
-  }
-`;
-
 const CoinsStyle = styled.div`
   display: flex;
   flex-direction: row;
@@ -82,5 +70,5 @@ const ContactStyle = styled.div`
 `;
 
 export {
-  AccountStyle, Wrapper, CoinsStyle, ContactStyle,
+  AccountStyle, CoinsStyle, ContactStyle,
 };

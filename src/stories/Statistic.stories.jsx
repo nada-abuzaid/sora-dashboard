@@ -1,5 +1,5 @@
 import React from 'react';
-import Statistic from '../pagesComponents/Dashboard/StatisticNumbers/Statistic';
+import Statistic from '../components/Dashboard/StatisticNumbers/Statistic';
 
 export default {
   title: 'Components/Statictics',
@@ -9,6 +9,8 @@ export default {
   },
 };
 
-const Template = (args) => <Statistic {...args} />;
+function Template(args) {
+  return <Statistic {...args} />;
+}
 
 export const Statistiic = Template.bind({});

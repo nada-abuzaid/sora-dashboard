@@ -9,6 +9,8 @@ export default {
   },
 };
 
-const Template = () => <Header />;
+function Template() {
+  return <Header />;
+}
 
 export const AuthHeader = Template.bind({});

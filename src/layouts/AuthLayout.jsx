@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Header from '../components/Header';
-import { Main } from '../components/styled/LayoutStyles';
+import Header from '../components/Common/Header';
+import { Main } from './styles';
 import MobileScreen from '../components/Auth/RightPanel';
 
 export default function AuthLayout({ children }) {

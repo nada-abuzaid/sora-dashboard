@@ -1,6 +1,6 @@
 import GlobalStyle from './Global';
 import {
-  AccountStyle, Wrapper, CoinsStyle, ContactStyle,
+  AccountStyle, CoinsStyle, ContactStyle,
 } from './dashboard';
 import {
   FieldStyle, SubmitStyle, TextErrorStyle, FieldWrapper,
@@ -9,7 +9,6 @@ import {
 export {
   GlobalStyle,
   AccountStyle,
-  Wrapper,
   CoinsStyle,
   ContactStyle,
   FieldStyle,

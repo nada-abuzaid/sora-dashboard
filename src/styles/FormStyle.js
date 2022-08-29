@@ -61,7 +61,8 @@ const SubmitStyle = styled.div`
 
 const TextErrorStyle = styled.div`
   color: ${({ theme: { colors } }) => colors.error};
-  font-size: 0.8rem;
+  font-size: 0.9rem;
+  font-family: "Nunito", sans-serif;
 `;
 
 export {

@@ -3,7 +3,7 @@ import { BASE_URL } from '../config';
 import companies from '../companies';
 
 // Endpoints
-const COMPANIES_DATA = `${BASE_URL}/api/v1/companies`;
+export const COMPANIES_DATA = `${BASE_URL}/api/v1/companies`;
 const COMPANY_DATA = (id) => `${COMPANIES_DATA}/${id}`;
 const USER_ENGAGEMENTS_DATA = (id) => `${COMPANY_DATA(id)}/users-engagements`;
 const USER_INTERESTS_DATA = (id) => `${COMPANY_DATA(id)}/users-interests`;

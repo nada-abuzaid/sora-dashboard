@@ -1,12 +1,14 @@
 import React from 'react';
-import Title from '../pagesComponents/auth/LeftPanel/Title';
+import Title from '../components/Auth/LeftPanel/Title';
 
 export default {
   title: 'Components/Title',
   component: Title,
 };
 
-const Template = (args) => <Title {...args} />;
+function Template(args) {
+  return <Title {...args} />;
+}
 
 export const AuthTitle = Template.bind({});
 AuthTitle.args = {

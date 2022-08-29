@@ -26,7 +26,7 @@ export default function Actions({ setDataSource, item }) {
       )}
 
       {isEditing && (
-        <Form type="Edit" editedCompany={editedCompany} setIsEdit={setIsEdit} />
+        <Form type="Edit" editedCompany={editedCompany} setIsEdit={setIsEdit} isEdit={isEditing} />
       )}
 
       {isUpload && <DragDrop setIsUpload={setIsUpload} />}
@@ -42,7 +42,7 @@ export default function Actions({ setDataSource, item }) {
         <Icon
           onClick={() => {
             setDeletedCompany(item);
-            setIsDelete(true);
+            setIsDelete(!isDelete);
           }}
         >
           <RiDeleteBinLine />

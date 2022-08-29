@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-import { Select } from 'antd';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -14,11 +12,11 @@ import {
   StyledTable,
 } from '../Dashboard/styles';
 import { getCompaniesData } from '../../services/callApi';
-import Empty from '../Dashboard/Empty';
-import Upload from './Upload';
 import Actions from './Actions';
 import Subscription from './Subscription';
 import Header from './Header';
+import Empty from '../Empty';
+import Emails from './Emails';
 
 export default function AdminTable({ setIsOpen, isOpen }) {
   const dispatch = useDispatch();
@@ -42,7 +40,8 @@ export default function AdminTable({ setIsOpen, isOpen }) {
       dataIndex: 'email',
       key: '1',
       width: 120,
-      render: (text) => <TableContent>{text}</TableContent>,
+      render: (text) => <Emails setIsOpen={setIsOpen} emails={text} />
+      ,
     },
     {
       title: <TableTitle>Coins bonus</TableTitle>,
@@ -57,21 +56,20 @@ export default function AdminTable({ setIsOpen, isOpen }) {
       key: '3',
       width: 70,
       render: (text) => <TableContent>{text}</TableContent>,
-    }, {
+    },
+    {
       title: <TableTitle>Subscription type</TableTitle>,
       dataIndex: 'subscriptionType',
       key: '4',
       width: 70,
       render: (text) => <Subscription type={text} />,
-    }, {
+    },
+    {
       title: <TableTitle>Manage details</TableTitle>,
       key: '5',
       width: 80,
       render: (record) => (
-        <Actions
-          item={record}
-          setDataSource={setDataSource}
-        />
+        <Actions item={record} setDataSource={setDataSource} />
       ),
     },
   ];
@@ -117,6 +115,7 @@ export default function AdminTable({ setIsOpen, isOpen }) {
             setFiltredDataSource={setFiltredDataSource}
             dataSource={dataSource}
             setIsOpen={setIsOpen}
+            isOpen={isOpen}
           />
           <AutoCompleteContainer>
             <AutoCompleteStyle

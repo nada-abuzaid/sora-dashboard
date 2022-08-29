@@ -2,7 +2,7 @@ import React from 'react';
 import { FileUploader } from 'react-drag-drop-files';
 import { AiOutlineClose } from 'react-icons/ai';
 import Modal from 'react-modal';
-import useUpload from '../../../hooks/useModal';
+import useUpload from '../../../hooks/useUpload';
 import handler from './handler';
 import {
   P, Desc, Submit, Div,

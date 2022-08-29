@@ -2,7 +2,7 @@ const companies = [
   {
     name: 'Plambee',
     uniqueCode: 'a5b1e1',
-    email: 'akeeney0@g.co',
+    email: 'akeeney0@g.co, na@gmail.com, jg@gmail.com',
     allowedEmployees: 100,
     registeredEmployees: 11,
     subscriptionType: '1',
@@ -11,7 +11,7 @@ const companies = [
   {
     name: 'Wordpedia',
     uniqueCode: '47d45f',
-    email: 'jgong1@constantcontact.com',
+    email: 'jgong1@contact.com, jgong1@contact.com',
     allowedEmployees: 200,
     registeredEmployees: 8,
     subscriptionType: '2',

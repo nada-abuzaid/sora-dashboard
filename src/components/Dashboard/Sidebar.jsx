@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import logoutImg from '../../assets/svgs/Logout.svg';
 import logo from '../../assets/svgs/syrona.svg';
 import AppLogo from '../../assets/svgs/AppLogo.svg';
-import Upgrade from './Subsecribe/Upgrade';
+import Upgrade from '../Subsecribe/Upgrade';
 import close from '../../assets/svgs/close.svg';
 import menu from '../../assets/svgs/Menu.svg';
 import account from '../../assets/svgs/Account.svg';
