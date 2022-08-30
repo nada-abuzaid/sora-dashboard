@@ -58,7 +58,7 @@ export default function Chart({ type }) {
           <p className="topThree-title">Top 3 Health conditions</p>
           {
             topHealthConditionsData.map(({ label, percentage }, index) => (
-              <div className="topthree-item">
+              <div className="topthree-item" key={index}>
                 {' '}
                 <span className="top-number">
                   {' '}

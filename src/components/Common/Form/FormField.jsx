@@ -38,11 +38,11 @@ FormField.propTypes = {
   placeholder: PropTypes.string,
   name: PropTypes.string.isRequired,
   type: PropTypes.string,
-  errors: PropTypes.string,
+  errors: PropTypes.shape({}),
 };
 
 FormField.defaultProps = {
   type: 'text',
-  errors: '',
+  errors: {},
   placeholder: '',
 };

@@ -9,16 +9,16 @@ import { Container, Row } from './styles';
 export default function AddForm({
   type = 'Add',
   editedCompany,
-  setIsEdit,
   isOpen,
   setIsOpen,
-  isEdit,
+  setAction,
+  action,
 }) {
   const [subType, setType] = useState('');
 
   const closeModal = () => {
     if (type === 'Edit') {
-      setIsEdit(!isEdit);
+      setAction({ ...action, isEditing: !action.isEditing });
     } else {
       setIsOpen(!isOpen);
     }
@@ -52,7 +52,7 @@ export default function AddForm({
 
   return (
     <Modal
-      isOpen={isOpen || isEdit}
+      isOpen={isOpen || action.isEditing}
       className="modal employer-modal"
       onRequestClose={closeModal}
       overlayClassName="overlay"

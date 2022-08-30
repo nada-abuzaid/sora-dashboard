@@ -16,7 +16,7 @@ export default function Slide({
     <SlideWrapper>
       <ImagesWrapper className="images">
         {
-          images.map((item, index) => <img src={item} alt="Popup" className={`popup${index + 1}`} />)
+          images.map((item, index) => <img src={item} alt="Popup" className={`popup${index + 1}`} key={index} />)
         }
       </ImagesWrapper>
       <SlideTitle>{title}</SlideTitle>

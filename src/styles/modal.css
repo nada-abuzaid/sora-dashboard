@@ -154,3 +154,8 @@ input.emails {
 .ant-notification .ant-notification-topRight{
   z-index: 100;
 }
+
+input#email{
+  width: 95%;
+  margin-top: 0.3rem;
+}

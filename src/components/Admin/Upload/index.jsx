@@ -1,20 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FileUploader } from 'react-drag-drop-files';
 import { AiOutlineClose } from 'react-icons/ai';
 import Modal from 'react-modal';
-import useUpload from '../../../hooks/useUpload';
 import handler from './handler';
 import {
   P, Desc, Submit, Div,
 } from './styles';
 
-function DragDrop({ setIsUpload }) {
-  const [modalIsOpen, isFile, handleChange, closeModal] = useUpload({
-    setIsUpload,
-  });
+function DragDrop({ setAction, action }) {
+  const [isFile, setFile] = useState(null);
+
+  const handleChange = (file) => {
+    setFile(file);
+  };
+
+  const closeModal = () => {
+    setAction({ ...action, isUpload: !action.isUpload });
+  };
+
   return (
     <Modal
-      isOpen={modalIsOpen}
+      isOpen={action.isUpload}
       className="modal upload-files"
       onRequestClose={closeModal}
       overlayClassName="overlay"

@@ -22,7 +22,6 @@ export default function AdminTable({ setIsOpen, isOpen }) {
   const dispatch = useDispatch();
   const [dataSource, setDataSource] = useState([]);
   const [filtredDataSource, setFiltredDataSource] = useState([]);
-  const [setOptions] = useState([]);
   const [sort, setSort] = useState('');
   const [searchValue, setSearchValue] = useState('');
   const { loading } = useSelector((state) => state.loading.value);
@@ -83,7 +82,6 @@ export default function AdminTable({ setIsOpen, isOpen }) {
         const data = await getCompaniesData();
         dispatch(setLoading({ loading: false }));
         setDataSource(data);
-        setOptions(dataSource.map((company) => company.name));
         return dataSource;
       } catch (error) {
         return error;

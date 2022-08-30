@@ -5,43 +5,43 @@ import Confirmation from '../Confirmation';
 import Form from '../Form';
 import DragDrop from '../Upload';
 import { ActionsWrapper, Icon } from './styles';
-import useModal from '../../../hooks/useModal';
 
 export default function Actions({ setDataSource, item }) {
   const [deletedCompany, setDeletedCompany] = useState({});
   const [editedCompany, setEditedCompany] = useState({});
-  const [isEditing, setIsEdit] = useState(false);
-  const [isUpload, setIsUpload] = useState(false);
-  const [closeModal, setIsDelete, isDelete] = useModal();
+  const [action, setAction] = useState({
+    isEditing: false,
+    isDelete: false,
+    isUpload: false,
+  });
 
   const handleDelete = () => {
     setDataSource((pre) => pre.filter(
       (employer) => employer.uniqueCode !== deletedCompany.uniqueCode,
     ));
-    closeModal();
+    setAction({ ...action, isDelete: !action.isDelete });
   };
 
   return (
     <>
-      {isDelete && (
+      {action.isDelete && (
         <Confirmation
           handleDelete={handleDelete}
-          closeModal={closeModal}
-          isDelete={isDelete}
-          setIsDelete={setIsDelete}
+          action={action}
+          setAction={setAction}
         />
       )}
 
-      {isEditing && (
-        <Form type="Edit" editedCompany={editedCompany} setIsEdit={setIsEdit} isEdit={isEditing} />
+      {action.isEditing && (
+        <Form type="Edit" editedCompany={editedCompany} action={action} setAction={setAction} />
       )}
 
-      {isUpload && <DragDrop setIsUpload={setIsUpload} />}
+      {action.isUpload && <DragDrop setAction={setAction} action={action} />}
       <ActionsWrapper>
         <Icon
           onClick={() => {
             setEditedCompany(item);
-            setIsEdit(!isEditing);
+            setAction({ ...action, isEditing: !action.isEditing });
           }}
         >
           <MdOutlineEdit />
@@ -49,12 +49,12 @@ export default function Actions({ setDataSource, item }) {
         <Icon
           onClick={() => {
             setDeletedCompany(item);
-            setIsDelete(!isDelete);
+            setAction({ ...action, isDelete: !action.isDelete });
           }}
         >
           <RiDeleteBinLine />
         </Icon>
-        <Icon onClick={() => setIsUpload(true)}>
+        <Icon onClick={() => setAction({ ...action, isUpload: !action.isUpload })}>
           <MdUploadFile />
         </Icon>
       </ActionsWrapper>

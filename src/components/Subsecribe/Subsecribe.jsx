@@ -88,8 +88,8 @@ export default function Subsecribe() {
           <button type="button" onClick={closeModal} className="close-btn">
             <AiOutlineClose />
           </button>
-          {scribblesImages.map((image) => (
-            <img src={image} alt="scribble" className="scribble" />
+          {scribblesImages.map((image, index) => (
+            <img src={image} alt="scribble" className="scribble" key={index} />
           ))}
         </div>
       </LeftStyle>

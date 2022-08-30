@@ -126,6 +126,7 @@ export default function ChartsData() {
       },
     },
   };
+
   return [
     chartData,
     lightOptions,

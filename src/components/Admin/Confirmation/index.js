@@ -5,11 +5,14 @@ import { P, Button, Actions } from './styles';
 import ConfirmationImg from '../../../assets/svgs/Confirmation.svg';
 
 export default function Confirmation({
-  handleDelete, closeModal, isDelete,
+  handleDelete, setAction, action,
 }) {
+  const closeModal = () => {
+    setAction({ ...action, isDelete: !action.isDelete });
+  };
   return (
     <Modal
-      isOpen={isDelete}
+      isOpen={action.isDelete}
       className="modal delete-modal"
       onRequestClose={closeModal}
       overlayClassName="overlay"
