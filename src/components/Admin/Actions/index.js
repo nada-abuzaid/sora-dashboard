@@ -5,24 +5,31 @@ import Confirmation from '../Confirmation';
 import Form from '../Form';
 import DragDrop from '../Upload';
 import { ActionsWrapper, Icon } from './styles';
+import useModal from '../../../hooks/useModal';
 
 export default function Actions({ setDataSource, item }) {
   const [deletedCompany, setDeletedCompany] = useState({});
   const [editedCompany, setEditedCompany] = useState({});
-  const [isDelete, setIsDelete] = useState(false);
   const [isEditing, setIsEdit] = useState(false);
   const [isUpload, setIsUpload] = useState(false);
+  const [closeModal, setIsDelete, isDelete] = useModal();
 
   const handleDelete = () => {
     setDataSource((pre) => pre.filter(
       (employer) => employer.uniqueCode !== deletedCompany.uniqueCode,
     ));
+    closeModal();
   };
 
   return (
     <>
       {isDelete && (
-        <Confirmation handleDelete={handleDelete} setIsDelete={setIsDelete} />
+        <Confirmation
+          handleDelete={handleDelete}
+          closeModal={closeModal}
+          isDelete={isDelete}
+          setIsDelete={setIsDelete}
+        />
       )}
 
       {isEditing && (
