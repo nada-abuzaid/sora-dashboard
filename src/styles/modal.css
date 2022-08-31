@@ -16,7 +16,7 @@
 
 .modal-subsecribe {
   height: 90%;
-  width: 65%;
+  width: 60%;
   box-shadow: none;
   overflow: hidden;
 }
@@ -31,7 +31,7 @@
 }
 
 .upload-files {
-  height: 40%;
+  height: auto;
   width: 50%;
   padding: 2rem;
   display: flex;
@@ -43,7 +43,17 @@
   border: dashed 2px #979797 !important;
   max-width: 100% !important;
   max-height: 100% !important;
-  height: 60% !important;
+  height: 80% !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.upload-files label div span {
+  font-size: 1rem;
 }
 
 @media screen and (max-width: 768px) {
@@ -151,11 +161,11 @@ input.emails {
   opacity: 1;
 }
 
-.ant-notification .ant-notification-topRight{
+.ant-notification .ant-notification-topRight {
   z-index: 100;
 }
 
-input#email{
+.employer-modal input#email {
   width: 95%;
   margin-top: 0.3rem;
 }

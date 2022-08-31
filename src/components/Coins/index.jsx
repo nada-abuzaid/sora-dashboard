@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { Chart } from 'primereact/chart';
 import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 import coinsImg from '../../assets/svgs/coin1.svg';
 import coinImg from '../../assets/svgs/coin.svg';
-import CoinsStyle from './style';
+import { CoinsStyle } from './style';
 
 export default function Coins({ type, coins, price }) {
+  const { isOpen } = useSelector((state) => state.sidebar.value);
   const [VerticalChartData] = useState({
     labels: ['Donations', 'Health Sessions', 'Products'],
     datasets: [
@@ -43,7 +45,7 @@ export default function Coins({ type, coins, price }) {
   };
 
   return (
-    <CoinsStyle type={type}>
+    <CoinsStyle type={type} isOpen={isOpen}>
       <div className="texts">
         <p className="earned">{type}</p>
         <p className="coins">{coins}</p>

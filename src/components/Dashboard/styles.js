@@ -4,7 +4,6 @@ import styled from 'styled-components';
 const Nav = styled.nav`
   position: fixed;
   width: 100%;
-
   display: flex;
   align-items: center;
   box-shadow: 2px 2px 4px #b5b5b5;
@@ -131,7 +130,7 @@ const ASide = styled.div`
     p,
     button {
       font-family: "Nunito Sans";
-      font-size: 0.9rem;
+      font-size: 1rem;
       margin-left: 0.7rem;
       padding: 1.2rem 0;
       ${(props) => (props.isOpen ? null : 'display:none')}
@@ -206,18 +205,28 @@ const Background = styled.div`
 const SlideWrapper = styled.div`
   width: 80%;
   height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
   background-color: ${({ theme: { colors } }) => colors.white};
+  @media only screen and (max-width: ${({ theme: { screens } }) => screens.mobile}) {
+    gap:  0;
+  }
+  @media only screen and (max-width: 400px) {
+    height: 95%;
+  }
 `;
 
 const SlideTitle = styled.p`
   font-family: "DM Serif Text";
-  font-size: 24px;
+  font-size: 1.5rem;
   @media only screen and (max-width: ${({ theme: { screens } }) => screens.tablet_portrait}) {
-    font-size: 22px;
+    font-size: 1.4rem;
     margin-bottom: 10px;
   }
   @media only screen and (max-width: ${({ theme: { screens } }) => screens.mobile}) {
-    font-size: 16px;
+    font-size: 1.2rem;
   }
 `;
 
@@ -225,15 +234,7 @@ const SlideParagraph = styled.p`
   text-align: justify;
   font-family: "Nunito Sans";
   margin-bottom: 50px;
-  font-size: 16px;
-  @media only screen and (max-width: ${({ theme: { screens } }) => screens.tablet_portrait}) {
-    margin-bottom: 20px;
-    font-size: 14px;
-  }
-  @media only screen and (max-width: ${({ theme: { screens } }) => screens.mobile}) {
-    font-size: 13px;
-    text-align: justify;
-  }
+  font-size: 1rem;
 `;
 
 const StyledCloseButton = styled.button`
@@ -262,6 +263,11 @@ const ImagesWrapper = styled.div`
     width: 32%;
     transform: translate(-45%, -65%);
   }
+  @media only screen and (max-width: ${({ theme: { screens } }) => screens.mobile}) {
+    img{
+      width: 50%;
+    }
+  }
 `;
 
 const StyledTable = styled(Table)`
@@ -272,6 +278,9 @@ thead > tr > th {
 
 .ant-table-header {
   border-radius: 20px 20px 0 0;
+  table{
+    width: auto;
+  }
 }
 
 .ant-table-container {

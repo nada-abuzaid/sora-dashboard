@@ -1,31 +1,22 @@
 import React from 'react';
 import { RiMenu2Line } from 'react-icons/ri';
-import PropTypes from 'prop-types';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Nav } from './styles';
+import { setSidebarOpen } from '../../store';
 
-export default function Header({ isOpen, setisOpen }) {
+export default function Header() {
   const { dashboard } = useSelector((state) => state.dashboard.value);
+  const dispatch = useDispatch();
+  const { isOpen } = useSelector((state) => state.sidebar.value);
 
   return (
     <Nav isOpen={isOpen} dashboard={dashboard}>
       <RiMenu2Line
         className="menu-icon"
         onClick={() => {
-          setisOpen(!isOpen);
+          dispatch(setSidebarOpen({ isOpen: !isOpen }));
         }}
       />
     </Nav>
   );
 }
-
-Header.propTypes = {
-  /**
-   * If the sidebar is open or not
-   */
-  isOpen: PropTypes.bool.isRequired,
-  /**
-   * Set the sidebar state
-   */
-  setisOpen: PropTypes.func.isRequired,
-};

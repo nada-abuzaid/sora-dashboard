@@ -103,11 +103,11 @@ const TitleStyle = styled.div`
     position: absolute;
     left: -4rem;
     top: -2.5rem;
-    width: 6em;
+    width: 6rem;
   }
   .section-title {
     font-family: 'DM Serif Text';
-    font-size: 2.2em;
+    font-size: 2.625rem;
     text-align: center;
   }
 

@@ -21,6 +21,9 @@ width: 90%;
 .ant-select.ant-select-single.ant-select-show-arrow {
   height: 2.5rem !important;
   width: 10%;
+  .ant-select-arrow{
+    color: black;
+  }
   div {
     height: 2.5rem;
     display: flex;
@@ -29,6 +32,9 @@ width: 90%;
     .ant-select-selection-item {
       height: 2.5rem;
       border: red;
+      display: flex;
+      align-items: center;
+      align-content: center;
     }
   }
 }

@@ -5,7 +5,7 @@ import dashboardReducer, { setDashboard } from './dashboard';
 import tokenReducer, { setToken } from './token';
 import companiesReducer, { setCompanies } from './companies';
 import employeesReducer, { setEmployees } from './employees';
-import modalReducer, { setConfirmationOpen } from './modal';
+import sidebarReducer, { setSidebarOpen } from './sidebar';
 
 const store = configureStore({
   reducer: {
@@ -15,7 +15,7 @@ const store = configureStore({
     token: tokenReducer,
     companies: companiesReducer,
     employees: employeesReducer,
-    modal: modalReducer,
+    sidebar: sidebarReducer,
   },
 });
 
@@ -27,5 +27,6 @@ export {
   setCompanies,
   setEmployees,
   store,
-  setConfirmationOpen,
+  setSidebarOpen,
+  sidebarReducer,
 };

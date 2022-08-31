@@ -38,20 +38,20 @@ const LeftStyle = styled.div`
       height: 72%;
       border-radius: 10px;
       filter: drop-shadow(0px 0px 5px #e9e9e9);
-      padding: 0.5rem 1rem;
+      padding: 1rem;
       position: relative;
       .mobile-header {
         display: flex;
         flex-direction: column;
         .premium {
           font-family: "DM Serif Text", sans-serif;
-          font-size: 1.8rem;
+          font-size: 2.375rem;
           color: ${({ theme }) => theme.colors.primary};
           text-align: center;
         }
         .desc {
           color: #404040;
-          font-size: 0.85rem;
+          font-size: 1.125rem;
           text-align: justify;
           width: 85%;
           margin: 0 auto;
@@ -68,8 +68,10 @@ const LeftStyle = styled.div`
       .mobile-features {
         display: flex;
         flex-direction: column;
-        gap: 0.4rem;
+        gap: 1rem;
         padding: 0 1rem;
+        font-size: 1.125rem;
+        font-family: 'Nunito Sans', sans-serif;
       }
       @media screen and (max-width: 768px) {
         height: 96%;
@@ -84,8 +86,8 @@ const LeftStyle = styled.div`
       font-size: 1.5rem;
       box-shadow: none;
       position: absolute;
-      top: 20px;
-      right: 20px;
+      top: 2rem;
+      right: 2rem;
       z-index: 10;
       opacity: 1;
       @media screen and (max-width: 768px) {
@@ -129,19 +131,22 @@ const LeftStyle = styled.div`
       display: flex;
       flex-direction: column;
       gap: 0.8rem;
+      font-family: "Nunito Sans";
       p:not(:first-child) {
-        color: ${({ theme: { colors } }) => colors.lightGray2};
-        padding: 0 2rem;
+        color: #404040;
         text-align: justify;
-        font-size: 0.85rem;
+        font-size: 1rem;
+        width: 75%;
+        margin: 0 auto;
       }
       .btn {
-        width: 50%;
         padding: 0 2rem;
+        margin: 1rem 2rem;
+        font-size: 1.125rem;
         a {
           background-color: ${({ theme: { colors } }) => colors.primary};
           color: ${({ theme: { colors } }) => colors.white};
-          padding: 0.6rem;
+          padding: 0.6rem 1.3rem;
           border-radius: 6px;
           text-align: center;
           border: none;
@@ -182,16 +187,16 @@ const UpgradeStyle = styled.div`
   height: 100%;
   position: relative;
   .upgrade {
-    gap: 0.3rem;
+    gap: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 0.5rem;
-    padding: 4rem 1rem 2rem 1rem;
+    padding: 4rem 0.8rem 2rem 0.8rem;
     margin-top: 2rem;
     background-color: #f4f7f7;
-    width: 80%;
-    height: 83%;
+    width: 85%;
+    height: 87%;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     @media only screen and (max-width: 600px) {
       width: 70%;
@@ -201,20 +206,23 @@ const UpgradeStyle = styled.div`
       position: absolute;
       top: 0;
       @media screen and (max-width: 600px) {
+        top: -3.5rem;
+      }
+      @media screen and (max-width: 435px) {
         top: -1.5rem;
       }
     }
     .title {
       font-family: "DM Serif Text";
-      font-size: 1.2rem;
+      font-size: 1.5rem;
       text-align: center;
       margin-bottom: 0;
-      width: 60%;
+      width: 80%;
     }
     .desc {
       font-family: "Nunito Sans";
       text-align: center;
-      font-size: 0.9rem;
+      font-size: 1rem;
       width: 100%;
     }
     .btn-more {
@@ -222,6 +230,7 @@ const UpgradeStyle = styled.div`
       border-radius: 6px;
       border: none;
       cursor: pointer;
+      font-size: 1rem;
       background: ${({
     theme: {
       colors: { primary },

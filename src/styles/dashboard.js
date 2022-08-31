@@ -50,12 +50,12 @@ const ContactStyle = styled.div`
   height: 80vh;
   p:first-child {
     font-family: "DM Serif Text", serif;
-    font-size: 2rem;
+    font-size: 48px;
   }
   .contact-email,
   .email {
     font-family: "Nunito Sans", serif;
-    font-size: 1.2rem;
+    font-size: 2rem;
     color: ${({ theme: { colors } }) => colors.black};
   }
   .email {

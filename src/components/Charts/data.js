@@ -1,16 +1,16 @@
 import useCharts from '../../hooks/useCharts';
 
 export default function ChartsData() {
-  const [
+  const {
     featuresData,
     interestsData,
     topHealthConditionsData,
     healthConditionsData,
-  ] = useCharts();
+  } = useCharts();
 
   const chartData = {
     labels: featuresData.map(
-      ({ label, percentage }) => ` ${label} - ${Math.round(percentage)}%`,
+      ({ label, percentage }) => `   ${label} - ${Math.round(percentage)}%`,
     ),
     datasets: [
       {
@@ -32,10 +32,24 @@ export default function ChartsData() {
       legend: {
         position: 'right',
         labels: {
-          padding: 20,
+          padding: 30,
           color: '#495057',
           usePointStyle: true,
           boxWidth: 7,
+          font: (context) => {
+            const { width } = context.chart;
+            if (width < 590) {
+              const size = Math.round(width / 30);
+              return {
+                size,
+                family: 'Nunito Sans',
+              };
+            }
+            return {
+              size: 16,
+              family: 'Nunito Sans',
+            };
+          },
         },
       },
     },
@@ -83,6 +97,20 @@ export default function ChartsData() {
         ticks: {
           color: '#495057',
           crossAlign: 'far',
+          font: (context) => {
+            const { width } = context.chart;
+            if (width < 590) {
+              const size = Math.round(width / 30);
+              return {
+                size,
+                family: 'Nunito Sans',
+              };
+            }
+            return {
+              size: 16,
+              family: 'Nunito Sans',
+            };
+          },
         },
         grid: {
           display: false,
@@ -116,6 +144,11 @@ export default function ChartsData() {
       x: {
         ticks: {
           color: '#495057',
+          font: {
+            size: 14,
+            family: 'Nunito Sans',
+            weight: 'bold',
+          },
         },
         grid: {
           display: false,

@@ -32,7 +32,7 @@ export default function Header({
         onChange={handleSort}
       >
         <Option value="Newest first">Newest first</Option>
-        <Option value="Oldesr first">Oldesr first</Option>
+        <Option value="Oldest first">Oldest first</Option>
         <Option value="From A to Z">From A to Z</Option>
       </Select>
       <button
