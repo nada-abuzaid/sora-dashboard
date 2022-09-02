@@ -1,7 +1,8 @@
 {
   "name": "sora-dashboard",
   "engines": {
-    "node": ">=16.0.0"
+    "node": "18.7.0",
+    "npm": "8.17.0"
   },
   "version": "0.1.0",
   "private": true,
