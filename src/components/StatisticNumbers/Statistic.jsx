@@ -16,6 +16,3 @@ Statistic.propTypes = {
   number: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
 };
-
-Statistic.defaultProps = {
-};

@@ -17,7 +17,7 @@ const theme = {
     lightGray: '#DFDFDF',
     lightGray1: '#92969D',
     lightGray2: '#737B7D',
-    lightGray3: '#E5E5E5',
+    lightGray3: '#ECF0F1',
     lightGray4: '#6E798C',
     whiteHover: '`rgba(255,255,255,0.2)`',
     greenOverlay: 'rgba(39,92,97,0.4)',
