@@ -91,7 +91,7 @@ const ButtonStyle = styled.div`
   cursor: pointer;
   a {
     color: ${({ theme: { colors } }) => colors.primaryLight};
-    font-family: 'Nunito Sans';
+    font-family: "Nunito Sans", sans-serif;
     font-weight: 600;
     &:hover {
       color: ${({ theme: { colors } }) => colors.primaryLight};

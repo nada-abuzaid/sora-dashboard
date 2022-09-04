@@ -22,6 +22,7 @@ export default function ChartsData() {
   };
 
   const lightOptions = {
+    maintainAspectRatio: false,
     cutout: '60%',
     elements: {
       arc: {
@@ -35,11 +36,12 @@ export default function ChartsData() {
           padding: 30,
           color: '#495057',
           usePointStyle: true,
-          boxWidth: 7,
+          boxWidth: 10,
+          boxHeight: 10,
           font: (context) => {
             const { width } = context.chart;
             if (width < 590) {
-              const size = Math.round(width / 30);
+              const size = Math.round(width / 29);
               return {
                 size,
                 family: 'Nunito Sans',
@@ -53,7 +55,6 @@ export default function ChartsData() {
         },
       },
     },
-    maintainAspectRatio: false,
     scale: {
       y: { beginAtZero: true },
     },

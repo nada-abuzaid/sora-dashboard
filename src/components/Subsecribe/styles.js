@@ -131,7 +131,7 @@ const LeftStyle = styled.div`
       display: flex;
       flex-direction: column;
       gap: 0.8rem;
-      font-family: "Nunito Sans";
+      font-family: "Nunito Sans", sans-serif;
       p:not(:first-child) {
         color: #404040;
         text-align: justify;
@@ -220,7 +220,7 @@ const UpgradeStyle = styled.div`
       width: 80%;
     }
     .desc {
-      font-family: "Nunito Sans";
+      font-family: "Nunito Sans", sans-serif;
       text-align: center;
       font-size: 1rem;
       width: 100%;

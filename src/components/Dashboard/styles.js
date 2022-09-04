@@ -109,7 +109,8 @@ const ASide = styled.div`
       align-items: center;
       .sora {
         text-transform: uppercase;
-        font-family: "Nunito Sans";
+            font-family: "Nunito Sans", sans-serif;
+
         font-weight: bold;
         color: ${({ theme: { colors } }) => colors.primary};
         font-size: 1.3rem;
@@ -129,7 +130,8 @@ const ASide = styled.div`
     color: ${({ theme: { colors } }) => colors.primaryDark};
     p,
     button {
-      font-family: "Nunito Sans";
+          font-family: "Nunito Sans", sans-serif;
+
       font-size: 1rem;
       margin-left: 0.7rem;
       padding: 1.2rem 0;
@@ -160,7 +162,8 @@ const ASide = styled.div`
     align-items: center;
     p {
       font-size: 0.7rem;
-      font-family: "Nunito Sans";
+          font-family: "Nunito Sans", sans-serif;
+
       margin-left: 0.6rem;
       ${(props) => (props.isOpen ? null : 'display: none')}
     }
@@ -232,7 +235,8 @@ const SlideTitle = styled.p`
 
 const SlideParagraph = styled.p`
   text-align: justify;
-  font-family: "Nunito Sans";
+      font-family: "Nunito Sans", sans-serif;
+
   margin-bottom: 50px;
   font-size: 1rem;
 `;
@@ -272,6 +276,7 @@ const ImagesWrapper = styled.div`
 
 const StyledTable = styled(Table)`
 padding: 0 40px;
+
 thead > tr > th {
   background-color: #89aaad33;
 }
@@ -287,7 +292,6 @@ thead > tr > th {
   border-radius: 20px 20px 0 0;
   box-shadow: inset 0px -4px 12px rgba(0, 0, 0, 0.1);
   width: 95%;
-  height: 95%;
 }
 
 .ant-table.ant-table-fixed-header {
@@ -314,6 +318,22 @@ thead > tr > th {
 
 && tbody > tr:hover > td {
   background: rgba(137, 170, 173, 0.1);
+}
+
+.ant-table-tbody > tr > td{
+  width: 10rem;
+}
+
+@media screen and (max-width: 1200px) {
+  padding: 0;
+  background-color: red;
+  thead > tr{
+  display: flex;
+  th {
+  display: inline-block;
+  width: 10rem;
+}
+}
 }
 `;
 

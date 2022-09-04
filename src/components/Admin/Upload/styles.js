@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
 const P = styled.p`
-  font-family: "DM Serif Text", serif;
+  font-family: "DM Serif Text", sans-serif;
   font-size: 1.5rem;
 `;
 
 const Desc = styled.p`
-  font-family: "Nunito Sans", serif;
+    font-family: "Nunito Sans", sans-serif;
   font-size: 1.2rem;
 `;
 

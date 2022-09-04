@@ -30,7 +30,7 @@ const StatisticStyle = styled.div`
   }
   p {
     font-size: 0.8rem;
-    font-family: 'Nunito Sans';
+    font-family: "Nunito Sans", sans-serif;
     margin-top: 0;
   }
 

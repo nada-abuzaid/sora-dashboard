@@ -54,7 +54,7 @@ const ContactStyle = styled.div`
   }
   .contact-email,
   .email {
-    font-family: "Nunito Sans", serif;
+    font-family: "Nunito Sans", sans-serif;
     font-size: 2rem;
     color: ${({ theme: { colors } }) => colors.black};
   }

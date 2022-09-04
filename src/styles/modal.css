@@ -109,7 +109,7 @@
 }
 
 .desc {
-  font-family: "Nunito Sans";
+  font-family: "Nunito Sans", sans-serif;
 }
 
 input.emails {
@@ -126,7 +126,7 @@ input.emails {
   border: none;
   outline: none;
   padding: 1rem 2rem;
-  font-family: "Nunito Sans";
+  font-family: "Nunito Sans", sans-serif;
   border-radius: 6px;
   font-size: 1rem;
   margin-top: 2rem;

@@ -46,13 +46,15 @@ const ChartStyle = styled.div`
     a {
       color: ${({ theme }) => theme.colors.primary};
       font-weight: 700;
-      font-family: "Nunito Sans";
+          font-family: "Nunito Sans", sans-serif;
+
       text-decoration: underline;
       font-size: 1rem;
     }
     .text2 {
       font-weight: 100;
-      font-family: "Nunito Sans";
+          font-family: "Nunito Sans", sans-serif;
+
       font-size: 1rem;
       @media only screen and (max-width: 900px) {
         font-size: 0.9rem;
@@ -71,12 +73,12 @@ const ChartStyle = styled.div`
       font-family: 'DM Serif Text';
     }
     .top-item{
-      font-family: 'Nunito Sans';
+      font-family: "Nunito Sans", sans-serif;
       font-size: 0.75rem;
       display: inline;
     }
     .top-number{
-      font-family: 'Nunito Sans';
+      font-family: "Nunito Sans", sans-serif;
       font-weight: bold;
       display: inline;
       font-size: 0.75rem;

@@ -8,7 +8,6 @@ width: 90%;
 .addEmployer-btn {
   background-color: ${({ theme: { colors } }) => colors.secondaryGreen};
   color: ${({ theme: { colors } }) => colors.white};
-  width: 10%;
   border: none;
   outline: none;
   font-family: "Nunito Sans", sans-serif;
@@ -20,7 +19,6 @@ width: 90%;
 
 .ant-select.ant-select-single.ant-select-show-arrow {
   height: 2.5rem !important;
-  width: 10%;
   .ant-select-arrow{
     color: black;
   }

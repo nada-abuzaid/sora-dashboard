@@ -46,7 +46,7 @@ const TitleWrapper = styled.div`
   gap: 0.8rem;
 
   .desc {
-    font-family: 'Nunito Sans';
+    font-family: "Nunito Sans", sans-serif;
     text-align: center;
     font-size: 1.2rem;
     width: 60%;
