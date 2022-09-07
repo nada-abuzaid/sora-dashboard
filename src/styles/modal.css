@@ -91,7 +91,7 @@
 .employer-modal {
   width: 40%;
   box-shadow: none;
-  font-family: "DM Serif Text", serif;
+  font-family: "DM Serif Text", sans-serif;
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -100,7 +100,7 @@
 }
 
 .title {
-  font-family: "DM Serif Text", serif;
+  font-family: "DM Serif Text", sans-serif;
   font-size: 1.7rem;
 }
 

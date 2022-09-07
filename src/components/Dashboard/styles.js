@@ -82,6 +82,9 @@ const ASide = styled.div`
     ? `width: ${sizes.MENU_WIDTH}px;`
     : `
     width: ${sizes.COLLAPSED_MENU_WIDTH}px;
+    .side-menu-item {
+      justify-content: center;
+    }
     `)}
   .side-content {
     height: 100%;
@@ -222,7 +225,7 @@ const SlideWrapper = styled.div`
 `;
 
 const SlideTitle = styled.p`
-  font-family: "DM Serif Text";
+    font-family: "DM Serif Text", sans-serif;
   font-size: 1.5rem;
   @media only screen and (max-width: ${({ theme: { screens } }) => screens.tablet_portrait}) {
     font-size: 1.4rem;
@@ -292,6 +295,9 @@ thead > tr > th {
   border-radius: 20px 20px 0 0;
   box-shadow: inset 0px -4px 12px rgba(0, 0, 0, 0.1);
   width: 95%;
+  .ant-table-body{
+    max-height: 100% !important;
+  }
 }
 
 .ant-table.ant-table-fixed-header {

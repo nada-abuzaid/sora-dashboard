@@ -106,7 +106,7 @@ const TitleStyle = styled.div`
     width: 6rem;
   }
   .section-title {
-    font-family: 'DM Serif Text';
+    font-family: "DM Serif Text", sans-serif;
     font-size: 2.625rem;
     text-align: center;
   }

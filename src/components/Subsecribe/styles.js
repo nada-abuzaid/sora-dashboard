@@ -213,7 +213,7 @@ const UpgradeStyle = styled.div`
       }
     }
     .title {
-      font-family: "DM Serif Text";
+      font-family: "DM Serif Text", sans-serif;
       font-size: 1.5rem;
       text-align: center;
       margin-bottom: 0;

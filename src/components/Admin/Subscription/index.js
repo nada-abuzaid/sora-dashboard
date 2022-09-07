@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import SubscriptionWrapper from './styles';
-import subsecribtionType from '../../../utils/subsecribe';
+import { subsecribtionType } from '../../../utils';
 
 export default function Subscription({ type }) {
   return (

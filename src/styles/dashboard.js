@@ -17,7 +17,7 @@ const AccountStyle = styled.div`
     align-items: center;
     justify-content: space-between;
     p {
-      font-family: "DM Serif Text", serif;
+      font-family: "DM Serif Text", sans-serif;
       font-size: 1.4rem;
     }
     .edit-icon {
@@ -49,7 +49,7 @@ const ContactStyle = styled.div`
   padding: 2rem;
   height: 80vh;
   p:first-child {
-    font-family: "DM Serif Text", serif;
+    font-family: "DM Serif Text", sans-serif;
     font-size: 48px;
   }
   .contact-email,

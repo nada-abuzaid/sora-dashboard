@@ -5,6 +5,7 @@
     "npm": "8.17.0"
   },
   "version": "0.1.0",
+  "proxy": "https://syronahealth-clinicians-api.herokuapp.com",
   "private": true,
   "dependencies": {
     "@auth0/auth0-react": "^1.10.2",
@@ -40,7 +41,7 @@
     "yup": "^0.32.11"
   },
   "scripts": {
-    "start": "serve -s build",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

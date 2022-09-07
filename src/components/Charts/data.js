@@ -48,7 +48,7 @@ export default function ChartsData() {
               };
             }
             return {
-              size: 16,
+              size: 15,
               family: 'Nunito Sans',
             };
           },

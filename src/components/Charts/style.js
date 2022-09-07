@@ -19,7 +19,7 @@ const ChartStyle = styled.div`
     }
   }
   p {
-    font-family: "DM Serif Text";
+    font-family: "DM Serif Text", sans-serif;
     font-size: 1.75rem;
     text-align: left !important;
   }
@@ -70,7 +70,7 @@ const ChartStyle = styled.div`
     border-radius: 6px;
     .topThree-title{
       font-size: 1.125rem;
-      font-family: 'DM Serif Text';
+      font-family: "DM Serif Text", sans-serif;
     }
     .top-item{
       font-family: "Nunito Sans", sans-serif;

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
 import Modal from 'react-modal';
 import { addEmployerSchema } from '../../../utils';
-import subsecribtionType from '../../../utils/subsecribe';
+import subsecribtionType from '../../../utils/Admin/subsecribe';
 import { Form, FormField, SubmitButton } from '../../Common/Form';
 import { Container, Row } from './styles';
 

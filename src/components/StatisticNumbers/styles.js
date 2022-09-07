@@ -25,13 +25,14 @@ const StatisticStyle = styled.div`
     background-color: ${({ theme: { colors } }) => colors.lightGray3};
   }
   .statistic-number {
-    font-family: 'DM Serif Text';
+    font-family: "DM Serif Text", sans-serif;
     font-size: 1.75rem;
   }
   p {
     font-size: 0.8rem;
     font-family: "Nunito Sans", sans-serif;
     margin-top: 0;
+    text-align: center;
   }
 
   @media only screen and (max-width: 600px) {

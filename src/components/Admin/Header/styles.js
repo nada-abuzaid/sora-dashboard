@@ -13,8 +13,21 @@ width: 90%;
   font-family: "Nunito Sans", sans-serif;
   font-weight: 600;
   border-radius: 6px;
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
   cursor: pointer;
+}
+
+.ant-select-focused .ant-select-selector, .ant-select-selector:hover{
+  border-color: ${({ theme: { colors } }) => colors.primary} !important;
+  box-shadow: none !important;
+}
+
+.ant-select-focused:not(.ant-select-disabled) .ant-select:not(.ant-select-customize-input) .ant-select-selector{
+  border-color: red !important;
+}
+
+.ant-select-focused .ant-select-arrow{
+  color: ${({ theme: { colors } }) => colors.primary} !important;
 }
 
 .ant-select.ant-select-single.ant-select-show-arrow {
@@ -26,6 +39,7 @@ width: 90%;
     height: 2.5rem;
     display: flex;
     align-items: center;
+    width: 7rem;
     .ant-select-selection-search,
     .ant-select-selection-item {
       height: 2.5rem;

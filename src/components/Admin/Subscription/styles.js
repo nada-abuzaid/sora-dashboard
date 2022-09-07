@@ -11,6 +11,7 @@ border-radius: 6px;
 font-family: "Nunito Sans", serif;
 font-size: 0.9rem;
 padding: 0.5rem;
+margin: 0 auto;
 ${({ type }) => (type === '1' ? `
 background-color: #CEBBC3;
 color: #000;

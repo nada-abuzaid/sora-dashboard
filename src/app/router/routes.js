@@ -1,6 +1,7 @@
 import {
   Account, AdminDashboard, Contact, Dashboard,
 } from '../../views';
+import Reports from '../../views/reports';
 
 const routes = [
   {
@@ -17,6 +18,11 @@ const routes = [
     Element: Account,
   }, {
     key: 4,
+    path: 'reports',
+    Element: Reports,
+  },
+  {
+    key: 5,
     path: '',
     Element: Dashboard,
   },

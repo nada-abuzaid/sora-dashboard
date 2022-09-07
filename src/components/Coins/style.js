@@ -31,7 +31,7 @@ const CoinsStyle = styled.div`
     }
     .earned {
       font-size: 1.625rem;
-      font-family: "DM Serif Text", serif;
+      font-family: "DM Serif Text", sans-serif;
       @media screen and (max-width: 1000px) {
         font-size: 1.2rem;
       }

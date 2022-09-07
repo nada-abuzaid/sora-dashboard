@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { RiDeleteBinLine } from 'react-icons/ri';
 import { MdOutlineEdit, MdUploadFile } from 'react-icons/md';
+import { HiChartBar } from 'react-icons/hi';
 import Confirmation from '../Confirmation';
 import Form from '../Form';
 import DragDrop from '../Upload';
@@ -13,6 +14,7 @@ export default function Actions({ setDataSource, item }) {
     isEditing: false,
     isDelete: false,
     isUpload: false,
+    isView: false,
   });
 
   const handleDelete = () => {
@@ -37,7 +39,11 @@ export default function Actions({ setDataSource, item }) {
       )}
 
       {action.isUpload && <DragDrop setAction={setAction} action={action} />}
+
       <ActionsWrapper>
+        <Icon onClick={() => setAction({ ...action, isView: !action.isView })}>
+          <HiChartBar />
+        </Icon>
         <Icon
           onClick={() => {
             setEditedCompany(item);

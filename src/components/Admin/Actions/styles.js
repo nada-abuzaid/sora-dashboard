@@ -6,7 +6,7 @@ const ActionsWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 70%;
-  padding: 0 0.5rem;
+  margin: 0 auto;
 `;
 
 const Icon = styled.button`

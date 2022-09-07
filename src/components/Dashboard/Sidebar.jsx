@@ -8,6 +8,7 @@ import Upgrade from '../Subsecribe/Upgrade';
 import close from '../../assets/svgs/close.svg';
 import menu from '../../assets/svgs/Menu.svg';
 import account from '../../assets/svgs/Account.svg';
+import reports from '../../assets/svgs/Reports.svg';
 import contact from '../../assets/svgs/contact-form.svg';
 import LogoutButton from '../Auth/logoutButton';
 import { Background, ASide } from './styles';
@@ -49,10 +50,16 @@ export default function Sidebar() {
               <p>Account settings</p>
             </NavLink>
             {dashboard !== 'admin' && (
+            <>
+              <NavLink to="/reports" className="side-menu-item">
+                <img src={reports} alt="Reports" className="icon" width={21} height={28} />
+                <p>Quarterly Reports</p>
+              </NavLink>
               <NavLink to="/contact" className="side-menu-item">
                 <img src={contact} alt="Logout" className="icon" />
                 <p>Contact Us</p>
               </NavLink>
+            </>
             )}
           </div>
           {dashboard !== 'admin' && (

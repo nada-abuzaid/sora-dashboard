@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { FileUploader } from 'react-drag-drop-files';
 import { AiOutlineClose } from 'react-icons/ai';
 import Modal from 'react-modal';
+
 import Content from './Content';
 import handler from './handler';
 import {
