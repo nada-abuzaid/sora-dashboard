@@ -11,7 +11,7 @@ import account from '../../assets/svgs/Account.svg';
 import reports from '../../assets/svgs/Reports.svg';
 import contact from '../../assets/svgs/contact-form.svg';
 import LogoutButton from '../Auth/logoutButton';
-import { Background, ASide } from './styles';
+import { ASide, Background } from './styles';
 import '../../styles/typography.css';
 import { setSidebarOpen } from '../../store';
 
@@ -30,7 +30,7 @@ export default function Sidebar() {
           </div>
           <button
             type="button"
-            className="close-btn"
+            className="closee-btn"
             onClick={() => dispatch(setSidebarOpen({ isOpen: false }))}
           >
             <img alt="close" src={close} width={14} />

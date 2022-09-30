@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Modal from 'react-modal';
 import { AiOutlineClose } from 'react-icons/ai';
 import { useDispatch } from 'react-redux';
-import Title from '../Auth/LeftPanel/Title';
+// import Title from '../Auth/LeftPanel/Title';
 import Feature from './Feature';
 import { LeftStyle, StyledCloseButton } from './styles';
 import '../../styles/modal.css';
@@ -13,6 +13,8 @@ import scribble1 from '../../assets/svgs/scribble1.svg';
 import scribble2 from '../../assets/svgs/scribble2.svg';
 import scribble3 from '../../assets/svgs/scribble3.svg';
 import scribble4 from '../../assets/svgs/scribble4.svg';
+import Scribbles from '../../assets/svgs/Scribbles.svg';
+
 import { setPro } from '../../store';
 import { Mailto } from '..';
 
@@ -47,7 +49,8 @@ export default function Subsecribe() {
         <div className="left-container">
           <div className="left">
             <div className="title">
-              <Title title="Subscribe to Premium" />
+              <img src={Scribbles} alt="Scribbles" className="scribbles" />
+              <p className="section-title">Subscribe to Premium</p>
             </div>
             <p>
               Supporting people with health transitions during their career by
@@ -55,14 +58,12 @@ export default function Subsecribe() {
               our certified Class I Medical Device App.
             </p>
             <p>
-              Contact us on info@syronahealth.com, if you want to subscribe to
+              Contact us on
+              {' '}
+              <Mailto email="info@syronahealth.com" className="contact-email">info@syronahealth.com</Mailto>
+              , if you want to subscribe to
               Premium and get more useful health data about your employees.
             </p>
-            <div className="btn">
-              <Mailto email="info@syronahealth.com" className="email">
-                Contact us
-              </Mailto>
-            </div>
           </div>
           <img src={subsecibe} className="image" alt="Subsecibe" />
           <StyledCloseButton onClick={closeModal}>

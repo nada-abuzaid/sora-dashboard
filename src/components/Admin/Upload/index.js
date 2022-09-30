@@ -1,10 +1,11 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 import { FileUploader } from 'react-drag-drop-files';
 import { AiOutlineClose } from 'react-icons/ai';
 import Modal from 'react-modal';
 
 import Content from './Content';
-import handler from './handler';
+// import handler from './handler';
 import {
   P, Desc, Submit, Div,
 } from './styles';
@@ -20,6 +21,29 @@ function DragDrop({ setAction, action }) {
   const closeModal = () => {
     setFile(null);
     setAction({ ...action, isUpload: !action.isUpload });
+  };
+
+  const handleSubmit = async () => {
+    if (isFile) {
+      const uploadFile = async () => {
+        const formData = new FormData();
+        formData.append('users', isFile);
+        try {
+          await axios({
+            method: 'post',
+            url: '/api/v1/companies/1/users',
+            headers: {
+              'Content-Type': 'multipart/form-data',
+            },
+            data: formData,
+          });
+        } catch (error) {
+          console.log(error);
+        }
+      };
+      uploadFile();
+      closeModal();
+    }
   };
 
   return (
@@ -45,6 +69,7 @@ function DragDrop({ setAction, action }) {
             label="Browse or Drag and drop CSV file"
             multiple={false}
             types={['csv']}
+            name="users"
           >
             <Content />
           </FileUploader>
@@ -56,9 +81,7 @@ function DragDrop({ setAction, action }) {
       <Div>
         <Submit
           className="submit-btn"
-          onClick={(e) => {
-            handler(isFile, e);
-          }}
+          onClick={handleSubmit}
         >
           Invite Employers
         </Submit>

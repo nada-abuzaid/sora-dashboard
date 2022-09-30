@@ -51,7 +51,7 @@ const AutoCompleteContainer = styled.div`
   align-items: center;
   z-index: 11;
   top: 0.7rem;
-  width: 40%;
+  width: 30%;
   font-size: 1.3rem;
   color: ${({ theme: { colors } }) => colors.white};
   .icon {
@@ -62,6 +62,10 @@ const AutoCompleteContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+  @media only screen and (max-width: ${({ theme: { screens } }) => screens.mobile}) {
+    right: 2.5rem;
+    width: 70%;
   }
 `;
 
@@ -98,11 +102,12 @@ const ASide = styled.div`
     align-items: center;
     justify-content: space-between;
     background: none;
-    .close-btn {
+    .closee-btn {
       opacity: 0;
       background: none;
       border: none;
       outline: none;
+      margin-right: 1rem;
       @media only screen and (max-width: 600px) {
         opacity: 1;
       }
@@ -158,15 +163,14 @@ const ASide = styled.div`
   }
   .footer {
     background-color: ${({ theme: { colors } }) => colors.lightGray3};
-    height: 3rem;
+    height: 4rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     p {
       font-size: 0.7rem;
-          font-family: "Nunito Sans", sans-serif;
-
+      font-family: "Nunito Sans", sans-serif;
       margin-left: 0.6rem;
       ${(props) => (props.isOpen ? null : 'display: none')}
     }
@@ -202,7 +206,7 @@ const Background = styled.div`
     top: 0;
     z-index: 90;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     ${(props) => (props.isOpen ? null : 'display: none')}
   }
@@ -221,6 +225,9 @@ const SlideWrapper = styled.div`
   }
   @media only screen and (max-width: 400px) {
     height: 95%;
+  }
+  .popup-images{
+    width: 30%;
   }
 `;
 
@@ -284,6 +291,10 @@ thead > tr > th {
   background-color: #89aaad33;
 }
 
+.ant-table{
+  background: none;
+}
+
 .ant-table-header {
   border-radius: 20px 20px 0 0;
   table{
@@ -332,7 +343,6 @@ thead > tr > th {
 
 @media screen and (max-width: 1200px) {
   padding: 0;
-  background-color: red;
   thead > tr{
   display: flex;
   th {

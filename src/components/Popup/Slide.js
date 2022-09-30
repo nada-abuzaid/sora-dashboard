@@ -1,24 +1,15 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import {
-  ImagesWrapper, SlideParagraph, SlideTitle, SlideWrapper,
+  SlideParagraph, SlideTitle, SlideWrapper,
 } from '../Dashboard/styles';
 
 export default function Slide({
-  image1, image2, title, paragraph,
+  image1, title, paragraph,
 }) {
-  const images = [
-    image1,
-    image2,
-  ];
-
   return (
     <SlideWrapper>
-      <ImagesWrapper className="images">
-        {
-          images.map((item, index) => <img src={item} alt="Popup" className={`popup${index + 1}`} key={index} />)
-        }
-      </ImagesWrapper>
+      <img src={image1} alt="Popup" className="popup-images" width={180} />
       <SlideTitle>{title}</SlideTitle>
       <SlideParagraph>
         {paragraph}
@@ -29,7 +20,6 @@ export default function Slide({
 
 Slide.propTypes = {
   image1: PropTypes.string.isRequired,
-  image2: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   paragraph: PropTypes.string.isRequired,
 };

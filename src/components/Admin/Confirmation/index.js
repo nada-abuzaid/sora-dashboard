@@ -18,7 +18,13 @@ export default function Confirmation({
       overlayClassName="overlay"
       ariaHideApp={false}
     >
-      <img src={ConfirmationImg} alt="employer" width={180} />
+      <img
+        src={ConfirmationImg}
+        alt="employer"
+        style={{
+          width: '35%',
+        }}
+      />
       <P>Are you sure you want to delete this employers profile?</P>
       <Actions>
         <Button onClick={handleDelete}>Yes, Delete</Button>

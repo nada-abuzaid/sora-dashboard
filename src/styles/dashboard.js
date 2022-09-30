@@ -19,13 +19,16 @@ const AccountStyle = styled.div`
     p {
       font-family: "DM Serif Text", sans-serif;
       font-size: 1.4rem;
+      text-align: left !important;
     }
     .edit-icon {
       background: none;
       border: none;
-      font-size: 1.5rem;
       color: ${({ theme: { colors } }) => colors.lightGray1};
       cursor: pointer;
+      img{
+        width: 1.5rem;
+      }
     }
   }
 `;
@@ -50,12 +53,12 @@ const ContactStyle = styled.div`
   height: 80vh;
   p:first-child {
     font-family: "DM Serif Text", sans-serif;
-    font-size: 48px;
+    font-size: 38px;
   }
   .contact-email,
   .email {
     font-family: "Nunito Sans", sans-serif;
-    font-size: 2rem;
+    font-size: 22px;
     color: ${({ theme: { colors } }) => colors.black};
   }
   .email {

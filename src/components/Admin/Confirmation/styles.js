@@ -1,12 +1,15 @@
 import styled from 'styled-components';
 
 const P = styled.p`
-  font-family: "DM Serif Text", sans-serif;
+font-family: "DM Serif Text", sans-serif;
 font-size: 1.5rem;
 display: flex;
 justify-content: center;
 align-items: center;
 text-align: center;
+@media only screen and (max-width: ${({ theme: { screens } }) => screens.mobile}) {
+  font-size: 1.3rem;
+}
 `;
 
 const Button = styled.button`

@@ -27,16 +27,16 @@ const Datastyle = styled.div`
 
 const FormStyle = styled.div`
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   gap: 2rem;
+  flex-direction: column;
   @media screen and (max-width: 800px) {
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
     gap: 1rem;
   }
-  .first-col,
-  .second-col {
+  .first-col {
     display: flex;
     flex-direction: column;
     gap: 1.2rem;

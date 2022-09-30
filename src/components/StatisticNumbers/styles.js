@@ -28,8 +28,8 @@ const StatisticStyle = styled.div`
     font-family: "DM Serif Text", sans-serif;
     font-size: 1.75rem;
   }
-  p {
-    font-size: 0.8rem;
+  p.statistic-title {
+    font-size: 16px;
     font-family: "Nunito Sans", sans-serif;
     margin-top: 0;
     text-align: center;

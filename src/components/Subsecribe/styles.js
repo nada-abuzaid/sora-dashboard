@@ -45,7 +45,7 @@ const LeftStyle = styled.div`
         flex-direction: column;
         .premium {
           font-family: "DM Serif Text", sans-serif;
-          font-size: 2.375rem;
+          font-size: 2rem;
           color: ${({ theme }) => theme.colors.primary};
           text-align: center;
         }
@@ -55,7 +55,7 @@ const LeftStyle = styled.div`
           text-align: justify;
           width: 85%;
           margin: 0 auto;
-          font-family: 'Nunito Sans', sans-serif;
+          font-family: "Nunito Sans", sans-serif;
         }
         .line {
           width: 90%;
@@ -71,7 +71,7 @@ const LeftStyle = styled.div`
         gap: 1rem;
         padding: 0 1rem;
         font-size: 1.125rem;
-        font-family: 'Nunito Sans', sans-serif;
+        font-family: "Nunito Sans", sans-serif;
       }
       @media screen and (max-width: 768px) {
         height: 96%;
@@ -135,26 +135,38 @@ const LeftStyle = styled.div`
       p:not(:first-child) {
         color: #404040;
         text-align: justify;
-        font-size: 1rem;
+        font-size: 0.9rem;
         width: 75%;
         margin: 0 auto;
       }
-      .btn {
-        padding: 0 2rem;
-        margin: 1rem 2rem;
-        font-size: 1.125rem;
-        a {
-          background-color: ${({ theme: { colors } }) => colors.primary};
-          color: ${({ theme: { colors } }) => colors.white};
-          padding: 0.6rem 1.3rem;
-          border-radius: 6px;
-          text-align: center;
-          border: none;
-        }
+      a {
+        text-decoration: underline;
+        color: #404040;
       }
       .title {
         align-self: center;
-        margin-top: 0.2rem;
+        position: relative;
+        .scribbles {
+          position: absolute;
+          left: -4rem;
+          top: -2.5rem;
+          width: 6rem;
+        }
+        .section-title {
+          font-family: "DM Serif Text", sans-serif;
+          font-size: 2rem;
+          text-align: center;
+          width: 100%;
+        }
+        @media only screen and (max-width: ${({ theme: { screens } }) => screens.mobile}) {
+          .scribbles {
+            display: none;
+          }
+          .section-title {
+            font-size: 1.8em;
+          }
+          
+        }
       }
     }
     .image {
@@ -222,7 +234,7 @@ const UpgradeStyle = styled.div`
     .desc {
       font-family: "Nunito Sans", sans-serif;
       text-align: center;
-      font-size: 1rem;
+      font-size: 0.9rem;
       width: 100%;
     }
     .btn-more {

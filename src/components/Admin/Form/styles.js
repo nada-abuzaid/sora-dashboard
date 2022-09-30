@@ -3,6 +3,10 @@ import styled from 'styled-components';
 const Container = styled.div`
 display: flex;
 flex-direction: row;
+@media only screen and (max-width: ${({ theme: { screens } }) => screens.mobile}) {
+    flex-direction: column;
+    gap: 1rem;
+  }
 `;
 
 const Row = styled.div`
@@ -24,6 +28,15 @@ gap: 1.5rem;
     max-height: 100%;
     max-width: 90%;
     padding: 0.8rem;
+  }
+  @media only screen and (max-width: ${({ theme: { screens } }) => screens.mobile}) {
+    gap: 1rem;
+   .col{
+    gap: 0rem;
+    p {
+    font-size: 0.9rem;
+  }
+   }
   }
 }
 `;

@@ -7,7 +7,9 @@ function LogoutButton() {
     <button
       type="button"
       className="btn btn-danger btn-block"
-      onClick={logout}
+      onClick={() => {
+        logout({ returnTo: window.location.origin });
+      }}
     >
       Sign Out
     </button>

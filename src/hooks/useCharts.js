@@ -10,10 +10,10 @@ function useCharts() {
   const [healthConditionsData, setHealthConditionsData] = useState([]);
   const dispatch = useDispatch();
 
-  const [id, setId] = useState(0);
+  const [id, setId] = useState(3);
 
   useEffect(() => {
-    setId(3);
+    setId(id);
     if (id === 0) return;
     const fetchData = async () => {
       try {
