@@ -8,6 +8,7 @@ function LogoutButton() {
       type="button"
       className="btn btn-danger btn-block"
       onClick={() => {
+        localStorage.removeItem('token');
         logout({ returnTo: window.location.origin });
       }}
     >
