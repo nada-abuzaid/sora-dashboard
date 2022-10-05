@@ -46,7 +46,7 @@ const TitleWrapper = styled.div`
   gap: 0.8rem;
 
   .desc {
-    font-family: 'Nunito Sans';
+    font-family: "Nunito Sans", sans-serif;
     text-align: center;
     font-size: 1.2rem;
     width: 60%;
@@ -103,11 +103,11 @@ const TitleStyle = styled.div`
     position: absolute;
     left: -4rem;
     top: -2.5rem;
-    width: 6em;
+    width: 6rem;
   }
   .section-title {
-    font-family: 'DM Serif Text';
-    font-size: 2.2em;
+    font-family: "DM Serif Text", sans-serif;
+    font-size: 2.625rem;
     text-align: center;
   }
 

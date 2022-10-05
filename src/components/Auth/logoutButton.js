@@ -7,7 +7,10 @@ function LogoutButton() {
     <button
       type="button"
       className="btn btn-danger btn-block"
-      onClick={logout}
+      onClick={() => {
+        localStorage.removeItem('token');
+        logout({ returnTo: window.location.origin });
+      }}
     >
       Sign Out
     </button>

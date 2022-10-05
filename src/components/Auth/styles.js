@@ -39,11 +39,11 @@ const Wrapper = styled.div`
   .mobile {
     position: absolute;
     flex: 1;
-    left: 30%;
-    bottom: 10%;
+    left: 35%;
+    bottom: 8%;
     z-index: 2;
     height: 80%;
-    width: 45%;
+    width: 35%;
   }
 
   .background {
@@ -91,7 +91,7 @@ const ButtonStyle = styled.div`
   cursor: pointer;
   a {
     color: ${({ theme: { colors } }) => colors.primaryLight};
-    font-family: 'Nunito Sans';
+    font-family: "Nunito Sans", sans-serif;
     font-weight: 600;
     &:hover {
       color: ${({ theme: { colors } }) => colors.primaryLight};

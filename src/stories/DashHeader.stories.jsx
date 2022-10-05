@@ -1,5 +1,5 @@
 import React from 'react';
-import DashHeader from '../pagesComponents/Dashboard/DashHeader';
+import DashHeader from '../components/Dashboard/DashHeader';
 
 export default {
   title: 'Components/Header',
@@ -9,6 +9,8 @@ export default {
   },
 };
 
-const Template = (args) => <DashHeader {...args} />;
+function Template(args) {
+  return <DashHeader {...args} />;
+}
 
 export const DashboardHeader = Template.bind({});

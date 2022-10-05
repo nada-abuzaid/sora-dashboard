@@ -2,6 +2,7 @@ import React from 'react';
 import SoraImg from '../../assets/svgs/Frame.svg';
 import Arrow from '../../assets/svgs/Arrow.svg';
 import Mobile from '../../assets/svgs/Mobile.svg';
+
 import { Shadow, Wrapper } from './styles';
 
 export default function MobileScreen() {

@@ -26,6 +26,7 @@ const FieldStyle = styled.div`
     border-radius: 5px;
     outline: none;
     padding: 1rem;
+    font-family: 'Nunito Sans', sans-serif;
   }
   .form__label {
     position: absolute;
@@ -35,6 +36,7 @@ const FieldStyle = styled.div`
     cursor: text;
     transition: all 200ms ease-in;
     background-color: white;
+    font-family: 'Nunito Sans', sans-serif;
   }
   .form__input:focus + .form__label,
   .form__input:valid + .form__label {
@@ -61,7 +63,8 @@ const SubmitStyle = styled.div`
 
 const TextErrorStyle = styled.div`
   color: ${({ theme: { colors } }) => colors.error};
-  font-size: 0.8rem;
+  font-size: 0.9rem;
+  font-family: "Nunito", sans-serif;
 `;
 
 export {

@@ -1,40 +1,37 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ThemeProvider } from 'styled-components';
-import { Route, Routes } from 'react-router-dom';
+import { useAuth0 } from '@auth0/auth0-react';
+import { useNavigate } from 'react-router-dom';
 import { GlobalStyle } from './styles';
 import 'antd/dist/antd.min.css';
 import theme from './themes';
-import { DashboardLayout } from './layouts';
-import { Auth } from './pages';
-import routes from './routes';
+import AllRoutes from './app/router';
 
 export default function App() {
+  const controller = new AbortController();
+  const { getAccessTokenSilently, isAuthenticated } = useAuth0();
+  const navigate = useNavigate();
+
+  getAccessTokenSilently().then((tokenVal) => {
+    localStorage.setItem('token', tokenVal);
+  });
+
+  useEffect(() => {
+    if (!isAuthenticated) {
+      localStorage.removeItem('token');
+      navigate('/auth');
+    } else {
+      navigate('/');
+    }
+    return () => {
+      controller.abort();
+    };
+  }, [isAuthenticated]);
+
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <Routes>
-        <Route path="/auth" element={<Auth />} />
-        <Route path="/" element={<DashboardLayout />}>
-          {routes.map((route) => {
-            if (route.path === '') {
-              return (
-                <Route
-                  index
-                  key={route.key}
-                  element={<route.componentName />}
-                />
-              );
-            }
-            return (
-              <Route
-                key={route.key}
-                path={route.path}
-                element={<route.componentName />}
-              />
-            );
-          })}
-        </Route>
-      </Routes>
+      <AllRoutes />
     </ThemeProvider>
   );
 }

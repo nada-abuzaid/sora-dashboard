@@ -5,14 +5,13 @@ import { Form } from '..';
 import { FormStyle, UpdateButton } from './style';
 
 export default function UserData({
-  name, email, setIsEdit, isEdit,
+  name, setIsEdit, isEdit,
 }) {
   const handleSubmit = () => {
     setIsEdit(false);
   };
   const initialValues = {
     name,
-    email,
     oldPassword: '',
     newPassword: '',
   };
@@ -28,13 +27,6 @@ export default function UserData({
               <p>Name</p>
               <Field name="name" placeholder="Name" value={name} />
             </div>
-            <div>
-              <p>Email</p>
-              <Field name="email" placeholder={email} value={email} readOnly />
-              <span>*Your can’t change your email because...</span>
-            </div>
-          </div>
-          <div className="second-col">
             <div>
               <p>Old Password</p>
               <Field name="oldPassword" placeholder="Old password" type="password" />
@@ -53,7 +45,6 @@ export default function UserData({
 
 UserData.propTypes = {
   name: PropTypes.string.isRequired,
-  email: PropTypes.string.isRequired,
   isEdit: PropTypes.bool.isRequired,
   setIsEdit: PropTypes.func.isRequired,
 };

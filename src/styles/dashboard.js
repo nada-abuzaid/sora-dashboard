@@ -17,28 +17,19 @@ const AccountStyle = styled.div`
     align-items: center;
     justify-content: space-between;
     p {
-      font-family: "DM Serif Text", serif;
+      font-family: "DM Serif Text", sans-serif;
       font-size: 1.4rem;
+      text-align: left !important;
     }
     .edit-icon {
       background: none;
       border: none;
-      font-size: 1.5rem;
       color: ${({ theme: { colors } }) => colors.lightGray1};
       cursor: pointer;
+      img{
+        width: 1.5rem;
+      }
     }
-  }
-`;
-
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  width: 90%;
-  gap: 2rem;
-  position: relative;
-  @media only screen and (max-width: 900px) {
-    flex-direction: column;
-    width: 100%;
   }
 `;
 
@@ -61,13 +52,13 @@ const ContactStyle = styled.div`
   padding: 2rem;
   height: 80vh;
   p:first-child {
-    font-family: "DM Serif Text", serif;
-    font-size: 2rem;
+    font-family: "DM Serif Text", sans-serif;
+    font-size: 38px;
   }
   .contact-email,
   .email {
-    font-family: "Nunito Sans", serif;
-    font-size: 1.2rem;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 22px;
     color: ${({ theme: { colors } }) => colors.black};
   }
   .email {
@@ -82,5 +73,5 @@ const ContactStyle = styled.div`
 `;
 
 export {
-  AccountStyle, Wrapper, CoinsStyle, ContactStyle,
+  AccountStyle, CoinsStyle, ContactStyle,
 };

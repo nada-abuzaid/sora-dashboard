@@ -2,12 +2,9 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Auth0Provider } from '@auth0/auth0-react';
 import propTypes from 'prop-types';
-import { DOMAIN, CLIENT_ID } from '../config';
+import { DOMAIN, CLIENT_ID, AUDEIENCE } from '../config';
 
 export default function Auth0ProviderFunc({ children }) {
-  const domain = DOMAIN;
-  const clientId = CLIENT_ID;
-
   const navigate = useNavigate();
 
   const onRedirectCallback = () => {
@@ -16,10 +13,11 @@ export default function Auth0ProviderFunc({ children }) {
 
   return (
     <Auth0Provider
-      domain={domain}
-      clientId={clientId}
+      domain={DOMAIN}
+      clientId={CLIENT_ID}
       redirectUri={window.location.origin}
       onRedirectCallback={onRedirectCallback}
+      audience={AUDEIENCE}
     >
       {children}
     </Auth0Provider>

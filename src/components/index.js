@@ -1,20 +1,11 @@
-import Header from './Header';
-import Mailto from './SendEmail';
+import { Mailto, Header } from './Common';
 import {
   FormField, SubmitButton, Form, TextError,
-} from './Form';
-import {
-  DashboardWrapper,
-  Main,
-  HeaderStyle,
-} from './styled';
+} from './Common/Form';
 
 export {
   Mailto,
   Header,
-  DashboardWrapper,
-  Main,
-  HeaderStyle,
   FormField,
   SubmitButton,
   Form,

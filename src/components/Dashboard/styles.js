@@ -4,7 +4,6 @@ import styled from 'styled-components';
 const Nav = styled.nav`
   position: fixed;
   width: 100%;
-
   display: flex;
   align-items: center;
   box-shadow: 2px 2px 4px #b5b5b5;
@@ -31,6 +30,9 @@ const AutoCompleteStyle = styled(AutoComplete)`
     display: flex;
     align-items: center;
     justify-content: center;
+    .ant-select-selector:focus{
+      border-color: ${({ theme: { colors } }) => colors.primary};
+    }
     span {
       display: flex;
       align-items: center;
@@ -47,9 +49,9 @@ const AutoCompleteContainer = styled.div`
   position: fixed;
   justify-content: center;
   align-items: center;
-  z-index: 20;
+  z-index: 11;
   top: 0.7rem;
-  width: 40%;
+  width: 30%;
   font-size: 1.3rem;
   color: ${({ theme: { colors } }) => colors.white};
   .icon {
@@ -61,19 +63,9 @@ const AutoCompleteContainer = styled.div`
     align-items: center;
     justify-content: center;
   }
-  .ant-select.ant-select-single.ant-select-show-arrow{
-    margin-left: 1rem;
-    height: 2.5rem !important;
-    width: 50%;
-    div {
-      height: 2.5rem;
-      display: flex;
-      align-items: center;
-      .ant-select-selection-search, .ant-select-selection-item{
-        height: 2.5rem;
-        border: red;
-      }
-    }
+  @media only screen and (max-width: ${({ theme: { screens } }) => screens.mobile}) {
+    right: 2.5rem;
+    width: 70%;
   }
 `;
 
@@ -94,6 +86,9 @@ const ASide = styled.div`
     ? `width: ${sizes.MENU_WIDTH}px;`
     : `
     width: ${sizes.COLLAPSED_MENU_WIDTH}px;
+    .side-menu-item {
+      justify-content: center;
+    }
     `)}
   .side-content {
     height: 100%;
@@ -107,11 +102,12 @@ const ASide = styled.div`
     align-items: center;
     justify-content: space-between;
     background: none;
-    .close-btn {
+    .closee-btn {
       opacity: 0;
       background: none;
       border: none;
       outline: none;
+      margin-right: 1rem;
       @media only screen and (max-width: 600px) {
         opacity: 1;
       }
@@ -121,7 +117,8 @@ const ASide = styled.div`
       align-items: center;
       .sora {
         text-transform: uppercase;
-        font-family: "Nunito Sans";
+            font-family: "Nunito Sans", sans-serif;
+
         font-weight: bold;
         color: ${({ theme: { colors } }) => colors.primary};
         font-size: 1.3rem;
@@ -141,8 +138,9 @@ const ASide = styled.div`
     color: ${({ theme: { colors } }) => colors.primaryDark};
     p,
     button {
-      font-family: "Nunito Sans";
-      font-size: 0.9rem;
+          font-family: "Nunito Sans", sans-serif;
+
+      font-size: 1rem;
       margin-left: 0.7rem;
       padding: 1.2rem 0;
       ${(props) => (props.isOpen ? null : 'display:none')}
@@ -165,14 +163,14 @@ const ASide = styled.div`
   }
   .footer {
     background-color: ${({ theme: { colors } }) => colors.lightGray3};
-    height: 3rem;
+    height: 4rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     p {
       font-size: 0.7rem;
-      font-family: "Nunito Sans";
+      font-family: "Nunito Sans", sans-serif;
       margin-left: 0.6rem;
       ${(props) => (props.isOpen ? null : 'display: none')}
     }
@@ -208,7 +206,7 @@ const Background = styled.div`
     top: 0;
     z-index: 90;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     ${(props) => (props.isOpen ? null : 'display: none')}
   }
@@ -217,34 +215,40 @@ const Background = styled.div`
 const SlideWrapper = styled.div`
   width: 80%;
   height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
   background-color: ${({ theme: { colors } }) => colors.white};
+  @media only screen and (max-width: ${({ theme: { screens } }) => screens.mobile}) {
+    gap:  0;
+  }
+  @media only screen and (max-width: 400px) {
+    height: 95%;
+  }
+  .popup-images{
+    width: 30%;
+  }
 `;
 
 const SlideTitle = styled.p`
-  font-family: "DM Serif Text";
-  font-size: 24px;
+    font-family: "DM Serif Text", sans-serif;
+  font-size: 1.5rem;
   @media only screen and (max-width: ${({ theme: { screens } }) => screens.tablet_portrait}) {
-    font-size: 22px;
+    font-size: 1.4rem;
     margin-bottom: 10px;
   }
   @media only screen and (max-width: ${({ theme: { screens } }) => screens.mobile}) {
-    font-size: 16px;
+    font-size: 1.2rem;
   }
 `;
 
 const SlideParagraph = styled.p`
   text-align: justify;
-  font-family: "Nunito Sans";
+      font-family: "Nunito Sans", sans-serif;
+
   margin-bottom: 50px;
-  font-size: 16px;
-  @media only screen and (max-width: ${({ theme: { screens } }) => screens.tablet_portrait}) {
-    margin-bottom: 20px;
-    font-size: 14px;
-  }
-  @media only screen and (max-width: ${({ theme: { screens } }) => screens.mobile}) {
-    font-size: 13px;
-    text-align: justify;
-  }
+  font-size: 1rem;
 `;
 
 const StyledCloseButton = styled.button`
@@ -273,23 +277,38 @@ const ImagesWrapper = styled.div`
     width: 32%;
     transform: translate(-45%, -65%);
   }
+  @media only screen and (max-width: ${({ theme: { screens } }) => screens.mobile}) {
+    img{
+      width: 50%;
+    }
+  }
 `;
 
 const StyledTable = styled(Table)`
 padding: 0 40px;
+
 thead > tr > th {
   background-color: #89aaad33;
 }
 
+.ant-table{
+  background: none;
+}
+
 .ant-table-header {
   border-radius: 20px 20px 0 0;
+  table{
+    width: auto;
+  }
 }
 
 .ant-table-container {
   border-radius: 20px 20px 0 0;
   box-shadow: inset 0px -4px 12px rgba(0, 0, 0, 0.1);
   width: 95%;
-  height: 95%;
+  .ant-table-body{
+    max-height: 100% !important;
+  }
 }
 
 .ant-table.ant-table-fixed-header {
@@ -316,6 +335,21 @@ thead > tr > th {
 
 && tbody > tr:hover > td {
   background: rgba(137, 170, 173, 0.1);
+}
+
+.ant-table-tbody > tr > td{
+  width: 10rem;
+}
+
+@media screen and (max-width: 1200px) {
+  padding: 0;
+  thead > tr{
+  display: flex;
+  th {
+  display: inline-block;
+  width: 10rem;
+}
+}
 }
 `;
 

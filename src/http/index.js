@@ -5,6 +5,9 @@ async function axiosRequest(url, method, data) {
     method,
     url,
     data,
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
+    },
   });
   return response;
 }

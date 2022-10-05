@@ -14,7 +14,6 @@ export default function Data({
       isEdit ? (
         <UserData
           name={name}
-          email={email}
           password={password}
           setIsEdit={setIsEdit}
           isEdit={isEdit}

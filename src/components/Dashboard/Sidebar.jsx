@@ -1,22 +1,24 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import logoutImg from '../../assets/svgs/Logout.svg';
 import logo from '../../assets/svgs/syrona.svg';
 import AppLogo from '../../assets/svgs/AppLogo.svg';
-import Upgrade from './Subsecribe/Upgrade';
+import Upgrade from '../Subsecribe/Upgrade';
 import close from '../../assets/svgs/close.svg';
 import menu from '../../assets/svgs/Menu.svg';
 import account from '../../assets/svgs/Account.svg';
+import reports from '../../assets/svgs/Reports.svg';
 import contact from '../../assets/svgs/contact-form.svg';
 import LogoutButton from '../Auth/logoutButton';
-import { Background, ASide } from './styles';
+import { ASide, Background } from './styles';
 import '../../styles/typography.css';
+import { setSidebarOpen } from '../../store';
 
-export default function Sidebar({ isOpen, setisOpen }) {
+export default function Sidebar() {
   const { dashboard } = useSelector((state) => state.dashboard.value);
-
+  const { isOpen } = useSelector((state) => state.sidebar.value);
+  const dispatch = useDispatch();
   return (
     <>
       <Background isOpen={isOpen} />
@@ -28,15 +30,18 @@ export default function Sidebar({ isOpen, setisOpen }) {
           </div>
           <button
             type="button"
-            className="close-btn"
-            onClick={() => setisOpen(!isOpen)}
+            className="closee-btn"
+            onClick={() => dispatch(setSidebarOpen({ isOpen: false }))}
           >
             <img alt="close" src={close} width={14} />
           </button>
         </div>
         <div className="side-content">
           <div className="side-menu">
-            <NavLink to={dashboard !== 'admin' ? '/' : '/admin'} className="side-menu-item">
+            <NavLink
+              to={dashboard !== 'admin' ? '/' : '/admin'}
+              className="side-menu-item"
+            >
               <img src={menu} alt="Dashboard" className="icon" />
               <p>Dashboard</p>
             </NavLink>
@@ -44,22 +49,24 @@ export default function Sidebar({ isOpen, setisOpen }) {
               <img src={account} alt="Account" className="icon" />
               <p>Account settings</p>
             </NavLink>
-            {
-              dashboard !== 'admin' && (
+            {dashboard !== 'admin' && (
+            <>
+              <NavLink to="/reports" className="side-menu-item">
+                <img src={reports} alt="Reports" className="icon" width={21} height={28} />
+                <p>Quarterly Reports</p>
+              </NavLink>
               <NavLink to="/contact" className="side-menu-item">
                 <img src={contact} alt="Logout" className="icon" />
                 <p>Contact Us</p>
               </NavLink>
-              )
-            }
+            </>
+            )}
           </div>
-          {
-              dashboard !== 'admin' && (
-              <div className="upgrade">
-                <Upgrade isOpen={isOpen} />
-              </div>
-              )
-          }
+          {dashboard !== 'admin' && (
+            <div className="upgrade">
+              <Upgrade isOpen={isOpen} />
+            </div>
+          )}
           <NavLink to="/auth" className="side-menu-item">
             <img src={logoutImg} alt="Logout" className="icon" />
             <LogoutButton />
@@ -75,14 +82,3 @@ export default function Sidebar({ isOpen, setisOpen }) {
     </>
   );
 }
-
-Sidebar.propTypes = {
-  /**
-   * If the sidebar is open or not
-   */
-  isOpen: PropTypes.bool.isRequired,
-  /**
-   * Set the sidebar state
-   */
-  setisOpen: PropTypes.func.isRequired,
-};
